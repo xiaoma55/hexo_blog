@@ -38,37 +38,37 @@ date: 2020-11-17 16:42:21
   
 3. 下载完成后打开如下图，点击图中箭头处的“安装PE到U盘”。
 
-![安装微PE](./installationSystem/1.png)
+![安装微PE](/img/articleContent/zhuangXiTong1.png)
 
 4. 在图中1处选择“自己的U盘”，2处选择“NTFS”，然后点击“立即安装进U盘”。
 
-![安装进U盘](./installationSystem/2.png)
+![安装进U盘](/img/articleContent/zhuangXiTong2.png)
 
 5. 在弹出来的对话框中，点击“开始制作”。
 
-![安装进U盘](./installationSystem/3.png)
+![安装进U盘](/img/articleContent/zhuangXiTong3.png)
 
 6. 等待几分钟后，即可完成U盘启动盘的制作。
 
-![安装进U盘](./installationSystem/4.png)
+![安装进U盘](/img/articleContent/zhuangXiTong4.png)
 
 ### 启动U盘启动盘
 
 1. 将制作好的启动u盘插入电脑usb接口，然后开启电脑，等到屏幕上出现开机画面后按快捷键（不同机器的快捷键可能不一样，但大多都是F8-F12还有ESC或者F2等这些中的一个，不知道的可以自行百度自己的电脑型号)，然后选择自己的U盘，进入到PE盘主菜单页面，如下图所示。
 
-![安装进U盘](./installationSystem/5.png)
+![安装进U盘](/img/articleContent/zhuangXiTong5.png)
 
 2. 点击图中的“CGI备份还原”,然后在2中选择C盘，3中选择自己的镜像，最后点“执行”。
 
-![安装进U盘](./installationSystem/6.png)
+![安装进U盘](/img/articleContent/zhuangXiTong6.png)
 
 3. 然后点“确定”，等待其完成，之后拔掉U盘重启电脑即可。
 
-![安装进U盘](./installationSystem/7.png)
+![安装进U盘](/img/articleContent/zhuangXiTong7.png)
 
 4. 重启电脑后，我们即可进入崭新的win10系统桌面了，如下图所示，根据提示完成基本设置即可。
 
-![安装进U盘](./installationSystem/8.png)
+![安装进U盘](/img/articleContent/zhuangXiTong8.png)
 
 5. 激活系统，{% post_link KMS 点击跳转到KMS激活教程 %}。
 

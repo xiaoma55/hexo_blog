@@ -35,7 +35,7 @@ OCR，即光学字符识别，是一种能将图片中的文字识别转换为�
 ```
 ## 使用
 
-![OCR软件](./tianRuoOCR/OCRSoft.png)
+![OCR软件](/img/articleContent/OCRSoft.png)
 
 大家运行上图中的第二个文件就可以直接打开。
 
@@ -45,7 +45,7 @@ OCR，即光学字符识别，是一种能将图片中的文字识别转换为�
 
 识别演示如下图。
 
-![OCR使用](./tianRuoOCR/OCRUse.jpg)
+![OCR使用](/img/articleContent/OCRUse.jpg)
 
 点击软件界面的 **“拆”** ，即可按所识别内容的格式进行分段。
 

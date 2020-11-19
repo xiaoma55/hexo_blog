@@ -104,7 +104,7 @@ theme: fluid
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: https://github.com/xiaoma55/xiaoma55.github.io.git
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: master
+  - type: git
+    repo: https://github.com/xiaoma55/xiaoma55.github.io.git
+    # example, https://github.com/hexojs/hexojs.github.io
+    branch: master
