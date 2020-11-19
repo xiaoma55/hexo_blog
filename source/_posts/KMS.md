@@ -56,4 +56,4 @@ date: 2020-11-17 18:05:31
 ---
 
 ## 联系博主，加入【羊山丨交流社区】
-![联系博主](./KMS/xiaomaWeChat.png)
+![联系博主](/img/icon/wechatFindMe.png)

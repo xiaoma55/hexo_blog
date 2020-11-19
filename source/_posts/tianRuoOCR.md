@@ -56,4 +56,4 @@ OCR，即光学字符识别，是一种能将图片中的文字识别转换为�
 ---
 
 ## 联系博主，加入【羊山丨交流社区】
-![联系博主](./tianRuoOCR/xiaomaWeChat.png)
+![联系博主](/img/icon/wechatFindMe.png)

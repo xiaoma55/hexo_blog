@@ -32,4 +32,4 @@ idea的全系产品都是收费的。
 ---
 
 ## 联系博主，加入【羊山丨交流社区】
-![联系博主](./IDEAactivation/xiaomaWeChat.png)
+![联系博主](/img/icon/wechatFindMe.png)

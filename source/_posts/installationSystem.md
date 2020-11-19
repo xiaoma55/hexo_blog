@@ -79,4 +79,4 @@ date: 2020-11-17 16:42:21
 ---
 
 ## 联系博主，加入【羊山丨交流社区】
-![联系博主](./installationSystem/xiaomaWeChat.png)
+![联系博主](/img/icon/wechatFindMe.png)
