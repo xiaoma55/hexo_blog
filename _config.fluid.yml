@@ -206,7 +206,7 @@ web_analytics:  # 网页访问统计
   # 百度统计的 Key，值需要获取下方链接中 `hm.js?` 后边的字符串
   # Baidu analytics, get the string behind `hm.js?`
   # See: https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376
-  baidu:
+  baidu: 67170173f7728b46e83d8bf815805a8b
 
   # Google 统计的 Tracking ID
   # Google analytics, set Tracking ID
@@ -602,7 +602,7 @@ post:
   comments:
     enable: true
     # Options: disqus | valine | gitalk | utterances | changyan | livere | remark42 | twikoo
-    type: disqus
+    type: gitalk
 
 
 #---------------------------
@@ -629,29 +629,29 @@ utterances:
 # 基于第三方的服务，国内用户直接使用容易被墙，建议配合 Disqusjs
 # Third-party based services, it is a very popular
 # See: https://disqus.com
+# disqus:
 disqus:
-  shortname:
+  shortname: fluid
   # 以下为 Disqusjs 支持, 国内用户如果想使用 Disqus 建议配合使用
   # The following are Disqusjs configurations, please ignore if DisqusJS is not required
   # See: https://github.com/SukkaW/DisqusJS
-  disqusjs: false
-  apikey:
+  # 是否启用评论功能
 
 # Gitalk
 # 基于 GitHub Issues
 # Based on GitHub Issues
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID:
-  clientSecret:
-  repo:
-  owner:
-  admin: ['name']
+  clientID: '61b738599506ef5e04c5'
+  clientSecret: '9e52e787ccd4549bf53cadeef0c9c46a1d3ce162'
+  repo: 'hexoBlogGitalk'
+  owner: 'xiaoma55'
+  admin: ['xiaoma55']
   language: zh-CN
   labels: ['Gitalk']
   perPage: 10
   pagerDirection: last
-  distractionFreeMode: false
+  distractionFreeMode: true
   createIssueManually: true
 
 # Valine
