@@ -1,7 +1,7 @@
 
 ### [博客主页](https://xiaoma.cool/)
 
-![主页](https://github.com/xiaoma55/hexo_blog/blob/master/source/image/readme1.png)
+![主页](https://github.com/xiaoma55/hexo_blog/blob/master/source/img/bg/for_git_readme.png)
 
 ### 简介
 
