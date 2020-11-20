@@ -290,6 +290,7 @@ navbar:
     - { key: "归档", link: "/archives/", icon: "iconfont icon-archive-fill" }
     - { key: "分类", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "友链", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
     #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
@@ -388,7 +389,8 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/bg/welcome_banner.jpg
+  # banner_img: /img/bg/welcome_banner.jpg
+  banner_img: https://cdn.jsdelivr.net/gh/xiaoma55/xiaoma55.github.io@master/source/img/bg/welcome_banner.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -709,7 +711,7 @@ twikoo:
 #---------------------------
 archive:
   banner_img: /img/articleBg/1(4).jpg
-  banner_img_height: 70
+  banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:
 
@@ -721,7 +723,7 @@ archive:
 category:
   enable: true
   banner_img: /img/articleBg/1(4).jpg
-  banner_img_height: 70
+  banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:
 
@@ -746,7 +748,7 @@ category:
 tag:
   enable: true
   banner_img: /img/articleBg/1(4).jpg
-  banner_img_height: 70
+  banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:
   tagcloud:
@@ -764,7 +766,7 @@ tag:
 about:
   enable: true
   banner_img: /img/articleBg/1(4).jpg
-  banner_img_height: 70
+  banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:  # 打字机内容
   avatar: /img/icon/wechatHeadPortrait.png
@@ -785,8 +787,8 @@ about:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 85
+  banner_img: /img/articleBg/1(4).jpg
+  banner_img_height: 60
   banner_mask_alpha: 0
   subtitle: "Page not found"
 
@@ -797,7 +799,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/default.png
+  banner_img: /img/articleBg/1(4).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:
@@ -805,21 +807,21 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
+      title: "列海王",
+      intro: "资深的测试工程师，让我们一起去他的鱼塘里畅游吧！",
+      link: "https://lieziqiao.github.io/",
       image: "/img/favicon.png"
     }
     - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
+      title: "梁老_文杰哥",
+      intro: "真正的运维大佬，在运维方面真的炉火纯青！",
+      link: "https://blog.csdn.net/hiphop321",
       image: "/img/favicon.png"
     }
     - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
+      title: "卓老_超哥",
+      intro: "java大佬，多年资深从业经验！",
+      link: "https://blog.csdn.net/qq_33329834",
       image: "/img/favicon.png"
     }
 

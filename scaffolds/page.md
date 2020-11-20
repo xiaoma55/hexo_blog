@@ -12,6 +12,10 @@ category:
     - [一级分类]
 comment: off
 layout: about
+# jsDelivr图片压缩写法
+# https://cdn.jsdelivr.net/gh/user/repo@version/file
+# https://cdn.jsdelivr.net/gh/fluid-dev/hexo-theme-fluid@master/source/img/favicon.png
+https://cdn.jsdelivr.net/gh/xiaoma55/xiaoma55.github.io@master/source/img/favicon.png
 ---
 
 ---
