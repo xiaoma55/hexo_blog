@@ -712,7 +712,7 @@ archive:
   banner_img: /img/articleBg/1(2).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
-  subtitle:
+  subtitle: "I guess it comes down to a simple choice:get busy living or get busy dying. "
 
 
 #---------------------------
@@ -724,7 +724,7 @@ category:
   banner_img: /img/articleBg/1(43).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
-  subtitle:
+  subtitle: "In our hearts, there is a place that cannot be locked. That place is called hope."
 
   # 单个分类中折叠展示文章数的最大值，超过限制会显示 More
   # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More
@@ -749,7 +749,7 @@ tag:
   banner_img: /img/articleBg/1(45).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
-  subtitle:
+  subtitle: "Hope is a good thing, maybe the best of things, and no good thing ever dies."
   tagcloud:
     min_font: 15
     max_font: 30
@@ -767,7 +767,7 @@ about:
   banner_img: /img/bg/welcome_banner0.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
-  subtitle:  # 打字机内容
+  subtitle:  "It takes a strong man to save himself, and a great man to save another."
   avatar: /img/icon/wechatHeadPortrait.png
   name: 小马
   introduce: "有些鸟儿是永远关不住的，因为他们的每一片羽翼都沾满了自由的光辉"
@@ -801,7 +801,7 @@ links:
   banner_img: /img/articleBg/1(18).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
-  subtitle:
+  subtitle: "Fear can hold you prisoner. Hope can set you free."
   # 友链的成员项
   # Member item of page
   items:
