@@ -651,7 +651,7 @@ gitalk:
   language: zh-CN
   labels: ['Gitalk']
   perPage: 10
-  pagerDirection: last
+  pagerDirection: first
   distractionFreeMode: true
   createIssueManually: true
 
