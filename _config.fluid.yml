@@ -806,22 +806,28 @@ links:
   # Member item of page
   items:
     - {
-      title: "列海王",
-      intro: "资深的测试工程师，让我们一起去他的鱼塘里畅游吧！",
-      link: "https://lieziqiao.github.io/",
-      image: "/img/favicon.png"
+      title: "阳佬_小狼哥",
+      intro: "太强了，架构师，每次看他写的代码：巧妙、优雅、震撼！",
+      link: "https://xiaolanglang.net/",
+      image: "/img/icon/headImageGaoYang.png"
     }
     - {
       title: "梁老_文杰哥",
       intro: "真正的运维大佬，在运维方面真的炉火纯青！",
       link: "https://blog.csdn.net/hiphop321",
-      image: "/img/favicon.png"
+      image: "/img/icon/headImageLiangWenJie.png"
+    }
+    - {
+      title: "列海王",
+      intro: "资深的测试工程师，让我们一起去他的鱼塘里畅游吧！",
+      link: "https://lieziqiao.github.io/",
+      image: "/img/icon/headImageLieZhongYu.png"
     }
     - {
       title: "卓老_超哥",
       intro: "java大佬，多年资深从业经验！",
       link: "https://blog.csdn.net/qq_33329834",
-      image: "/img/favicon.png"
+      image: "/img/icon/headImageZhuoChao.png"
     }
 
 
