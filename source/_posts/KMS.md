@@ -7,8 +7,8 @@ tags:
   - 装系统
   - 激活
 category:
-  - - 博客
-    - 技术
+  - - 软件
+    - 激活
 comment: 'off'
 date: 2020-11-17 18:05:31
 ---
@@ -31,7 +31,7 @@ date: 2020-11-17 18:05:31
 
 此工具可以破解的软件和系统如下图所示
 
-![可破解版本](/img/articleContent/KMS1.png)
+![软件简介](/img/articleContent/KMS1.png)
 
 ### 安装软件
 
@@ -39,11 +39,11 @@ date: 2020-11-17 18:05:31
 
 我们解压第一个文件：（如果要破解win7系统，那么请大家先解压第二个文件并安装）
 
-![可破解版本](/img/articleContent/KMS2.png)
+![解压](/img/articleContent/KMS2.png)
 
 解压第一个文件后如图所示，点击此文件进行安装：
 
-![可破解版本](/img/articleContent/KMS3.png)
+![安装软件](/img/articleContent/KMS3.png)
 
 ### 使用软件
 
@@ -51,7 +51,7 @@ date: 2020-11-17 18:05:31
 
 大家做好心理准备，点击图中箭头所指的红色大圆点，即可一键破解我们电脑上的windows和office。
 
-![可破解版本](/img/articleContent/KMS4.png)
+![使用软件](/img/articleContent/KMS4.png)
 
 ---
 
