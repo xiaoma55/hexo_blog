@@ -1,7 +1,7 @@
 ---
 title: JetBrains全系任意版本产品激活(包括idea，pycharm等等)
-index_img: /img/articleBg/1(14).jpg
-banner_img: /img/articleBg/1(14).jpg
+index_img: /img/articleBg/1(15).jpg
+banner_img: /img/articleBg/1(15).jpg
 sticky: 999999999
 tags:
   - JetBrains

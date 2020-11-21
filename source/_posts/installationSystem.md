@@ -1,7 +1,7 @@
 ---
 title: 最简单干净的系统安装教程(心血历程)
-index_img: /img/articleBg/1(24).jpg
-banner_img: /img/articleBg/1(24).jpg
+index_img: /img/articleBg/1(3).jpg
+banner_img: /img/articleBg/1(3).jpg
 tags:
   - 软件
   - 装系统

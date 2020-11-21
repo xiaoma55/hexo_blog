@@ -1,8 +1,8 @@
 ---
 title: {{ title }}
 date: {{ date }}
-index_img: /img/articleBg/1(4).jpg
-banner_img: /img/articleBg/1(4).jpg
+index_img: /img/articleBg/1(1).jpg
+banner_img: /img/articleBg/1(1).jpg
 tags:
     - 标签一
     - 标签一

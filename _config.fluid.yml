@@ -764,7 +764,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/articleBg/1(7).jpg
+  banner_img: /img/bg/welcome_banner0.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:  # 打字机内容
@@ -798,7 +798,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/articleBg/1(45).jpg
+  banner_img: /img/articleBg/1(18).jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:

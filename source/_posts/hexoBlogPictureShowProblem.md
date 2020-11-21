@@ -1,7 +1,7 @@
 ---
 title: hexo博客上的图片显示问题
-index_img: /img/articleBg/1(41).jpg
-banner_img: /img/articleBg/1(41).jpg
+index_img: /img/articleBg/1(2).jpg
+banner_img: /img/articleBg/1(2).jpg
 tags:
   - 博客
   - hexo

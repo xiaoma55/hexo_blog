@@ -1,7 +1,7 @@
 ---
 title: 搭建一个属于自己的博客
-index_img: /img/articleBg/1(43).jpg
-banner_img: /img/articleBg/1(43).jpg
+index_img: /img/articleBg/1(1).jpg
+banner_img: /img/articleBg/1(1).jpg
 tags:
   - 博客
   - hexo
