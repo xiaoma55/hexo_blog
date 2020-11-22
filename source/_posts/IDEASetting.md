@@ -1,5 +1,5 @@
 ---
-title: IDEA的配置(小马多年血泪沉淀下来的)
+title: IntelliJ IDEA 配置(小马多年血泪沉淀下来的)
 index_img: /img/articleBg/1(6).jpg
 banner_img: /img/articleBg/1(6).jpg
 tags:

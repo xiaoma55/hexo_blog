@@ -1,5 +1,5 @@
 ---
-title: IDEA插件(小马多年血泪沉淀下来的)
+title: IntelliJ IDEA 插件(小马多年血泪沉淀下来的)
 index_img: /img/articleBg/1(7).jpg
 banner_img: /img/articleBg/1(7).jpg
 tags:
