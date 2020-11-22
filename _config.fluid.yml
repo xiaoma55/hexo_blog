@@ -764,7 +764,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/bg/welcome_banner0.jpg
+  banner_img: /img/bg/aboutMeBanner.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle:  "It takes a strong man to save himself, and a great man to save another."
