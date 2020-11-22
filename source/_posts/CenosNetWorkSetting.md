@@ -1,5 +1,5 @@
 ---
-title: Cenos7 网络配置
+title: Cenos7 网络配置(让虚拟机访问因特网)
 index_img: /img/articleBg/1(11).jpg
 banner_img: /img/articleBg/1(11).jpg
 tags:
