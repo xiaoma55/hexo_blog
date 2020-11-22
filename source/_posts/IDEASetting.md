@@ -23,27 +23,27 @@ JAVA秃头人最常用的软件莫过于IDEA了。
 
 有其他好用配置的朋友，可以在下方留言呦！
 
-## 1：忽略大小写开关
+## 1.忽略大小写开关
 
 ![忽略大小写开关](/img/articleContent/IDEASetting/ignoreMatchCase.png)
 
-## 2：取消单行显示tabs的操作
+## 2.取消单行显示tabs的操作
 
 ![取消单行显示tabs的操作](/img/articleContent/IDEASetting/showTabsInOneRow.png)
 
-## 3：项目文件编码
+## 3.项目文件编码
 
 ![项目文件编码](/img/articleContent/IDEASetting/fileEncodings.png)
 
-## 4：滚轴修改字体大小
+## 4.滚轴修改字体大小
 
 ![滚轴修改字体大小](/img/articleContent/IDEASetting/changeFontSizeWithCtrlMouse.png)
 
-## 5：设置显示行号和方法间的分隔符
+## 5.设置显示行号和方法间的分隔符
 
 ![设置显示行号和方法间的分隔符](/img/articleContent/IDEASetting/showLineNumberAndMethodSeparators.png)
 
-## 6：新建类头注释信息
+## 6.新建类头注释信息
 
 ![新建类头注释信息](/img/articleContent/IDEASetting/fileHeaderInNewClass.png)
 
@@ -55,7 +55,7 @@ JAVA秃头人最常用的软件莫过于IDEA了。
 */
 ```
 
-## 7：JavaDoc注释（就是方法上加的注释）
+## 7.JavaDoc注释（就是方法上加的注释）
 
 ![JavaDoc注释](/img/articleContent/IDEASetting/javaDocTemplates.png)
 
@@ -84,7 +84,7 @@ groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s
 /**+回车
 ```
 
-## 8：Terminal中显示git命令行
+## 8.Terminal中显示git命令行
 
 ![Terminal中显示git命令行](/img/articleContent/IDEASetting/terminalGit.png)
 
@@ -102,11 +102,11 @@ groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s
 
 ![Terminal中显示git命令行](/img/articleContent/IDEASetting/terminalGit2.png)
 
-## 9： 取消注释(javadoc:@param)中的检查报错
+## 9.取消注释(javadoc:@param)中的检查报错
 
 ![取消注释(javadoc:@param)中的检查报错](/img/articleContent/IDEASetting/cancleErrorInJavaDoc.png)
 
-## 10：IDEA中配置数据库
+## 10.IDEA中配置数据库
 
 ```
 Ctrl+Enter             ：执行SQL ，
@@ -115,21 +115,21 @@ Ctrl+F12 或者 右击列名  ：定位到某行数据后，可以跳转到指�
 
 ```
 
-### 1：新建数据库连接
+### 1.新建数据库连接
 
 ![新建数据库连接](/img/articleContent/IDEASetting/database1.png)
 
-### 2：配置数据库连接
+### 2.配置数据库连接
 
 ![配置数据库连接](/img/articleContent/IDEASetting/database2.png)
 
-### 3：页面介绍
+### 3.页面介绍
 
 ![页面介绍](/img/articleContent/IDEASetting/database3.png)
 
 ![页面介绍](/img/articleContent/IDEASetting/database4.png)
 
-### 4：查询
+### 4.查询
 
 ![查询](/img/articleContent/IDEASetting/database5.png)
 
