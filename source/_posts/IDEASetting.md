@@ -7,8 +7,8 @@ tags:
   - IDEA
   - 配置
 category:
-  - - 软件
-    - 配置
+  - - 编程
+    - IDEA
 comment: 'off'
 date: 2020-11-22 01:26:20
 ---

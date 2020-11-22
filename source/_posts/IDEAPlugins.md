@@ -7,8 +7,8 @@ tags:
   - IDEA
   - 插件
 category:
-  - - 软件
-    - 推荐
+  - - 编程
+    - IDEA
 comment: 'off'
 date: 2020-11-22 12:52:22
 ---

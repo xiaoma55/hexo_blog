@@ -8,7 +8,7 @@ tags:
   - IDEA
   - 激活
 category:
-    - [软件, 激活]
+    - [编程, IDEA]
 comment: 'off'
 date: 2020-11-16 22:54:26
 ---

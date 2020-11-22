@@ -7,8 +7,8 @@ tags:
   - IDEA
   - 快捷键
 category:
-  - - 软件
-    - 快捷键
+  - - 编程
+    - IDEA
 comment: 'off'
 date: 2020-11-22 14:09:12
 ---

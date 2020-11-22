@@ -3,7 +3,8 @@ title: 文字识别小工具【天若OCR】
 index_img: /img/articleBg/1(5).jpg
 banner_img: /img/articleBg/1(5).jpg
 tags:
-  - 软件
+  - - 软件
+    - Windows
 category:
     - [软件]
 comment: 'off'

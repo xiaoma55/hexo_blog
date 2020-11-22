@@ -8,7 +8,6 @@ tags:
   - windows
 category:
   - - 软件
-    - 安装
 comment: 'off'
 date: 2020-11-17 16:42:21
 ---
