@@ -1,5 +1,5 @@
 ---
-title: IDEA快捷键(我自己的设置)
+title: IDEA快捷键(小马多年血泪沉淀下来的)
 index_img: /img/articleBg/1(8).jpg
 banner_img: /img/articleBg/1(8).jpg
 tags:

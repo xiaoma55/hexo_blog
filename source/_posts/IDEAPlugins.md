@@ -1,5 +1,5 @@
 ---
-title: IDEA插件(我这些年沉淀下来比较好用的)
+title: IDEA插件(小马多年血泪沉淀下来的)
 index_img: /img/articleBg/1(7).jpg
 banner_img: /img/articleBg/1(7).jpg
 tags:
@@ -31,26 +31,26 @@ date: 2020-11-22 12:52:22
 
 ## 2.CodeGlance 
 
-> 代码地图，万行的上帝类用这个还是用点用
+> 代码地图，万行的上帝类用这个还是用处十分大的。
 
 
 ![代码地图](/img/articleContent/IDEAPlugins/CodeGlance.png)
 
 ## 3.Rainbow Brackets
 
-> 彩虹括号颜色
+> 彩虹括号颜色。当我们的方法嵌套比较多的时候，括号就盯不住了，这个插件就可以让对应的括号显示一样的颜色。
 
 ![彩虹括号颜色](/img/articleContent/IDEAPlugins/RainbowBrackets.png)
 
 ## 4.HighlightBracketPair 
 
-> 括号匹配高亮显示，你鼠标所在代码所处的括号会标亮
+> 括号匹配高亮显示，你鼠标所在代码所处的括号会标亮，十分有用
 
 ![括号匹配高亮显示](/img/articleContent/IDEAPlugins/HighlightBracketPair.png)
 
 ## 5.Alibaba Java Coding Guidelines
 
-> 阿里巴巴代码检查工具，挺好用的，可以养成良好的编码习惯
+> 阿里巴巴代码检查工具，挺好用的，可以养成良好的编码习惯。
 
 ## 6.Grep Console
 
@@ -68,25 +68,25 @@ date: 2020-11-22 12:52:22
 
 ## 7.Translation
 
-> 翻译，我主要用它翻译源码上面的doc注释，Ctlr + Q 就可以，感觉挺方便的
+> 翻译，我主要用它翻译源码上面的doc注释，Ctlr + Q 就可以，感觉挺方便的。
 
 ![翻译](/img/articleContent/IDEAPlugins/Translation.png)
 
 ## 8.Codota
 
-> 代码示例：网上别人用过此方法、类的示例
+> 代码示例：网上别人用过此方法、类的示例，而且代码质量十分高，再也不用去看千篇一律的某度了。
 
 ![代码示例](/img/articleContent/IDEAPlugins/Codota.png)
 
 ## 9.RestfulToolkit
 
-> ctrl + \ 可以搜索controller对应的位置
+> ctrl + \ 可以搜索controller对应的位置。这个我感觉在微服务项目里尤其有用，试试就知道了。
 
 ![可以搜索controller对应的位置](/img/articleContent/IDEAPlugins/RestfulToolkit.png)
 
 ## 10.CamelCase
 
-> Alt + Shift + U 可以把你的变量格式任意变化，比如驼峰等等，很强的，下图就是几种实例
+> Alt + Shift + U 可以把你的变量格式任意变化，比如驼峰等等，很强的，下图就是几种实例。
 
 ![变量命名格式化](/img/articleContent/IDEAPlugins/CamelCase.png)
 
