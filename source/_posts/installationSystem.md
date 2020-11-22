@@ -5,6 +5,7 @@ banner_img: /img/articleBg/1(3).jpg
 tags:
   - 软件
   - 装系统
+  - windows
 category:
   - - 软件
     - 安装

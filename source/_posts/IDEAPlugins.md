@@ -3,12 +3,12 @@ title: IntelliJ IDEA 插件 (小马多年血泪沉淀下来的)
 index_img: /img/articleBg/1(7).jpg
 banner_img: /img/articleBg/1(7).jpg
 tags:
-  - JetBrains
+  - windows
   - IDEA
   - 插件
 category:
   - - 软件
-    - 插件
+    - 推荐
 comment: 'off'
 date: 2020-11-22 12:52:22
 ---
