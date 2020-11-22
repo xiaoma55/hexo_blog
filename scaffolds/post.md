@@ -13,5 +13,11 @@ category:
 comment: off
 ---
 
+写摘要，就是首页显示的那个
+
+<!-- more -->
+
+写内容，走起
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
