@@ -20,6 +20,10 @@ date: 2020-11-23 02:58:16
 
 ## 1.网络模式选择
 
+> 先看下vmware的虚拟网卡VMnet8的网关IP
+
+![网络模式选择](/img/articleContent/Cenos7NetWorkSetting/CenosNetWorkSetting0.png)
+
 > 确认虚拟机选择的是 **NAT** 网络模式
 
 ![网络模式选择](/img/articleContent/Cenos7NetWorkSetting/CenosNetWorkSetting1.png)
