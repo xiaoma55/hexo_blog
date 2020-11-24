@@ -7,6 +7,7 @@ tags:
   - 安装
   - Linux
   - Cenos7
+  - VMware
 category:
   - - 编程
     - Cenos
