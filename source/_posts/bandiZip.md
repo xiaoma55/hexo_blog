@@ -1,0 +1,72 @@
+---
+title: 真的是我最后一款压缩软件
+index_img: /img/articleBg/1(21).jpg
+banner_img: /img/articleBg/1(21).jpg
+tags:
+  - 软件
+  - BandiZip
+category:
+  - - 软件
+comment: 'off'
+date: 2020-11-26 02:32:50
+---
+
+今天给大家推荐一款压缩软件：【**BandZip**】。
+
+用了它之后，嗯，他就是我**最后一款**压缩软件了。
+
+话不多说，看正文吧。
+
+<!-- more -->
+
+先看一段官网介绍吧
+
+> Bandizip是一个强大的归档器，它提供了一个超快的处理速度和方便的特性。
+
+## 1.遇见
+
+先看下小马的效果图吧，就问你爱不爱
+
+![图标效果图](/img/articleContent/bandiZip/bandiZip1.png)
+
+## 2.软件下载
+
+1. 大家下载链接中的东西后，先点击标记1【BANDZIP6-SETUP.EXE】,安装软件。
+
+2. 然后点击标记2【linux.iconpack】,安装图标包。
+
+![图标效果图](/img/articleContent/bandiZip/bandiZip2.png)
+
+```
+链接：https://pan.baidu.com/s/1D48ntQPL_FH6h9NeGpaobQ 
+提取码：6666 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V3的分享
+```
+
+## 3.设置
+
+下面是我自己的几个设置，大家可以参考一下
+
+1. 设置右键菜单
+
+![设置右键菜单](/img/articleContent/bandiZip/bandiZip3.png)
+
+2. 设置文件格式关联
+
+![文件格式关联](/img/articleContent/bandiZip/bandiZip4.png)
+
+3. 解压设置
+
+![解压设置](/img/articleContent/bandiZip/bandiZip5.png)
+
+4. 压缩设置
+
+![压缩设置](/img/articleContent/bandiZip/bandiZip6.png)
+
+## 4.完工
+
+**好了，齐活，干饭走起。**
+
+
+## 联系博主，加入【羊山丨交流社区】
+![联系博主](/img/icon/wechatFindMe.png)
