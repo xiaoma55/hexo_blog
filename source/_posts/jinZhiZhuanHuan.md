@@ -1,7 +1,7 @@
 ---
 title: 我的假宽带？假U盘？
-index_img: /img/articleBg/1(19).jpg
-banner_img: /img/articleBg/1(19).jpg
+index_img: /img/articleBg/1(20).jpg
+banner_img: /img/articleBg/1(20).jpg
 tags:
   - 进制
 category:
