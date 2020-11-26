@@ -146,7 +146,15 @@ groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s
 
 ![取消注释(javadoc:@param)中的检查报错](/img/articleContent/IDEASetting/cancleErrorInJavaDoc.png)
 
-## 10.IDEA中配置数据库
+## 10.工具栏添加【新建类】和【新建包】图标(2020-11-26补充)
+
+> 最近有朋友一直反馈这个，就添加一下，在工具栏直接可以新建类和新建图标，再也不用右键->new->......
+
+![新建类和新建图标](/img/articleContent/IDEASetting/newClassAndDictory.png)
+
+![新建类和新建图标](/img/articleContent/IDEASetting/newClassAndDictory2.png)
+
+## 11.IDEA中配置数据库
 
 > idea自带的数据库用起来十分友好，我推荐他是因为：它可以在不切换页面进行数据库操作，更重要的是他可以根据列名跳转，这个就比什么sqlYog、Navicat强大多了。说实话，用了她之后，我再也没有用过其他数据库工具。
 
