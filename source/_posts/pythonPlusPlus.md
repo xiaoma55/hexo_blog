@@ -28,7 +28,7 @@ python到底支不支持自增自减呢
 
 看上图，python是不支持自增自减的。
 
-至于为什么要去掉这个操作，我们可以看下Stack Overflow上的一个回答
+至于为什么要去掉这个操作，我们可以看下[Stack Overflow上的一个回答](https://stackoverflow.com/questions/3654830/why-are-there-no-and-operators-in-python)
 
 ![为什么不要下标](/img/articleContent/pythonPlusPlus/pythonPlusPlus1.png)
 
@@ -41,9 +41,10 @@ python到底支不支持自增自减呢
 
 ![疑惑](/img/articleContent/pythonPlusPlus/pythonPlusPlus2.png)
 
-我们来看下google研发总监的观点
+[我们来看下google研发总监的观点](http://norvig.com/python-iaq.html)
 
 ![google研发总监观点](/img/articleContent/pythonPlusPlus/pythonPlusPlus3.png)
+
 
 这样就一目了然了，哈哈哈，太有趣了
 
