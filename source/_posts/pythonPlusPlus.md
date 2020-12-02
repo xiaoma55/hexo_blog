@@ -1,5 +1,5 @@
 ---
-title: python 支持自增(++)，自减(--)吗？
+title: Python 支持自增自减吗？
 index_img: /img/articleBg/1(23).jpg
 banner_img: /img/articleBg/1(23).jpg
 tags:
@@ -12,7 +12,7 @@ comment: 'off'
 date: 2020-12-01 21:35:38
 ---
 
-python中到底支不支持自增自减操作呢？
+python中到底支不支持自增(++)自减(--)操作呢？
 
 例如：i++,++i。
 
