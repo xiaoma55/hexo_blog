@@ -6,8 +6,8 @@ tags:
   - VMware
   - Cenos7
 category:
-  - - 博客
-    - 技术
+  - - 编程
+    - Cenos7
 comment: 'off'
 date: 2020-11-25 10:57:20
 ---
