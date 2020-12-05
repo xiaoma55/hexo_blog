@@ -7,7 +7,7 @@ tags:
   - Cenos7
 category:
   - - 编程
-    - Cenos7
+    - Linux
 comment: 'off'
 date: 2020-11-25 10:57:20
 ---

@@ -10,7 +10,7 @@ tags:
   - VMware
 category:
   - - 编程
-    - Cenos
+    - Linux
 comment: 'off'
 date: 2020-11-23 00:21:49
 ---
