@@ -60,6 +60,8 @@ find . -type f -name '*.sh' | xargs grep -i 'your_string'  在当前目录搜索
 ```
 [root@node1 ~]# which mysql
 /usr/bin/mysql
+[root@node1 ~]# which pwd
+/usr/bin/pwd
 ```
 
 
@@ -73,6 +75,8 @@ find . -type f -name '*.sh' | xargs grep -i 'your_string'  在当前目录搜索
 ```
 [root@node1 ~]# whereis mysql
 mysql: /usr/bin/mysql /usr/lib64/mysql /usr/include/mysql /usr/share/mysql /usr/share/man/man1/mysql.1.gz
+[root@node1 /]# whereis pwd
+pwd: /usr/bin/pwd /usr/share/man/man1/pwd.1.gz
 ```
 
 ## locate
