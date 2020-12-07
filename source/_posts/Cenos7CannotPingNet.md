@@ -5,6 +5,7 @@ banner_img: /img/articleBg/1(18).jpg
 tags:
   - VMware
   - Cenos7
+  - Linux
 category:
   - - 编程
     - Linux

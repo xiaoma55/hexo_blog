@@ -3,8 +3,8 @@ title: 记录一次Cenos7系统时间显示不正确
 index_img: /img/articleBg/1(25).jpg
 banner_img: /img/articleBg/1(25).jpg
 tags:
-  - VMware
   - Cenos7
+  - Linux
 category:
   - - 编程
     - Linux
