@@ -75,13 +75,104 @@ fi
 
 ![流程控制-for](/img/articleContent/shellBasic2/shellBasic2_4.png)
 
+```
+#!/bin/bash
+for i in "$*"
+do
+        echo "the num is $i"
+done
+echo "================"
+for i in "$@"
+do
+        echo "the num is $i"
+done
+
+
+the num is 1 2 3
+================
+the num is 1
+the num is 2
+the num is 3
+```
+
+```
+for i in {1..100}
+do
+        echo $i
+done
+```
+
+```
+#!/bin/bash
+SUM=0
+for (( i=1;i<=100;i++))
+do
+        SUM=$[SUM+$i]
+done
+echo $SUM
+
+
+5050
+```
+
+```
+for file in $(ls /root)
+do 
+        echo $file  
+done
+```
+
+
 ### 2.2 while
 
 ![流程控制-while](/img/articleContent/shellBasic2/shellBasic2_5.png)
 
+```
+#!/bin/bash
+SUM=0
+i=1
+while [ $i -le $1 ]
+do
+        SUM=$[$SUM+$i]
+        i=$[$i+1]
+done
+echo $SUM
+
+
+./testWhile.sh 100
+5050
+```
+
+```
+#!/bin/bash
+i=1
+sum=0
+while [ $i -le $1 ]
+do
+  let sum=sum+$i
+  let i++
+done
+echo $sum
+```
+
 ### 2.3 case
 
 ![流程控制-case](/img/articleContent/shellBasic2/shellBasic2_6.png)
+
+```
+#!/bin/bash
+case $1 in
+"1")
+echo "周一"
+;;
+"2")
+echo "周二"
+;;
+*)
+echo "other"
+;;
+esac
+```
 
 ### 2.4 break、continue
 
