@@ -344,9 +344,9 @@ cal 2020 ：显示2020年的日历
 
 ## 32 cut
 
-> ==**cut -c N-M 文件名**==           ：N-M表示段区间，比如 1- ， 2-4 ， -5等
+> **cut -c N-M 文件名**          ：N-M表示段区间，比如 1- ， 2-4 ， -5等
 
-> ==**cut -d "切割符" -f N,M 文件名**==  :N,M表示第几段，索引从1开始，不是0
+> **cut -d "切割符" -f N,M 文件名**  :N,M表示第几段，索引从1开始，不是0
 
 > 文件内容查看命令，cut命令可以从一个文本文件或者文本流中提取文本列
 
@@ -444,7 +444,7 @@ nna 21 85
 
 ## 33 wc
 
-> ==**wc -lwc 文件名**==         &nbsp;&nbsp;&nbsp;:不写参数就是按lwc走
+> **wc -lwc 文件名**         &nbsp;&nbsp;&nbsp;:不写参数就是按lwc走
 
 > 统计行数 单词数 字节数
 
@@ -481,9 +481,9 @@ root@node1 shell]# ls / | wc -w
 
 ## 34 awk
 
-==**awk  -F ':'   '{OFS="|"} /cc/ {print NF} /aaa|ddd/ {print NR ":" $0}' $2<$4&&$3="ccc" {print $2} 文件名**==
+**awk  -F ':'   '{OFS="|"} /cc/ {print NF} /aaa|ddd/ {print NR ":" $0}' $2<$4&&$3="ccc" {print $2} 文件名**
 
-==**awk -F ':' 'BEGING{}{total=total+$2}END{print total}' 文件名**==
+**awk -F ':' 'BEGING{}{total=total+$2}END{print total}' 文件名**
 
 > BEGIN{读取文件前的操作}{读取文件后的操作} END {操作完文件之后的操作}
 
@@ -506,7 +506,7 @@ $n 代表文本行中的第 n 个数据字段。
 ![](/img/articleContent/linuxZhiLing/linuxZhiLing8.png)
 
 
-==案例一：test_awk.txt==
+案例一：test_awk.txt
 
 ```
 aaa 111 333
@@ -522,7 +522,7 @@ ddd 999 222 999
 
 ![](/img/articleContent/linuxZhiLing/linuxZhiLing10.png)
 
-==案例二：test_awk2.txt==
+案例二：test_awk2.txt
 
 ```
 aaa:111:333
@@ -641,7 +641,7 @@ ddd:999:222:999:cccc
 
 ![](/img/articleContent/linuxZhiLing/linuxZhiLing31.png)
 
-==综合案例==
+综合案例
 
 > 1 对统计当前目录下(/export/data/shell), 所有文本文件的大小
 
