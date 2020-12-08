@@ -1,5 +1,5 @@
 ---
-title: Shell入门 数据类型和变量
+title: Shell_入门1 数据类型和变量
 index_img: /img/articleBg/1(28).jpg
 banner_img: /img/articleBg/1(28).jpg
 tags:
@@ -171,6 +171,19 @@ A=
 -rwxr--r--. 1 root root 240 10月  3 14:25 myShell.sh
 2020年 10月 03日 星期六 14:25:41 CST
 ```
+
+赋值
+
+```
+pwd_string=$(pwd) #将当前的绝对路径赋值给pwd_string变量 
+date_string=`date`
+date_string=`date "+%Y-%m-%d %H:%M:%S"`
+#将当前时间赋值给date_string变量 
+
+echo $pwd_string 
+echo $date_string 
+```
+
 ### 3.4.静态变量
 ```
 #!/bin/bash
@@ -191,6 +204,10 @@ A=99
 1. export 变量名=变量值
 2. source /etc/profile
 3. echo $变量名
+```
+
+```
+env  #打印所有环境变量
 ```
 #### 3.5.2使用案例
 > 在/etc/profile文件中定义TOMCAT_HOME环境变量<br/>
