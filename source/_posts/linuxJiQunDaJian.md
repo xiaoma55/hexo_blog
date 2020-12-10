@@ -4,10 +4,10 @@ index_img: /img/articleBg/1(32).jpg
 banner_img: /img/articleBg/1(32).jpg
 tags:
   - Cenos7
-  - Linux
+  - 大数据
 category:
   - - 编程
-    - Linux
+    - 大数据
 comment: 'off'
 date: 2020-12-09 14:30:55
 ---
