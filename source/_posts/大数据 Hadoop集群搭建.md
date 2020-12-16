@@ -52,11 +52,11 @@ tar -zxvf hadoop-2.7.5.tar.gz -C /export/servers/
 
 > 官方未编译版本如下，会发现, snappy 和 bzip2 都为false, 表示不支持
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/2.png)
+![Hadoop检查包](/img/articleContent/bigDataHadoop/2.png)
 
 > 我们编译过的版本如下，会发现, snappy 和 bzip2 都为true, 表示支持
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/3.png)
+![Hadoop检查包](/img/articleContent/bigDataHadoop/3.png)
 
 > OpenSSL依然为false，安装一下就好
 
@@ -475,15 +475,15 @@ mr-jobhistory-daemon.sh start historyserver
 
 node1：
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/4.png)
+![Hadoop进程查看1](/img/articleContent/bigDataHadoop/4.png)
 
 node2：
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/5.png)
+![Hadoop进程查看2](/img/articleContent/bigDataHadoop/5.png)
 
 node3：
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/6.png)
+![Hadoop进程查看3](/img/articleContent/bigDataHadoop/6.png)
 
 停止集群
 ```
@@ -493,7 +493,7 @@ mr-jobhistory-daemon.sh stop historyserver
 ```
 > 注意:如果在启动之后，有些服务没有启动成功，则需要查看启动日志，Hadoop的启动日志在每台主机的/export/server/hadoop-2.7.5/logs/目录，需要根据哪台主机的哪个服务启动情况去对应的主机上查看相应的日志，以下是node1主机的日志目录.
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/7.png)
+![Hadoop日志](/img/articleContent/bigDataHadoop/7.png)
 
 ### 5.4 一键启动(平时用这个就好了)
 
@@ -513,14 +513,14 @@ mr-jobhistory-daemon.sh start historyserver
 ```
 http://192.168.88.161:50070/
 ```
-![Hadoop目录](/img/articleContent/bigDataHadoop/8.png)
+![NameNode页面](/img/articleContent/bigDataHadoop/8.png)
 
 > 查看Yarn集群页面地址:
 
 ```
 http://192.168.88.161:8088/cluster 
 ```
-![Hadoop目录](/img/articleContent/bigDataHadoop/9.png)
+![Yarn页面](/img/articleContent/bigDataHadoop/9.png)
 
 > 查看MapReduce历史任务页面地址:
 
@@ -528,7 +528,7 @@ http://192.168.88.161:8088/cluster
 http://192.168.88.161:19888/jobhistory
 ```
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/10.png)
+![MapReduce历史任务页面](/img/articleContent/bigDataHadoop/10.png)
 
 ### 6.2 主机名访问
 
@@ -550,7 +550,7 @@ http://192.168.88.161:19888/jobhistory
 
 ### 7.1 HDFS使用
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/11.png)
+![HDFS使用](/img/articleContent/bigDataHadoop/11.png)
 
 1. 从Linux本地上传一个文本文件到hdfs的/目录下
 
@@ -567,12 +567,12 @@ hadoop fs -put a.txt  /
 
 > 通过NameNode页面.进入HDFS：http://node1:50070/
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/12.png)
+![通过页面查看](/img/articleContent/bigDataHadoop/12.png)
 
 
 查看文件是否创建成功.
 
-![Hadoop目录](/img/articleContent/bigDataHadoop/13.png)
+![查看文件是否创建成功](/img/articleContent/bigDataHadoop/13.png)
 
 ### 7.2 运行mapreduce程序
 
