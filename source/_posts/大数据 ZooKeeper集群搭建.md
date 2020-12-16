@@ -1,5 +1,5 @@
 ---
-title: 大数据_ZooKeeper基础搭建
+title: ZooKeeper集群搭建
 index_img: /img/articleBg/1(33).jpg
 banner_img: /img/articleBg/1(33).jpg
 tags:
