@@ -325,23 +325,31 @@ Edits文件存储日志信息，在NameNode上所有对目录的操作，增加�
 ```
 SecondaryNameNode 会按照一定的规则被唤醒，进行fsimage和edits的合并，防止文件过大。
 合并的过程是，将NameNode的fsimage和edits下载到SecondryNameNode 所在的节点的数据目录，然后合并到fsimage文件，最后上传到NameNode节点。合并的过程中不影响NameNode节点的操作
-SecondaryNameNode被唤醒的条件可以在core-site.xml中配置：
-fs.checkpoint.period：单位秒，默认值3600，检查点的间隔时间，当距离上次检查点执行超过该时间后启动检查点
-fs.checkpoint.size：单位字节，默认值67108864，当edits文件超过该大小后，启动检查点
+SecondaryNameNode被唤醒的条件可以在hdfs-site.xml中配置：
+
+dfs.namenode.checkpoint.period：单位秒，默认值3600，检查点的间隔时间，当距离上次检查点执行超过该时间后启动检查点，就是edits和fsimage的合并
+dfs.namenode.checkpoint.txns：事务操作次数，默认值1000000，当edits文件事务操作超过这个次数，就进行edits和fsimage的合并
+dfs.namenode.checkpoint.check.period：单位秒，默认值60。1分钟检查一次操作次数
+
 ```
 
 **[core-site.xml]**
 
 ```
-<!-- 多久记录一次 HDFS 镜像, 默认 1小时 -->
+<!-- 多久进行edits和fsimage的合并 -->
 <property>
- <name>fs.checkpoint.period</name>
- <value>3600</value>
+	<name>dfs.namenode.checkpoint.period</name>
+	<value>3600</value>
 </property>
-<!-- 一次记录多大, 默认 64M -->
+<!-- 多少次事务操作之后进行edits和fsimage的合并 -->
 <property>
- <name>fs.checkpoint.size</name>
- <value>67108864</value>
+	<name>dfs.namenode.checkpoint.txns</name>
+	<value>1000000</value>
+</property>
+<!-- 1分钟检查一次操作次数 -->
+<property>
+	<name>dfs.namenode.checkpoint.check.period</name>
+	<value>60</value>
 </property>
 ```
 
