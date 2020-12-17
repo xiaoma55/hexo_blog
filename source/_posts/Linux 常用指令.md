@@ -92,6 +92,34 @@ cp [选项] sorce dest
     \cp 表示强制覆盖：如果某个文件或者文件夹里的文件在目标位置存在，那么系统会提示是否覆盖，使用\cp就强制复制，没有提示
 ```
 
+## 9.1 scp
+> 跨服务器拷贝文件
+
+```
+scp [选项] file_source file_target 
+
+常用选项
+    -r 递归复制整个文件夹
+    \cp 表示强制覆盖：如果某个文件或者文件夹里的文件在目标位置存在，那么系统会提示是否覆盖，使用\cp就强制复制，没有提示
+```
+
+### 9.1.1 从本地复制到远程
+
+```shell
+scp -r local_folder remote_username@remote_ip:remote_folder 
+scp -r local_folder remote_ip:remote_folder 
+
+scp -r /home/music/ root@www.runoob.com:/home
+scp -r /home/music/ www.runoob.com:/home
+```
+
+### 9.1.2 从远程复制到本地
+
+```shell
+scp root@www.runoob.com:/home/music /home/music/1.mp3 
+scp -r www.runoob.com:/home/others/ /home/music/
+```
+
 ## 10 rm
 > 删除文件或文件夹
 

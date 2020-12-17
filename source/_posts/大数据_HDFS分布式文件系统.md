@@ -444,12 +444,451 @@ hadoop-daemon.sh start namenode
 
 ## 8 API操作
 
-## 9 其他功能
+### 8.1 导入maven依赖
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-common</artifactId>
+        <version>2.7.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-client</artifactId>
+        <version>2.7.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-hdfs</artifactId>
+        <version>2.7.5</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.hadoop</groupId>
+        <artifactId>hadoop-mapreduce-client-core</artifactId>
+        <version>2.7.5</version>
+    </dependency>
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13</version>
+    </dependency>
+</dependencies>
+```
+
+### 8.2 java操作hadoop
+
+<details>
+<summary>代码示例</summary>
+
+```java
+package cn.itcast.hdfs;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.*;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+/**
+ * Author xiaoma
+ * Date 2020/8/20 9:45
+ * Desc 这个类实现 对 hdfs的上传，下载，创建文件夹，读取文件，移动文件，赋权等操作
+ */
+public class  HdfsTest {
+    //1.如何获取 HDFS的客户端 FileSystem
+    @Test
+    public void test01() throws IOException, URISyntaxException, InterruptedException {
+        /**
+         * 1.获取FileSystem的对象
+         * 2.通过3种方式获取FileSystem
+         */
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.get(conf);
+        //System.out.println(fileSystem);
+        //org.apache.hadoop.fs.LocalFileSystem@6989da5e
+        //本地的文件系统，windows 文件系统
+        System.out.println(fileSystem);
+
+        //读取 node1集群的 hdfs文件系统
+        conf = new Configuration();
+        conf.set("fs.defaultFS", "hdfs://node1:8020");
+        FileSystem fileSystem1 = FileSystem.get(conf);
+        //System.out.println(fileSystem1);
+
+        //通过uri和伪装用户来创建 FileSystem
+        URI uri = new URI("hdfs://node1:8020");
+        FileSystem fileSystem2 = FileSystem.get(uri, conf, "root");
+        System.out.println(fileSystem2);
+    }
+
+    //2.获取 HDFS 上某个路径下所有的文件
+    @Test
+    public void test02() throws URISyntaxException, IOException, InterruptedException {
+        //1.获取 hdfs的客户端对象 FileSystem
+        FileSystem filesystem = FileSystem.get(new URI("hdfs://node1:8020"), new Configuration(), "root");
+        //2.执行查询路径下的所有文件
+        RemoteIterator<LocatedFileStatus> listFiles = filesystem.listFiles(new Path("/user"), true);
+
+        while (listFiles.hasNext()) {
+            LocatedFileStatus fileStatus = listFiles.next();
+
+            Path path = fileStatus.getPath();
+            String fileName = path.getName();
+            System.out.println(fileName);
+        }
+
+        //3.关闭释放资源
+        filesystem.close();
+    }
+
+    //3.在HDFS上创建一个文件夹
+    @Test
+    public void makeDir() throws URISyntaxException, IOException, InterruptedException {
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf, "root");
+        //2.创建文件夹
+        fileSystem.mkdirs(new Path("/app/config"));
+        //3.关闭释放资源
+        fileSystem.close();
+    }
+    //4.在HDFS上创建一个文件
+    @Test
+    public void makeFile() throws URISyntaxException, IOException, InterruptedException {
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf, "root");
+        //2.创建文件夹
+        FSDataOutputStream outputStream = fileSystem.create(new Path("/app/config/c3p0.xml"));
+        outputStream.write("username=zhangsan\r\npassword=123456".getBytes());
+        //刷新数据
+        outputStream.flush();
+        //3.关闭释放资源
+        fileSystem.close();
+    }
+    //5.完成文件下载的操作
+    @Test
+    public void download() throws URISyntaxException, IOException, InterruptedException {
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf, "root");
+        //2.下载文件
+        fileSystem.copyToLocalFile(new Path("/app/config/c3p0.xml"),
+                new Path("F:\\_workspace_java\\hadoop_hdfs\\"));
+
+        //3.释放资源
+        fileSystem.close();
+    }
+    //6.完成文件上传的操作
+    @Test
+    public void upload() throws URISyntaxException, IOException, InterruptedException {
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf, "root");
+        //2.下载文件
+        fileSystem.copyFromLocalFile(new Path("F:\\_workspace_java\\hadoop_hdfs\\c3p0.xml"),new Path("/"));
+        //3.释放资源
+        fileSystem.close();
+    }
+    //7本地有多个小文件，上传到hdfs中，因为hdfs中不推荐使用小文件，将这些小文件进行合并操作
+    //合并成一个大文件统一上传。
+    @Test
+    public void mergeUpload() throws Exception{
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf, "root");
+        //2.执行创建一个文件，生成输出流
+        FSDataOutputStream outputStream = fileSystem.create(new Path("/merge.txt"));
+        //3.获取本地文件系统
+        LocalFileSystem localFileSystem = FileSystem.getLocal(new Configuration());
+        //4.获取本地小文件
+        RemoteIterator<LocatedFileStatus> localListFiles = localFileSystem.listFiles(new Path("F:\\_workspace_java\\hadoop_hdfs\\"), false);
+        
+        while(localListFiles.hasNext()){
+            LocatedFileStatus fileStatus = localListFiles.next();
+            //获取本地文件的路径
+            Path path = fileStatus.getPath();
+            FSDataInputStream inputStream = localFileSystem.open(path);
+            IOUtils.copy(inputStream,outputStream);
+            IOUtils.closeQuietly(inputStream);
+        }
+        outputStream.close();
+    }
+    //hdfs 访问权限设置
+    @Test
+    public void acl() throws Exception{
+        //1.创建hdfs的客户端
+        URI uri = new URI("hdfs://node1:8020");
+        Configuration conf = new Configuration();
+        FileSystem fileSystem = FileSystem.newInstance(uri, conf,"root");
+        //2.将core-site.xml 保存到本地系统
+        fileSystem.copyToLocalFile(new Path("/config2/core-site.xml"),new Path("F:\\_workspace_java\\hadoop_hdfs\\core-site.xml"));
+        //3.释放资源
+        fileSystem.close();
+    }
+}
+
+```
+</details>
+
+## 9 拷贝、归档、快照、回收站
+
+### 9.1 跨集群数据拷贝
+
+DistCp（distributed copy）是一款被用于大型集群间/集群内的复制工具,该命令的内部原理是MapReduce。
+
+```shell
+cd /export/serverss/hadoop-2.7.5/
+bin/hadoop distcp hdfs://node1:8020/jdk-8u241-linux-x64.tar.gz  hdfs://cluster2:8020/
+```
+
+### 9.2 归档 archive
+
+> 功能：对存储的小文件进行合并成为大文件。
+
+> 目的：减少hdfs中小文件的数量。
+
+> 如何进行小文件的归档操作呢：
+
+- 使用 HDFS JAVA API 实现小文件的合并
+  - 场景：初始文件一般都必须在本地，而且文件的类型都要一致
+  - 缺点：如果多种类型的文件，那么没办法归档成一个文件；如果合并之后的文件，想要拆分，只能自己写代码还是先将归档的文件解压到指定目录。
+- 使用 hadoop 归档操作命令，使用 hadoop archive shell命令实现归档文件操作。
+  - 场景：这些文件已经存在于HDFS 中，对HDFS中某个目录下文件进行归档
+> 什么是归档文件
+  - 归档文件，可以理解为 将多个文件压到一起，类似于 Linux 中 tar cvf archive.tar a.txt b.txt 这个命令只是将多个小文件进行了压成一个文件，而并没有缩小存储。
+  - 归档文件注意：
+    - 归档文件的后缀名 .har 
+    - 启动归档，底层会运行 MapReduce程序，必须启动yarn集群
+    - 创建归档文件之后，源文件不会被删除或者修改，归档的文档文件一旦创建就不能修改了。
+> 如何使用归档文件，如何创建？
+
+      #格式
+      hadoop archive -archiveName name -p <parent> <src>* <dest>
+      #示例.将config2 下的所有内容归档保存到 outputdir 文件夹下
+      hadoop archive -archiveName config2.har -p /config2 /outputdir
+      
+> 如何查看归档文件的内容？
+
+```shell
+#格式
+hadoop archive -archiveName name -p <parent> <src>* <dest>
+#示例.将config2 下的所有内容归档保存到 outputdir 文件夹下
+hadoop archive -archiveName config2.har -p /config2 /outputdir
+```
+
+> 如何查看归档文件的内容？
+
+```shell
+#1.直接在web browser 50070端口web查看
+http://node1:50070/explorer.html#/outputdir/config2.har
+
+#2.通过shell 命令进行查看
+hadoop fs -ls /outputdir/config2.har
+
+#3.查看 har 文件中原有的文件列表
+#格式
+#har://scheme-hostname:port/archivepath/fileinarchive   
+hadoop fs -ls har://hdfs-node1:8020/outputdir/config2.har
+
+#4.查看 har 文件中某一个文件的内容
+hadoop fs -cat har://hdfs-node1:8020/outputdir/config2.har/core-site.xml
+
+#5.将归档的文件解压出来
+
+#5.1 创建一个文件夹 config3
+hdfs dfs -mkdir -p /config3
+
+#5.2 将归档的文件解压到config3中
+hadoop fs -cp har://hdfs-node1:8020/outputdir/config2.har/* /config3
+```
+
+### 9.3 快照
+
+> 快照就是snapshot （几乎不用）
+
+> hdfs 的快照什么场景上使用：
+  - 数据的备份
+  - 放置用户操作不当出现错误的操作
+  - 试验、测试
+  - 灾备恢复
+  
+> hdfs 的快照是什么呢？
+  - 相当于对HDFS中的某一个文件夹进行 拍照，保持当前这个文件夹的一个状态信息（差异化快照）
+  - 差异化快照：拍完快照，快照文件只是对源文件的映射关系匹配。
+  
+>  dfs 的快照主要是针对文件夹。
+
+> 如何进行快照的使用
+
+```
+#开启快照
+hdfs dfsadmin -allowSnapshot /config3
+
+#创建快照
+hdfs dfs -createSnapshot /config3 backup_config3_20200820_1521
+
+#修改一下文件在创建一个快照
+hdfs dfs -rm -r /config3/core-site.xml
+hdfs dfs -createSnapshot /config3 backup_config3_20200820_1523
+
+#查看快照
+hdfs dfs -ls /config3/.snapshot
+
+#重命名快照
+hdfs dfs renameSnapshot /config3 backup_config3_20200820_1523 backup_config3_20200820_1525
+
+#删除快照
+hdfs dfs -deleteSnapshot /config3 backup_config3_20200820_1521
+
+#禁用快照
+hdfs dfsadmin -disallowSnapshot /config3
+
+#列出当前用户可快照的目录
+hdfs lsSnapshottableDir
+```
+
+总结：HDFS的快照功能虽然能够保证数据的安全性，但是一般不建议大家使用，快照功能会占用非常大的磁盘空间。HDFS本身是带3备份，不能放置数据丢失，这个时候就开启快照功能。
+
+### 9.4 Trash回收站
+
+> Trash回收机制应用场景
+
+- 放置用户手一抖彻底删除数据，当放置到Trash回收站里，还可以再次恢复数据。
+
+> Trash回收站原理
+
+- 当用户默认删除数据的时候，并不是直接从物理磁盘删掉，而只是将文件移动到指定的文件夹下，如果一致不恢复数据（根据默认时间7天等相关参数），Trash数据将从磁盘中抹掉。(`这个默认是关闭的，也就是fs.trash.interval=0`)
+
+```xml
+<property>  
+    <name>fs.trash.interval</name>  
+    <value>10080</value>  
+    <description>Number of minutes after which the checkpoint gets deleted. If zero, the trash feature is disabled.</description>  
+</property>  
+
+<property>  
+    <name>fs.trash.checkpoint.interval</name>  
+    <value>0</value>  
+    <description>Number of minutes between trash checkpoints. Should be smaller or equal to fs.trash.interval. If zero, the value is set to the value of fs.trash.interval.</description>  
+</property>
+```
+
+
+属性 | 说明
+---|---
+fs.trash.interval | 分钟数，回收站文件的存活时间, 当超过这个分钟数后文件会被删除。如果为零，回收站功能将被禁用。
+fs.trash.checkpoint.interval | 检查点创建的时间间隔(单位为分钟)。其值应该小于或等于fs.trash.interval。如果为零，则将该值设置为fs.trash.interval的值。
+
+
+
+- 如果使用java API 来删除数据的话，直接将文件从磁盘抹掉，不会移动到Trash回收站中，shell才会。
+
+- 如果不想放到回收站
+
+```
+#直接删除数据，不放在回收站中
+hdfs dfs -rm -r -skipTrash /config3/yarn-site.xml 
+
+#放在回收站中
+hdfs dfs -rm -r  /config3/yarn-site.xml 
+```
+
+> 恢复数据
+
+```
+#将Trash回收站中的指定的数据恢复到指定文件夹中
+hdfs dfs -mv hdfs://node1:8020/user/root/.Trash/200820154000/config3/yarn-site.xml /config3/
+```
+
+> 清空Trash回收站
+
+```
+hdfs dfs -expunge
+```
+
+总结，Trash回收机制为了保证操作数据，删除数据的时候，防止误删除，所以建议生产环境，在删除数据的时候，不要 skipTrash 跳过Trash回收机制。
 
 ## 10 HDFS的高可用机制
 
+### 10.1 介绍
+
+在Hadoop 中，NameNode 所处的位置是非常重要的，整个HDFS文件系统的元数据信息都由NameNode 来管理，NameNode的可用性直接决定了Hadoop 的可用性，一旦NameNode进程不能工作了，就会影响整个集群的正常使用。 
+
+在典型的HA集群中，两台独立的机器被配置为NameNode。在工作集群中，NameNode机器中的一个处于Active状态，另一个处于Standby状态。Active NameNode负责群集中的所有客户端操作，而Standby充当从服务器。Standby机器保持足够的状态以提供快速故障切换（如果需要）。
+
+![Hadoop目录](/img/articleContent/HDFS分布式文件系统/12.png)
+
+### 10.2 组件介绍
+
+> ZKFailoverController
+
+是基于Zookeeper的故障转移控制器，它负责控制NameNode的主备切换，ZKFailoverController会监测NameNode的健康状态，当发现Active NameNode出现异常时会通过Zookeeper进行一次新的选举，完成Active和Standby状态的切换
+
+> HealthMonitor
+
+周期性调用NameNode的HAServiceProtocol RPC接口（monitorHealth 和 getServiceStatus），监控NameNode的健康状态并向ZKFailoverController反馈
+
+> ActiveStandbyElector
+
+接收ZKFC的选举请求，通过Zookeeper自动完成主备选举，选举完成后回调ZKFailoverController的主备切换方法对NameNode进行Active和Standby状态的切换.
+
+> DataNode
+
+NameNode包含了HDFS的元数据信息和数据块信息（blockmap），其中数据块信息通过DataNode主动向Active NameNode和Standby NameNode上报
+
+> 共享存储系统
+
+共享存储系统负责存储HDFS的元数据（EditsLog），Active NameNode（写入）和 Standby NameNode（读取）通过共享存储系统实现元数据同步，在主备切换过程中，新的Active NameNode必须确保元数据同步完成才能对外提供服务
+
+![Hadoop目录](/img/articleContent/HDFS分布式文件系统/13.png)
+
+### 10.3 高可用集群搭建
+
+{% post_link 大数据_HDFS高可用集群搭建 高可用HDFS集群搭建教程 %}。
+
 ## 11 Hadoop的联邦机制(Federation)
 
+### 11.1 背景概述
+
+单NameNode的架构使得HDFS在集群扩展性和性能上都有潜在的问题，当集群大到一定程度后，NameNode进程使用的内存可能会达到上百G，NameNode成为了性能的瓶颈。因而提出了namenode水平扩展方案-- Federation。
+
+Federation中文意思为联邦,联盟，是NameNode的Federation,也就是会有多个NameNode。多个NameNode的情况意味着有多个namespace(命名空间)，区别于HA模式下的多NameNode，它们是拥有着同一个namespace。既然说到了NameNode的命名空间的概念,这里就看一下现有的HDFS数据管理架构,如下图所示:
+
+![Hadoop目录](/img/articleContent/HDFS分布式文件系统/14.png)
+
+从上图中,我们可以很明显地看出现有的HDFS数据管理,数据存储2层分层的结构.也就是说,所有关于存储数据的信息和管理是放在NameNode这边,而真实数据的存储则是在各个DataNode下.而这些隶属于同一个NameNode所管理的数据都是在同一个命名空间下的.而一个namespace对应一个block pool。Block Pool是同一个namespace下的block的集合.当然这是我们最常见的单个namespace的情况,也就是一个NameNode管理集群中所有元数据信息的时候.如果我们遇到了之前提到的NameNode内存使用过高的问题,这时候怎么办?元数据空间依然还是在不断增大,一味调高NameNode的jvm大小绝对不是一个持久的办法.这时候就诞生了HDFS Federation的机制.
+
+### 11.2 Federation架构设计
+
+> HDFS Federation是解决namenode内存瓶颈问题的水平横向扩展方案。
+
+Federation意味着在集群中将会有多个namenode/namespace。这些namenode之间是联合的，也就是说，他们之间相互独立且不需要互相协调，各自分工，管理自己的区域。分布式的datanode被用作通用的数据块存储存储设备。每个datanode要向集群中所有的namenode注册，且周期性地向所有namenode发送心跳和块报告，并执行来自所有namenode的命令。
+
+![Hadoop目录](/img/articleContent/HDFS分布式文件系统/15.png)
+
+Federation一个典型的例子就是上面提到的NameNode内存过高问题,我们完全可以将上面部分大的文件目录移到另外一个NameNode上做管理.更重要的一点在于,这些NameNode是共享集群中所有的DataNode的,它们还是在同一个集群内的。
+这时候在DataNode上就不仅仅存储一个Block Pool下的数据了,而是多个(在DataNode的datadir所在目录里面查看BP-xx.xx.xx.xx打头的目录)。
+
+`概括起来：`
+
+多个NN共用一个集群里的存储资源，每个NN都可以单独对外提供服务。
+每个NN都会定义一个存储池，有单独的id，每个DN都为所有存储池提供存储。
+DN会按照存储池id向其对应的NN汇报块信息，同时，DN会向所有NN汇报本地存储可用资源情况。
+
+### 11.3 HDFS Federation不足
+
+HDFS Federation并没有完全解决单点故障问题。虽然namenode/namespace存在多个，但是从单个namenode/namespace看，仍然存在单点故障：如果某个namenode挂掉了，其管理的相应的文件便不可以访问。Federation中每个namenode仍然像之前HDFS上实现一样，配有一个secondary namenode，以便主namenode挂掉一下，用于还原元数据信息。
+所以一般集群规模真的很大的时候，会采用HA+Federation的部署方案。也就是每个联邦的namenodes都是ha的。
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
