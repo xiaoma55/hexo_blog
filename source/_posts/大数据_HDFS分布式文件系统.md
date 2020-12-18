@@ -444,7 +444,27 @@ hadoop-daemon.sh start namenode
 
 ## 8 API操作
 
-### 8.1 导入maven依赖
+### 8.1 配置Windows下Hadoop环境
+
+在windows上做HDFS客户端应用开发，需要设置Hadoop环境,而且要求是windows平台编译的Hadoop
+
+> 1 将已经编译好的Windows版本Hadoop解压到到一个没有中文没有空格的路径下面
+
+```
+从这里下载
+```
+
+> 2 在windows上面配置hadoop的环境变量： HADOOP_HOME，并将%HADOOP_HOME%\bin添加到path中
+
+![环境变量配置](/img/articleContent/HDFS分布式文件系统/16.png)
+
+![环境变量配置](/img/articleContent/HDFS分布式文件系统/17.png)
+
+> 3 把hadoop2.7.5文件夹中bin目录下的hadoop.dll文件放到系统盘:  C:\Windows\System32 目录下
+
+> 4 关闭windows重启
+
+### 8.2 导入maven依赖
 
 ```xml
 <dependencies>
@@ -476,7 +496,7 @@ hadoop-daemon.sh start namenode
 </dependencies>
 ```
 
-### 8.2 java操作hadoop
+### 8.3 java操作hadoop
 
 <details>
 <summary>代码示例</summary>
