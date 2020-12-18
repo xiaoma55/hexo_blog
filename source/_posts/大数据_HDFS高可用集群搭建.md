@@ -28,17 +28,17 @@ date: 2020-12-17 21:39:58
 
 > 2.x单节点架构
 
-![image](/img/articleContent/大数据_HDFS高可用集群搭建/1.png)
+![2.x单节点架构](/img/articleContent/大数据_HDFS高可用集群搭建/1.png)
 
 > 2.x高可用架构
 
-![image](/img/articleContent/大数据_HDFS高可用集群搭建/2.png)
+![2.x高可用架构](/img/articleContent/大数据_HDFS高可用集群搭建/2.png)
 
 > 完全分布式，实现namenode高可用，ResourceManager的高可用
 
 > 集群运行服务规划
 
-![image](/img/articleContent/大数据_HDFS高可用集群搭建/3.png)
+![集群运行服务规划](/img/articleContent/大数据_HDFS高可用集群搭建/3.png)
 
 
 ## 2 安装包解压
@@ -465,11 +465,11 @@ bin/hdfs namenode -initializeSharedEdits -force
 sbin/start-dfs.sh
 ```
 
-![image](/img/articleContent/大数据_HDFS高可用集群搭建/4.png)
+![启动HDFS](/img/articleContent/大数据_HDFS高可用集群搭建/4.png)
 
 启动后的进程为
 
-![image](/img/articleContent/大数据_HDFS高可用集群搭建/5.png)
+![启动HDFS后的进程](/img/articleContent/大数据_HDFS高可用集群搭建/5.png)
 
 > 在node2上执行
 
