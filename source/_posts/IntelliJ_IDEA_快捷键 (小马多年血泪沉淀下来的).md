@@ -43,6 +43,7 @@ Ctrl alt 下        向下复制一行(原duplicate line or selection)
 Ctrl shift +       展开所有方法
 Ctrl shift -       收缩所有方法
 Alt 左右           回到上一次代码位置(自行在setting->keymap中搜navigate找到Back和Forward，默认Ctrl Alt 左右，我习惯给成Alt 左右)
+Ctrl O             重写方法提示
 
 Git 提交(commint)  ctrl k (窗口出来后点右上角那个设置可以选择窗口位置或者说是模式，个人不喜欢默认的)
 Git 拉取(pull)     ctrl alt k(自己在setting->keymap里搜git pull去设置)
