@@ -835,6 +835,12 @@ links:
       link: "http://yiwei.host/",
       image: "/img/icon/headImageSunZhaoZhao.png"
     }
+    - {
+      title: "moliam",
+      intro: "一个嵌入式菜鸡",
+      link: "http://moliam.space/",
+      image: "http://backgroundimg.oss-cn-shenzhen.aliyuncs.com/9_ball3_4k.jpg"
+    }
 
 
 #---------------------------
