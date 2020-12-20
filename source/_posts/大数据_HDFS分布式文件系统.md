@@ -1,5 +1,5 @@
 ---
-title: HDFS分布式文件系统
+title: HDFS 分布式文件系统
 index_img: /img/articleBg/1(35).jpg
 banner_img: /img/articleBg/1(35).jpg
 tags:

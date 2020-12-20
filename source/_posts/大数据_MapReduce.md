@@ -1,5 +1,5 @@
 ---
-title: MapReduce
+title: MapReduce 分布式计算框架
 index_img: /img/articleBg/1(39).jpg
 banner_img: /img/articleBg/1(39).jpg
 tags:
@@ -7,6 +7,7 @@ tags:
   - 大数据
   - Hadoop
   - MapReduce
+category:
   - - 编程
     - 大数据
 comment: 'off'

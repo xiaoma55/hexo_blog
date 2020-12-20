@@ -1,5 +1,5 @@
 ---
-title: Hadoop集群搭建
+title: Hadoop 集群搭建
 index_img: /img/articleBg/1(34).jpg
 banner_img: /img/articleBg/1(34).jpg
 tags:

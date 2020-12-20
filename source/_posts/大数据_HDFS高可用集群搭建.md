@@ -1,5 +1,5 @@
 ---
-title: HDFS高可用集群搭建
+title: HDFS 高可用集群搭建
 index_img: /img/articleBg/1(38).jpg
 banner_img: /img/articleBg/1(38).jpg
 tags:
