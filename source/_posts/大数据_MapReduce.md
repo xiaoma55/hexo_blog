@@ -1565,6 +1565,8 @@ public class GroupJobMain {
 
 ![image](/img/articleContent/大数据_MapReduce/15.png)
 
+![image](/img/articleContent/大数据_MapReduce/28.png)
+
 > mapTask的并行机制
 
 - mapTask在运行的时候，开启多个map由谁来决定？
