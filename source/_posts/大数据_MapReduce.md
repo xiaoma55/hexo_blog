@@ -119,19 +119,19 @@ MapReduce是一种编程模型，用于大规模数据集（大于1TB）的并�
 
 > 用户编写的程序分成三个部分：Mapper，Reducer，Driver(提交运行mr程序的客户端)
 
-### 2.2.1 Mapper
+#### 2.2.1 Mapper
 
 (1)自定义类继承Mapper类<br/>
 (2)重写自定义类中的map方法，在该方法中将K1和V1转为K2和V2<br/>
 (3)将生成的K2和V2写入上下文中
 
-### 2.2.2 Reducer
+#### 2.2.2 Reducer
 
 (1)自定义类继承Reducer类<br/>
 (2)重写Reducer中的reduce方法，在该方法中将K2和[V2]转为K3和V3<br/>
 (3)将K3和V3写入上下文中
 
-### 2.2.3 Driver
+#### 2.2.3 Driver
 
 > 整个程序需要一个Drvier来进行提交，提交的是一个描述了各种必要信息的job对象<br/>
 
