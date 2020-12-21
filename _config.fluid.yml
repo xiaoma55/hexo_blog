@@ -715,7 +715,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/articleBg/1(2).jpg
+  banner_img: /img/bg/归档.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle: "I guess it comes down to a simple choice:get busy living or get busy dying. "
@@ -727,7 +727,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/articleBg/1(43).jpg
+  banner_img: /img/bg/分类.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle: "In our hearts, there is a place that cannot be locked. That place is called hope."
@@ -752,7 +752,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/articleBg/1(45).jpg
+  banner_img: /img/bg/标签.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle: "Hope is a good thing, maybe the best of things, and no good thing ever dies."
@@ -804,7 +804,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/articleBg/1(18).jpg
+  banner_img: /img/bg/友链.jpg
   banner_img_height: 60
   banner_mask_alpha: 0
   subtitle: "Fear can hold you prisoner. Hope can set you free."
