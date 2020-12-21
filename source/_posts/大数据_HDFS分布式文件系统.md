@@ -451,7 +451,9 @@ hadoop-daemon.sh start namenode
 > 1 将已经编译好的Windows版本Hadoop解压到到一个没有中文没有空格的路径下面
 
 ```
-从这里下载
+链接：https://pan.baidu.com/s/1AxiSFAFNw88o7XVHxwebGA 
+提取码：6666 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V3的分享
 ```
 
 > 2 在windows上面配置hadoop的环境变量： HADOOP_HOME，并将%HADOOP_HOME%\bin添加到path中
