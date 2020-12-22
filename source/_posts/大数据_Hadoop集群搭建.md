@@ -21,6 +21,8 @@ Hadoop是Apache旗下的一个用java语言实现开源软件框架，是一个�
 
 <!-- more -->
 
+[Hadoop官网](https://hadoop.apache.org/)
+
 ## 1 上传hadoop包
 
 > 由于appache给出的hadoop的安装包没有提供带C程序访问的接口，所以我们在使用本地库（本地库可以用来做压缩，以及支持C程序等等）的时候就会出问题,需要对Hadoop源码包进行重新编译
