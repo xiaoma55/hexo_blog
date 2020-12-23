@@ -1,5 +1,5 @@
 ---
-title: Yarn 分布式资源调度平台1
+title: Yarn 分布式资源调度平台2
 index_img: /img/articleBg/1(40).jpg
 banner_img: /img/articleBg/1(40).jpg
 tags:
