@@ -28,7 +28,7 @@ ALT F8             变量计算器
 ALT 鼠标左         调试时查看变量值，如果不生效，可能是和有道云笔记冲突
 F8                 断点调试下一步，如果不生效，可能是有道词典或者photoshop冲突
 Ctrl H             全局文件内容查找/替换（原ctrl shift r）
-Ctrl R             当前文件查找替换
+Ctrl R             当前文件查找替换（把ctrl r 换成ctrl f 比较好,查找替换一步到位）
 Double Shift       全局文件名查找
 Ctrl Alt T         环绕（if/else/try/catch）
 Ctrl P             参数提示
