@@ -359,9 +359,6 @@ footer:
           <script src="/js/duration.js"></script>
     </div>
 
-    <!-- 空的音频文件，模拟用户行为，为了解决chrome不能自动播放的问题 -->
-    <iframe id="musicNone" allow="autoplay" style="display:none" src="一个空的音频文件"></iframe>
-
     <!-- 网易云音乐 -->
     <div id="music" style="display:none">
           <script src="/js/music.js"></script>
