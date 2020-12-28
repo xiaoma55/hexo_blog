@@ -27,11 +27,9 @@ var musicArray =new Array(
 const myMusic = document.getElementById("music1");
 
 myMusic.innerHTML =
-    "<audio controls='controls' preload='auto' loop autoplay>\n" +
             "<source src='http://music.163.com/song/media/outer/url?id=" +
              musicArray[Math.floor(Math.random() * musicArray.length)] +
-            "&userid=530079932' type='audio/mpeg' />\n" +
-    "</audio>";
+            "&userid=530079932' type='audio/mpeg' />";
 
 function play(){
     myMusic.muted = true;

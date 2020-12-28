@@ -364,11 +364,14 @@ footer:
           <script src="/js/music.js"></script>
     </div>
  -->
-    <div id="music1" >
-              <script src="/js/music.js"></script>
-    </div>
 
-  '
+    <div>
+    <audio controls="controls" loop autoplay id="music1">
+    </audio>
+    <script src="/js/music.js"></script>
+    </div>
+'
+
 
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
