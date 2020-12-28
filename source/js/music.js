@@ -11,15 +11,22 @@ var musicArray =new Array(
 
 )
 
-document.getElementById("music").innerHTML =
-    "<iframe " +
-        "frameborder='no' " +
-        "border='0' " +
-        "marginwidth='0' " +
-        "marginheight='0' " +
-        "width=330 " +
-        "height=86 " +
-        "src='//music.163.com/outchain/player?type=2&id=" +
-        musicArray[Math.floor(Math.random() * musicArray.length)] +
-        "&userid=530079932&auto=1&height=66'>" +
-    "</iframe>";
+// document.getElementById("music").innerHTML =
+//     "<iframe " +
+//         "frameborder='no' " +
+//         "border='0' " +
+//         "marginwidth='0' " +
+//         "marginheight='0' " +
+//         "width=330 " +
+//         "height=86 " +
+//         "src='//music.163.com/outchain/player?type=2&id=" +
+//         musicArray[Math.floor(Math.random() * musicArray.length)] +
+//         "&userid=530079932&auto=1&height=66'>" +
+//     "</iframe>";
+
+document.getElementById("music1").innerHTML =
+    "<audio controls='controls' preload='auto' loop autoplay>\n" +
+            "<source src='http://music.163.com/song/media/outer/url?id=" +
+             musicArray[Math.floor(Math.random() * musicArray.length)] +
+            "&userid=530079932' type='audio/mpeg' />\n" +
+    "</audio>";
