@@ -395,8 +395,8 @@ footer:
 
     # 页面显示的文本，{}是数字的占位符（必须包含)，下同
     # Displayed text, {} is a placeholder for numbers (must be included), the same below
-    pv_format: "总访问量 {} 次"
-    uv_format: "总访客数 {} 人"
+    pv_format: "被瞅了 {} 次"
+    uv_format: "被 {} 人看爆"
 
   # 国内大陆服务器的备案信息
   # For Chinese mainland website policy, other areas keep disable
