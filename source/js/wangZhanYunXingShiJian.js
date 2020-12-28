@@ -9,7 +9,7 @@ function createtime() {
     mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
     seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
     snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-    document.getElementById("timeDate").innerHTML = "本站安全运行&nbsp"+dnum+"&nbsp天 ";
+    document.getElementById("timeDate").innerHTML = "本站已在各种夹缝中安全运行&nbsp"+dnum+"&nbsp天 ";
     document.getElementById("times").innerHTML = hnum + "&nbsp小时 " + mnum + "&nbsp分 " + snum + "&nbsp秒";
 } 
 setInterval("createtime()",250);
