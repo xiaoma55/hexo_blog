@@ -190,24 +190,24 @@ font:
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
 custom_js:
-  - /js/click.js
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/qipao.js #头部上升气泡
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js # 动态彩带
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js # 静态彩带
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiantiao.js # 动态黑色线条
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxuehua.js # 小雪花飘落
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js # 樱花飘落
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/xiaoxingxing.js # 鼠标跟随小星星
-#  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/daxuehua.js # 大雪花飘落
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/love.js # 鼠标点击出小爱心❤
+  - /js/dianJiChuZi.js # 点击出字
+  - /js/touBuShangShengQiPao.js #头部上升气泡
+  - /js/dongTaiCaiDai.js # 动态彩带
+  - /js/jingTaiSiDai.js # 静态彩带
+  - /js/dongTaiHeiSeXianTiao.js # 动态黑色线条
+  - /js/xiaoXueHua.js # 小雪花飘落
+  - /js/yingHuaPiaoLuo.js # 樱花飘落
+  - /js/shuBiaoGenSuiXiaoXinXin.js # 鼠标跟随小星星
+#  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/daXueHua.js # 大雪花飘落
+  - /js/dianJiChuXiaoAiXin.js # 鼠标点击出小爱心❤
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
 custom_css:
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css # 头部打字机颜色效果渐变
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/daziyanse.css# 头部打字机颜色
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css# 滚动条颜色
-  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/css/shubiao.css# 鼠标指针
+  - /css/touBuDaZiJiYanSe.css # 头部打字机颜色效果渐变
+  - /css/daZiYanSe.css # 头部打字机颜色
+  - /css/gunDongTiaoYanSe.css # 滚动条颜色
+  - /css/shuBiaoZhiZhenYangShi.css # 鼠标指针
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
@@ -371,14 +371,14 @@ footer:
     <div style="font-size: 14px;margin-top: 20px;">
           <span id="timeDate">载入天数...</span>
           <span id="times">载入时分秒...</span>
-          <script src="/js/duration.js"></script>
+          <script src="/js/wangZhanYunXingShiJian.js"></script>
     </div>
 
     <!-- 网易云音乐 -->
     <div>
         <audio loop autoplay id="music">
         </audio>
-        <script src="/js/music.js"></script>
+        <script src="/js/wangZhanBeiJingYinYue.js"></script>
     </div>
 '
 
