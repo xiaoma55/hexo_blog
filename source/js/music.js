@@ -24,9 +24,20 @@ var musicArray =new Array(
 //         "&userid=530079932&auto=1&height=66'>" +
 //     "</iframe>";
 
-document.getElementById("music1").innerHTML =
+const myMusic = document.getElementById("music1");
+
+myMusic.innerHTML =
     "<audio controls='controls' preload='auto' loop autoplay>\n" +
             "<source src='http://music.163.com/song/media/outer/url?id=" +
              musicArray[Math.floor(Math.random() * musicArray.length)] +
             "&userid=530079932' type='audio/mpeg' />\n" +
     "</audio>";
+
+function play(){
+    myMusic.muted = true;
+    myMusic.play();
+    myMusic.muted = false;
+    myMusic.play();
+}
+
+play();
