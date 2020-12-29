@@ -309,7 +309,7 @@ navbar:
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "友链", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "新冠肺炎疫情地图", link: "https://voice.baidu.com/act/newpneumonia/newpneumonia", icon: "iconfont icon-baidu-fill" }
 
 # 搜索栏，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search bar, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
