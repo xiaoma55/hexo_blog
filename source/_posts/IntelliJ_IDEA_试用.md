@@ -27,19 +27,19 @@ Jetbrains家的产品有一个很良心的地方，他会允许你`试用30天`�
 
 在`Settings` -> `Plugins` 内手动添加第三方插件仓库地址：`https://plugins.zhile.io`
 
-![数据仓库](/img/articleContent/IntelliJ_试用/1.png)
+![添加第三方插件仓库](/img/articleContent/IntelliJ_试用/1.png)
 
 ## 2. 安装插件
 
 在 `Settings` -> `Plugins` 内安装插件：`IDE Eval Reset`
 
-![数据仓库](/img/articleContent/IntelliJ_试用/2.png)
+![安装插件](/img/articleContent/IntelliJ_试用/2.png)
 
 ## 3. 设置插件自动生效
 
 在 `Help` -> `Eval Reset` -> 在勾选 `Auto reset before per restart`，然后重启软件，这样每次重启软件，都会自动重置试用时间为30天，你无需做额外的事情。
 
-![数据仓库](/img/articleContent/IntelliJ_试用/3.png)
+![设置插件自动生效](/img/articleContent/IntelliJ_试用/3.png)
 
 ## 4. 插件更新
 
