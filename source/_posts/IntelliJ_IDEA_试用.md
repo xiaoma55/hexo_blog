@@ -2,6 +2,7 @@
 title: IntelliJ_全家桶_试用（福利）
 index_img: /img/articleBg/1(42).jpg
 banner_img: /img/articleBg/1(42).jpg
+sticky: 100
 tags:
   - JetBrains
   - IDEA
