@@ -1,5 +1,6 @@
+//网站主流音乐
 const musicArray =[
-    "31654478",   //  Victory
+    "31654478",     //  Victory
     "31654455",     //  Star Sky
     "27876900",     //  Here We Are Again
     "1992463",      //  Awaken the Dawn (Solo)
@@ -15,23 +16,35 @@ const musicArray =[
     "471415",       //  オルゴールの记忆
     "28151036",     //  伝承
     "757567"];
-
+//韩静音乐
 const hanJingMusicArray = [
-        "1447361757", //  沙悟净（翻自 河图）
+        "1447361757",   //  沙悟净（翻自 河图）
         "1293886117",   //  年少有为
         "1499297916",   //  男孩 (Live)
         "482207546",    //  拜无忧（Cover 萧忆情）
         "420008229"];
-
+//吴特刚音乐
 const wuTeGangMusicArray = [
-        "433107903"
+        "433107903"     //ninelie(Easylistening) 徐梦圆
 ]
+
+
+//============================================================================
+//============================================================================
+//============================================================================
+//使用音乐，以后要是网站改音乐，把这个变量改成对应的数组就行
+const useMusicArray = musicArray ;
+//============================================================================
+//============================================================================
+//============================================================================
+
+
 
 const myMusic = document.getElementById("music");
 
 myMusic.innerHTML =
             "<source src='http://music.163.com/song/media/outer/url?id=" +
-    wuTeGangMusicArray[Math.floor(Math.random() * wuTeGangMusicArray.length)] +
+    useMusicArray[Math.floor(Math.random() * useMusicArray.length)] +
             "&userid=530079932' type='audio/mpeg' />";
 
 function play(){
