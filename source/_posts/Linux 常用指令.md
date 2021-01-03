@@ -319,6 +319,23 @@ sz 文件路径 ：下载
 
 > 查看主机名
 
+```
+hostname
+
+hostnamectl
+```
+
+> 修改主机名(不用重启)
+
+```
+hostnamectl --static set-hostname xiaoMaZhuJiMing
+```
+
+```
+/etc/sysconfig/network
+这个目录下如果配置了HOSTNAME，删掉这个配置吧
+```
+
 
 ## 27 history
 > 查看已经执行过的历史命令，也可以执行历史命令
