@@ -329,6 +329,8 @@ hostnamectl
 
 ```
 hostnamectl --static set-hostname xiaoMaZhuJiMing
+
+# 可以用上面命令查看改好了没，也可以看下 /etc/hostname 这个文件，应该也改了
 ```
 
 ```
