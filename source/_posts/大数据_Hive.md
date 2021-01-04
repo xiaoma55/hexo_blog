@@ -2309,6 +2309,28 @@ http://google.github.io/snappy/
 
 On a single core of a Core i7 processor in 64-bit mode, Snappy compresses at about 250 MB/sec or more and decompresses at about 500 MB/sec or more.
 
+#### 9.1.1 zlib压缩
+
+> 优点：`压缩率比较高`；hadoop本身支持，在应用中处理gzip格式的文件就和直接处理文本一样。
+
+> 缺点：`压缩性能一般`。
+
+#### 9.1.2 snappy压缩
+
+> 优点：`高速压缩速度`和合理的压缩率。
+
+> 缺点：`压缩率比zlib要低`；hadoop本身不支持，需要安装（CDH版本已自动支持，可忽略）。
+
+### 9.1.3 系统采用的格式
+
+> 因为ORCFILE的压缩快、存取快，而且拥有特有的查询优化机制，所以系统`采用ORCFILE存储格式`（RCFILE升级版），压缩算法采用orc支持的ZLIB和SNAPPY。
+
+> 在ODS数据源层，因为数据量较大，可以采用orcfile+ZLIB的方式，以节省磁盘空间；
+
+> 而在计算的过程中（DWD、DWM、DWS、APP），为了不影响执行的速度，可以浪费一点磁盘空间，采用orcfile+SNAPPY的方式，提升hive的执行速度。
+
+> 存储空间足够的情况下，`推荐采用SNAPPY压缩`。
+
 ### 9.2 压缩配置参数
 
 > 要在Hadoop中启用压缩，可以配置如下参数（mapred-site.xml文件中）
@@ -2378,9 +2400,9 @@ insert overwrite local directory '/export/servers/snappy' select * from score di
 
 ![列式存储和行式存储](/img/articleContent/大数据_Hive/19.png)
 
-`行存储的特点`： 查询满足条件的一整行数据的时候，列存储则需要去每个聚集的字段找到对应的每个列的值，行存储只需要找到其中一个值，其余的值都在相邻地方，所以此时行存储查询的速度更快。
+`行存储的特点`： `查询`满足条件的`一整行数据的时候`，列存储则需要去每个聚集的字段找到对应的每个列的值，行存储只需要找到其中一个值，其余的值都在相邻地方，所以此时行存储查询的速度更快。
 
-`列存储的特点`： 因为每个字段的数据聚集存储，在查询只需要少数几个字段的时候，能大大减少读取的数据量；每个字段的数据类型一定是相同的，列式存储可以针对性的设计更好的设计压缩算法。
+`列存储的特点`： 因为每个字段的数据聚集存储，在`查询`只需要`少数几个字段的时候`，能大大减少读取的数据量；每个字段的数据类型一定是相同的，列式存储可以针对性的设计更好的设计压缩算法。
 
 `相比于行式存储，列式存储在分析场景下有着许多优良的特性:`
 
@@ -2397,13 +2419,15 @@ insert overwrite local directory '/export/servers/snappy' select * from score di
 
 ### 10.2 TEXTFILE格式
 
-> 默认格式，数据不做压缩，磁盘开销大，数据解析开销大。可结合Gzip、Bzip2使用(系统自动检查，执行查询时自动解压)，但使用这种方式，hive不会对数据进行切分，从而无法对数据进行并行操作。
+> 默认格式，`行式存储`。数据不做压缩，磁盘开销大，数据解析开销大。可结合Gzip、Bzip2使用(系统自动检查，执行查询时自动解压)，但使用这种方式，hive`不会对数据进行切分`，从而无法对数据进行并行操作。并且反序列化过程中，必须逐个字符判断是不是分隔符和行结束符，`性能较差`。
 
 ### 10.3 ORC格式
 
-> ORC的全称是(Optimized Record Columnar)，使用ORC文件格式可以提高hive读、写和处理数据的能力。
+> ORC的全称是(Optimized Record Columnar)，使用ORC文件格式可以`提高hive读、写和处理数据的能力`。
 
-> 在ORC格式的hive表中，记录首先会被横向的切分为多个stripes，然后在每一个stripe内数据以列为单位进行存储，所有列的内容都保存在同一个文件中。每个stripe的默认大小为256MB，相对于RCFile每个4MB的stripe而言，更大的stripe使ORC的数据读取更加高效。
+> 在ORC格式的hive表中，数据按行分块，每块按列存储。`结合了行存储和列存储的优点`。记录首先会被横向的切分为多个stripes，然后在每一个stripe内数据以列为单位进行存储，所有列的内容都保存在同一个文件中。
+
+> 每个stripe的默认大小为256MB，相对于RCFile每个4MB的stripe而言，`更大的stripe`使ORC可以`支持索引`，数据读取更加高效。
 
 ![ORC格式](/img/articleContent/大数据_Hive/20.png)
 
@@ -2642,7 +2666,7 @@ dfs -du -h /user/hive/warehouse/myhive.db/log_orc_snappy ;
 
 `4）存储方式和压缩总结：`
 
-	`在实际的项目开发当中，hive表的数据存储格式一般选择：orc或parquet。压缩方式一般选择snappy。`
+`在实际的项目开发当中，hive表的数据存储格式一般选择：orc或parquet。压缩方式一般选择snappy。`
 
 ## 11 Hive调优
 
