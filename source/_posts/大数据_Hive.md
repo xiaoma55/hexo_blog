@@ -2032,9 +2032,85 @@ FIRST_VALUE(url) OVER(PARTITION BY cookieid) AS first2  
 FROM itcast_t4;
 ```
 
-### 8.4 自定义函数
+### 8.4 时间函数
 
-#### 8.4.1 概述
+#### 8.4.1 `unix_timestamp()`日期转为时间戳
+
+> 1 `unix_timestamp()`   获取当前时间戳
+
+```shell
+select unix_timestamp()   --1565858389
+```
+
+> 2 `unix_timestamp(string timestame)`   输入的时间戳格式必须为'yyyy-MM-dd HH:mm:ss',如不符合则返回null
+
+```shell
+select unix_timestamp('2019-08-15 16:40:00')   --1565858400
+select unix_timestamp('2019-08-15')  --null
+```
+
+> 3 `unix_timestamp(string date,string pattern)`   将指定时间字符串格式字符串转化成unix时间戳,如不符合则返回null
+
+```shell
+select unix_timestamp('2019-08-15','yyyy-MM-dd')   --1565798400
+select unix_timestamp('2019-08-15 16:40:00','yyyy-MM-dd HH:mm:ss')   --1565858400
+select unix_timestamp('2019-08-15','yyyy-MM-dd HH:mm:ss')   --null
+```
+
+#### 8.4.2 `from_unixtime()`时间戳转为日期
+
+> 1 `from_unixtime(bigint unixtime,string format)`  将时间戳秒数转化为UTC时间，并用字符串表示，可通过format规定的时间格式，指定输出的时间格式，其中unixtime 是10位的时间戳值，而13位的所谓毫秒的是不可以的。
+
+```shell
+select from_unixtime(1565858389,'yyyy-MM-dd HH:mm:ss')  --2019-08-15 16:39:49
+select from_unixtime(1565858389,'yyyy-MM-dd')   --2019-08-15
+```
+
+> 2 如果unixtime为13位的，需要先转成10位
+
+```shell
+select from_unixtime(cast(1553184000488/1000 as int),'yyyy-MM-dd HH:mm:ss')   --2019-03-22 00:00:00
+select from_unixtime(cast(substr(1553184000488,1,10) as int),'yyyy-MM-dd HH:mm:ss')  --2019-03-22 00:00:00
+```
+
+#### 8.4.3 当前时间
+
+```shell
+select from_unixtime(unix_timestamp(),'yyyy-MM-dd HH:mm:ss')   -- 2019-08-15 17:18:55
+```
+
+#### 8.4.4 获取时间所在的季度
+
+```shell
+quarter('2015-04-08')    --2
+```
+2015-04-08所在的季度为当年的第二个季度。
+ 
+### 8.5 字符串获取函数
+
+> 大多数数据库中都有`substr`和`substring`两种字符串截取函数。但与其他的关系型数据库不同，在`hive中`，`substr`与`substring`函数的使用方式是`完全一致`的，属于`同一个函数`。
+
+#### 8.5.1 两个参数
+
+> 语法：`substr(string A, int start)`，`substring(string A, int start)`<br/>
+返回值: string<br/>
+说明：返回字符串A从start位置到结尾的字符串
+```shell
+select substr('2020-06-06', 6), substring('2020-06-06', 6);     --06-06  06-06
+```
+
+#### 8.5.2 三个参数
+
+> 语法: `substr(string A, int start, int len)`，`substring(string A, intstart, int len)`<br/>
+返回值: string<br/>
+说明：返回字符串A从start位置开始，长度为len的字符串。
+```shell
+select substr('2020-06-06', 6,2), substring('2020-06-06', 6,2);     --06  06
+```
+
+### 8.6 自定义函数
+
+#### 8.6.1 概述
 
 > Hive 自带了一些函数，比如：max/min等，但是数量有限，自己可以通过自定义UDF来方便的扩展。
 当Hive提供的内置函数无法满足你的业务处理需要时，此时就可以考虑使用用户自定义函数（UDF：user-defined function）。
@@ -2051,7 +2127,7 @@ FROM itcast_t4;
 一进多出<br/>
 如lateral view explore()
 
-#### 8.4.2 自定义UDF
+#### 8.6.2 自定义UDF
 
 > 实现一个 udf 函数 步骤
 
@@ -2069,7 +2145,7 @@ FROM itcast_t4;
    1. select my_upper('abcdefg')
 ```
 
-##### 8.4.2.1 创建maven  java 工程，导入jar包
+##### 8.6.2.1 创建maven  java 工程，导入jar包
 
 ```xml
 # pom配置文件
@@ -2124,7 +2200,7 @@ FROM itcast_t4;
     </build>
 ```
 
-##### 8.4.2.2 开发java类继承UDF，并重载evaluate 方法
+##### 8.6.2.2 开发java类继承UDF，并重载evaluate 方法
 
 ```
 public class MyUDF  extends UDF{
@@ -2138,9 +2214,9 @@ public class MyUDF  extends UDF{
 }
 ```
 
-##### 8.4.2.3 将我们的项目打包，并上传到hive的lib目录下
+##### 8.6.2.3 将我们的项目打包，并上传到hive的lib目录下
 
-##### 8.4.2.4 添加我们的jar包
+##### 8.6.2.4 添加我们的jar包
 
 > 重命名我们的jar包名称
 
@@ -2154,21 +2230,21 @@ mv original-day_10_hive_udf-1.0-SNAPSHOT.jar my_upper.jar
 add jar /export/servers/hive-2.7.5/lib/my_upper.jar;
 ```
 
-##### 8.4.2.5 设置函数与我们的自定义函数关联
+##### 8.6.2.5 设置函数与我们的自定义函数关联
 
 ```
 create temporary function my_upper as 'cn.itcast.udf.ItcastUDF';
 ```
 
-##### 8.4.2.6 使用自定义函数
+##### 8.6.2.6 使用自定义函数
 
 ```
 select my_upper('abc');
 ```
 
-#### 8.4.3 自定义UDTF
+#### 8.6.3 自定义UDTF
 
-##### 8.4.3.1 需求
+##### 8.6.3.1 需求
 
 > 自定义一个UDTF，实现将一个任意分隔符的字符串切割成独立的单词,例如:
 
@@ -2183,7 +2259,7 @@ hive
 MapReduce
 ```
 
-##### 8.4.3.2 代码实现
+##### 8.6.3.2 代码实现
 
 ```java
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
@@ -2241,7 +2317,7 @@ public class MyUDTF extends GenericUDTF {
 }
 ```
 
-##### 8.4.3.3 添加我们的jar包
+##### 8.6.3.3 添加我们的jar包
 
 > 将打包的jar包上传到node3主机/export/servers/hive-2.7.5/lib目录,并重命名我们的jar包名称
 
@@ -2256,13 +2332,13 @@ mv original-day_10_hive_udtf-1.0-SNAPSHOT.jar my_udtf.jar
 hive>add jar /export/servers/hive-2.7.5/lib/my_udtf.jar
 ```
 
-##### 8.4.3.4 创建临时函数与开发后的udtf代码关联
+##### 8.6.3.4 创建临时函数与开发后的udtf代码关联
 
 ```
 hive>create temporary function my_udtf as 'cn.itcast.udf.ItcastUDF';
 ```
 
-##### 8.4.3.5 使用自定义udtf函数
+##### 8.6.3.5 使用自定义udtf函数
 
 ```
 hive>select myudtf("zookeeper,hadoop,hdfs,hive,MapReduce",",") word;
