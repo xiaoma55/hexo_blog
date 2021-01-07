@@ -34,6 +34,8 @@ sqoop通过Hadoop的MapReduce导入导出，因此提供了很高的并行性能
 
 ![概述](/img/articleContent/大数据_Sqoop/1.png)
 
+> `RDBMS`:`Relational Database Management System`(关系型数据库管理系统)
+
 ## 2 sqoop1与sqoop2架构对比
 
 ### 2.1 sqoop1架构
