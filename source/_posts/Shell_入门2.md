@@ -35,7 +35,7 @@ date: 2020-12-08 19:46:11
 ```
 #!/bin/bash
 #判断字符串是否相等
-if [ "ok" = "ok" ]
+if [ "ok" == "ok" ]
 then
         echo "equal"
 fi
