@@ -1,5 +1,5 @@
 ---
-title: Xshell 关键字颜色设置
+title: Xshell6 绿色版下载及关键字颜色设置
 index_img: /img/articleBg/1(47).jpg
 banner_img: /img/articleBg/1(47).jpg
 tags: 
