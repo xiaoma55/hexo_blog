@@ -383,5 +383,20 @@ CREATE TABLE `emp_out` (
 \-\-hive-drop-import-delims | 设置无视字符串中的分割符（hcatalog默认开启）
 `--fields-terminated-by '\t'` | 设置字段分隔符
 
+## 9 \-\-split-by详解
+
+![--split-by](/img/articleContent/大数据_Sqoop/9.png)
+
+> 假设有一张表test，sqoop命令中`-–split-by 'id' -m 10`，会发生怎样奇特的事情。<br/>
+> 首先呢，sqoop会去查表的元数据等等，重点说一下sqoop是如何根据–split-by进行分区的。<br/>
+> 首先sqoop会向关系型数据库比如mysql发送一个命令:`select max(id),min(id) from test`。
+> <br/>然后会把max、min之间的区间平均分为10分，最后`10个并行的map`去找数据库，同时也会分成`10个sql`给`10个map`去进行导入操作。
+> 加入有1000条数据，则10个sql分别为`select XXX from table where split-by>=1 and split-by<100` , `select XXX from table where split-by>=101 and split-by<=200`.......最后`每个map各自获取各自SQL中的数据`进行导入工作。
+> <br/>导数据就正式开始啦！
+
+> `split-by`即便是`int`型，若`不是连续有规律递增`的话，各个map分配的数据是不均衡的，可能会`有些map很忙`，`有些map几乎没有数据处理`的情况，就是`数据倾斜`
+
+
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
