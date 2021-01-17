@@ -1,7 +1,7 @@
 ---
 title: 大数据_Hive索引
-index_img: /img/articleBg/1(1).jpg
-banner_img: /img/articleBg/1(1).jpg
+index_img: /img/articleBg/1(50).jpg
+banner_img: /img/articleBg/1(50).jpg
 tags:
   - 标签一
   - 标签一
