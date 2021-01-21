@@ -2039,5 +2039,3 @@ URL：/hbase/data/MOMO_CHAT/MSG
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![image](/img/articleContent/大数据_HBase/1.png)
