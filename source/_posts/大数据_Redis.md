@@ -275,7 +275,7 @@ http://doc.redisfans.com/
 
 > Bitmaps单独提供了一套命令，所以在Redis中使用Bitmaps和使用字符串的方法不太相同。可以把Bitmaps想象成一个`存储0、1值的数组`，数组的每个单元值`只能存储0和1`，数组的`下标在Bitmaps中叫做偏移量`
 
-![image](/img/articleContent/大数据_Redis/1.png)
+![BitMaps位图](/img/articleContent/大数据_Redis/1.png)
 
 > BitMaps 命令说明：将每个独立用户是否访问过网站存放在Bitmaps中， 将访问的用户记做1， 没有访问的用户记做0， 用偏移量作为用户的id 。
 
@@ -289,7 +289,7 @@ SETBIT key offset value
 
 > 设置键的第offset个位的值（从0算起），假设现在有20个用户，uid=0，5，11，15，19的用户对网站进行了访问， 那么当前Bitmaps初始化结果如图所示
 
-![image](/img/articleContent/大数据_Redis/2.png)
+![设置值](/img/articleContent/大数据_Redis/2.png)
 
 > 具体操作过程如下， unique:users:2016-04-05代表2016-04-05这天的独立访问用户的Bitmaps
 
@@ -337,7 +337,7 @@ BITOP operation destkey key [key, …]
 
 > bitop是一个复合操作， 它可以做多个Bitmaps的and（交集） 、 or（并集） 、 not（非） 、 xor（异或） 操作并将结果保存在destkey中。 假设2016-04-04访问网站的userid=1， 2， 5， 9， 如图3-13所示：
 
-![image](/img/articleContent/大数据_Redis/998.png)
+![Bitmaps间的运算](/img/articleContent/大数据_Redis/998.png)
 
 ```
 setbit unique:users:2016-04-04 1 1
@@ -361,7 +361,7 @@ bitop or unique:users:or:2016-04-04_05 unique:users:2016-04-04 unique:users:2016
 bitcount unique:users:or:2016-04-04_05
 ```
 
-![image](/img/articleContent/大数据_Redis/999.png)
+![Bitmaps间的运算](/img/articleContent/大数据_Redis/999.png)
 
 ### 2.8 HyperLogLog结构
 
@@ -1697,7 +1697,7 @@ public class RedisClusterTest {
 
 > 在应用程序和MySQL数据库中建立一个中间层：Redis缓存，通过Redis缓存可以有效减少查询数据库的时间消耗，但是引入redis又有可能出现`缓存穿透`、`缓存击穿`、`缓存雪崩`等问题。
 
-![image](/img/articleContent/大数据_Redis/23.png)
+![Redis面试题](/img/articleContent/大数据_Redis/23.png)
 
 ### 8.1 缓存穿透
 
