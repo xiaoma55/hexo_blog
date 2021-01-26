@@ -24,7 +24,7 @@ ELK 包含三款产品，分别是 `Elasticsearch`, `Logstash`, `Kibana`
 
 https://www.elastic.co/cn/elasticsearch
 
-![image](/img/articleContent/大数据_ElasticSearch/1.png)
+ ![](/img/articleContent/大数据_ElasticSearch/1.png)
 
 ### 1.1 简介
 
@@ -42,7 +42,7 @@ https://www.elastic.co/cn/elasticsearch
 
 > Shay Banon （谢巴农）
 
-![image](/img/articleContent/大数据_ElasticSearch/2.png)
+ ![](/img/articleContent/大数据_ElasticSearch/2.png)
 
 ### 1.2 可以做什么
 
@@ -50,13 +50,13 @@ https://www.elastic.co/cn/elasticsearch
 
 > 电商 / 招聘 / 门户 / 论坛
 
-![image](/img/articleContent/大数据_ElasticSearch/3.png)
+ ![](/img/articleContent/大数据_ElasticSearch/3.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/4.png)
+ ![](/img/articleContent/大数据_ElasticSearch/4.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/5.png)
+ ![](/img/articleContent/大数据_ElasticSearch/5.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/6.png)
+ ![](/img/articleContent/大数据_ElasticSearch/6.png)
 
 #### 1.2.2 企业内部系统搜索
 
@@ -66,7 +66,7 @@ https://www.elastic.co/cn/elasticsearch
 
 > OA / CRM / ERP
 
-![image](/img/articleContent/大数据_ElasticSearch/7.png)
+ ![](/img/articleContent/大数据_ElasticSearch/7.png)
 
 #### 1.2.3 数据分析引擎
 
@@ -122,7 +122,7 @@ https://www.elastic.co/cn/elasticsearch
 
 ### 1.6 发展历史
 
-![image](/img/articleContent/大数据_ElasticSearch/8.png)
+ ![](/img/articleContent/大数据_ElasticSearch/8.png)
 
 > 2004年，发布第一个版本名为Compass的搜索引擎，创建搜索引擎的目的主要是为了搜索食谱
 
@@ -164,11 +164,11 @@ https://www.elastic.co/cn/elasticsearch
 
 ### 2.2 Lucene简介
 
-![image](/img/articleContent/大数据_ElasticSearch/9.png)
+ ![](/img/articleContent/大数据_ElasticSearch/9.png)
 
 > Lucene是一种高性能的全文检索库，在2000年开源，最初由大名鼎鼎的Doug Cutting（道格·卡丁）开发
 
-![image](/img/articleContent/大数据_ElasticSearch/10.png)
+ ![](/img/articleContent/大数据_ElasticSearch/10.png)
 
 > Lucene是Apache的一个顶级开源项目，是一个全文检索引擎工具包。但Lucene不是一个完整的全文检索引擎，它只是提供一个基本的全文检索的架构，还提供了一些基本的文本分词库
 
@@ -178,7 +178,7 @@ https://www.elastic.co/cn/elasticsearch
 
 > 倒排索引是一种建立索引的方法。是全文检索系统中常用的数据结构。通过倒排索引，就是根据单词快速获取包含这个单词的文档列表。倒排索引通常由两个部分组成：单词词典、文档。
 
-![image](/img/articleContent/大数据_ElasticSearch/11.png)
+ ![](/img/articleContent/大数据_ElasticSearch/11.png)
 
 ### 2.4 企业中为什么不直接使用Lucene
 
@@ -528,7 +528,7 @@ http://node2.itcast.cn:9200/?pretty
 http://node3.itcast.cn:9200/?pretty
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/12.png)
+ ![](/img/articleContent/大数据_ElasticSearch/12.png)
 
 > 能够看到es启动之后的一些信息
 
@@ -602,7 +602,7 @@ node -v
 npm -v
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/13.png)
+ ![](/img/articleContent/大数据_ElasticSearch/13.png)
 
 #### 4.2.2 本地安装（推荐）
 
@@ -654,7 +654,7 @@ vim app.js
 
 > 在Vim中输入「:4354」，定位到第4354行，修改 http://localhost:9200为http://node1.itcast.cn:9200。
 
-![image](/img/articleContent/大数据_ElasticSearch/14.png)
+ ![](/img/articleContent/大数据_ElasticSearch/14.png)
 
 ##### 4.2.2.5 启动head服务
 
@@ -689,7 +689,7 @@ netstat -nltp | grep 9100
 kill -9 8328
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/15.png)
+ ![](/img/articleContent/大数据_ElasticSearch/15.png)
 
 #### 4.2.3 在线安装（网速慢，不推荐）
 
@@ -720,7 +720,7 @@ cd /export/serverss/es/elasticsearch-head
 npm install
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/16.png)
+ ![](/img/articleContent/大数据_ElasticSearch/16.png)
 
 > 以下进度信息
 
@@ -771,7 +771,7 @@ cd /export/serverss/es/elasticsearch-head/_site
 vim app.js
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/17.png)
+ ![](/img/articleContent/大数据_ElasticSearch/17.png)
 
 >`更改前：http://localhost:9200`<br/>
 `更改后：http://node01:9200`
@@ -780,7 +780,7 @@ vim app.js
 
 > http://node1.itcast.cn:9100/
 
-![image](/img/articleContent/大数据_ElasticSearch/18.png)
+ ![](/img/articleContent/大数据_ElasticSearch/18.png)
 
 ### 4.3 安装IK分词器
 
@@ -822,7 +822,7 @@ scp -r ik/ node3.itcast.cn:$PWD
 
 > 打开VSCode，在应用商店中搜索elasticsearch，找到Elasticsearch for VSCode,安装
 
-![image](/img/articleContent/大数据_ElasticSearch/19.png)
+ ![](/img/articleContent/大数据_ElasticSearch/19.png)
 
 ### 4.5 测试分词器
 
@@ -832,13 +832,13 @@ scp -r ik/ node3.itcast.cn:$PWD
 
 > 3.右键点击 命令面板 菜单
 
-![image](/img/articleContent/大数据_ElasticSearch/20.png)
+ ![](/img/articleContent/大数据_ElasticSearch/20.png)
 
 > 4.选择ES:Elastic: Set Host，然后输入Elasticsearch的机器名和端口号。
 
-![image](/img/articleContent/大数据_ElasticSearch/21.png)
+ ![](/img/articleContent/大数据_ElasticSearch/21.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/22.png)
+ ![](/img/articleContent/大数据_ElasticSearch/22.png)
 
 > 5.将以下内容复制到ES中，并测试。
 
@@ -893,7 +893,7 @@ PUT /my-index
 }
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/23.png)
+ ![](/img/articleContent/大数据_ElasticSearch/23.png)
 
 #### 5.1.2 字段的类型
 
@@ -947,7 +947,7 @@ GET /job_idx/_mapping
 
 > 使用head插件也可以查看到索引映射信息。
 
-![image](/img/articleContent/大数据_ElasticSearch/24.png)
+ ![](/img/articleContent/大数据_ElasticSearch/24.png)
 
 #### 5.1.5 查看ElasticSearch中的所有索引
 
@@ -961,7 +961,7 @@ GET _cat/indices
 delete /job_idx
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/25.png)
+ ![](/img/articleContent/大数据_ElasticSearch/25.png)
 
 #### 5.1.7 指定使用IK分词器
 
@@ -995,7 +995,7 @@ PUT /customer/_doc/1
 }
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/26.png)
+ ![](/img/articleContent/大数据_ElasticSearch/26.png)
 
 > 如果在customer中，不存在ID为1的文档，Elasticsearch会自动创建
 
@@ -1035,7 +1035,7 @@ PUT /job_idx/_doc/29097
 
 > 使用ES-head插件浏览数据：
 
-![image](/img/articleContent/大数据_ElasticSearch/27.png)
+ ![](/img/articleContent/大数据_ElasticSearch/27.png)
 
 ### 5.3 修改数据
 
@@ -1094,7 +1094,7 @@ GET _cat/indices?index=job_idx
 ]
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/28.png)
+ ![](/img/articleContent/大数据_ElasticSearch/28.png)
 
 ### 5.6 根据ID检索数据
 
@@ -1111,7 +1111,7 @@ GET /job_idx/_search
 }
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/29.png)
+ ![](/img/articleContent/大数据_ElasticSearch/29.png)
 
 ### 5.7 根据关键字检索数据
 
@@ -1829,7 +1829,7 @@ public class ESTest {
 
 ## 7 ElasticSearch架构原理
 
-![image](/img/articleContent/大数据_ElasticSearch/30.png)
+ ![](/img/articleContent/大数据_ElasticSearch/30.png)
 
 ### 7.1 节点类型
 
@@ -1913,13 +1913,13 @@ PUT /job_idx_shard
 GET /_cat/indices?v
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/31.png)
+ ![](/img/articleContent/大数据_ElasticSearch/31.png)
 
 ### 7.3 重要工作流程
 
 #### 7.3.1 文档写入原理
 
-![image](/img/articleContent/大数据_ElasticSearch/32.png)
+ ![](/img/articleContent/大数据_ElasticSearch/32.png)
 
 > 1.选择任意一个DataNode发送请求，例如：node2.itcast.cn。此时，node2.itcast.cn就成为一个		coordinating node（协调节点）
 
@@ -1935,7 +1935,7 @@ GET /_cat/indices?v
 
 #### 7.3.2 检索原理
 
-![image](/img/articleContent/大数据_ElasticSearch/33.png)
+ ![](/img/articleContent/大数据_ElasticSearch/33.png)
 
 > client发起查询请求，某个DataNode接收到请求，该DataNode就会成为协调节点（Coordinating Node）
 
@@ -2055,7 +2055,7 @@ GET /_sql?format=json
 }
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/34.png)
+ ![](/img/articleContent/大数据_ElasticSearch/34.png)
 
 > 第二次查询
 
@@ -2318,9 +2318,9 @@ curl http://node1.itcast.cn:9200/_license/start_trial?acknowledge=true -X POST
 -Dmaven.wagon.http.ssl.ignore.validity.dates=true
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/35.png)
+ ![](/img/articleContent/大数据_ElasticSearch/35.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/36.png)
+ ![](/img/articleContent/大数据_ElasticSearch/36.png)
 
 #### 8.4.6 统计不同支付方式订单数，并按照订单数量倒序排序
 
@@ -2370,7 +2370,7 @@ GET /_sql?format=txt
 网络流量数据 | PacketBeat
 Windows事件日志 | Winlogbeat
 
-![image](/img/articleContent/大数据_ElasticSearch/37.png)
+ ![](/img/articleContent/大数据_ElasticSearch/37.png)
 
 > Beats可以直接将数据发送到Elasticsearch或者发送到Logstash，基于Logstash可以进一步地对数据进行处理，然后将处理后的数据存入到Elasticsearch，最后使用Kibana进行数据可视化。
 
@@ -2382,7 +2382,7 @@ Windows事件日志 | Winlogbeat
 
 > 启动FileBeat时，会启动一个或者多个输入（Input），这些Input监控指定的日志数据位置。FileBeat会针对每一个文件启动一个Harvester（收割机）。Harvester读取每一个文件的日志，将新的日志发送到libbeat，libbeat将数据收集到一起，并将数据发送给输出（Output）。
 
-![image](/img/articleContent/大数据_ElasticSearch/38.png)
+ ![](/img/articleContent/大数据_ElasticSearch/38.png)
  
 ### 9.3 FileBeat安装
 
@@ -2428,7 +2428,7 @@ filebeat.inputs:
 
 > 在FileBeats中，可以读取一个或多个数据源。
 
-![image](/img/articleContent/大数据_ElasticSearch/39.png)
+ ![](/img/articleContent/大数据_ElasticSearch/39.png)
 
 ##### 9.4.2.2 output配置
 
@@ -2437,7 +2437,7 @@ filebeat.inputs:
 > PS：
 >> FileBeats中的filebeat.reference.yml包含了FileBeats所有支持的配置选项。
 
-![image](/img/articleContent/大数据_ElasticSearch/40.png)
+ ![](/img/articleContent/大数据_ElasticSearch/40.png)
 
 #### 9.4.3 配置文件
 
@@ -2669,7 +2669,7 @@ POST /filebeat-7.6.1-2021.01.26-000001/_delete_by_query
 
 > 在/export/servers/es/filebeat-7.6.1-linux-x86_64/data目录中有一个Registry文件夹，里面有一个data.json，该文件中记录了Harvester读取日志的offset。
 
-![image](/img/articleContent/大数据_ElasticSearch/41.png)
+ ![](/img/articleContent/大数据_ElasticSearch/41.png)
 
 ## 10 Logstash
 
@@ -2679,11 +2679,11 @@ POST /filebeat-7.6.1-2021.01.26-000001/_delete_by_query
 
 > 它可以处理各种类型的日志数据，例如：Apache的web log、Java的log4j日志数据，或者是系统、网络、防火墙的日志等等。它也可以很容易的和Elastic Stack的Beats组件整合，也可以很方便的和关系型数据库、NoSQL数据库、Kafka、RabbitMQ等整合。
 
-![image](/img/articleContent/大数据_ElasticSearch/42.png)
+ ![](/img/articleContent/大数据_ElasticSearch/42.png)
 
 #### 10.1.1 经典架构
 
-![image](/img/articleContent/大数据_ElasticSearch/43.png)
+ ![](/img/articleContent/大数据_ElasticSearch/43.png)
 
 #### 10.1.2 对比Flume
 
@@ -3141,7 +3141,7 @@ PATH | 匹配路径
 
 ##### 10.3.6.4 用法
 
-![image](/img/articleContent/大数据_ElasticSearch/44.png)
+ ![](/img/articleContent/大数据_ElasticSearch/44.png)
 
 ```
 filter {
@@ -3319,13 +3319,13 @@ output {
 
 > 要过滤出来我们需要的字段。我们需要使用mutate插件。mutate插件主要是作用在字段上，例如：它可以对字段进行重命名、删除、替换或者修改结构。
 
-![image](/img/articleContent/大数据_ElasticSearch/46.png)
+ ![](/img/articleContent/大数据_ElasticSearch/46.png)
 
 > 官方文档：https://www.elastic.co/guide/en/logstash/7.6/plugins-filters-mutate.html
 
 > 例如，mutate插件可以支持以下常用操作
 
-![image](/img/articleContent/大数据_ElasticSearch/47.png)
+ ![](/img/articleContent/大数据_ElasticSearch/47.png)
 
 > 配置：
 >>注意：此处为了方便进行类型的处理，将status、length指定为int类型。
@@ -3362,7 +3362,7 @@ output {
 
 > 用法如下：
 
-![image](/img/articleContent/大数据_ElasticSearch/47.png)
+ ![](/img/articleContent/大数据_ElasticSearch/47.png)
 
 > 将date字段转换为「年月日 时分秒」格式。默认字段经过date插件处理后，会输出到@timestamp字段，所以，我们可以通过修改target属性来重新定义输出字段。
 
@@ -3476,7 +3476,7 @@ bin/logstash -f config/filebeat-apache-weblog.conf --config.reload.automatic
 
 ### 11.1 简介
 
-![image](/img/articleContent/大数据_ElasticSearch/48.png)
+ ![](/img/articleContent/大数据_ElasticSearch/48.png)
 
 > 通过上面的这张图就可以看到，Kibana可以用来展示丰富的图表。
 >> Kibana是一个开源的数据分析和可视化平台，使用Kibana可以用来搜索Elasticsearch中的数据，构建漂亮的可视化图形、以及制作一些好看的仪表盘
@@ -3484,17 +3484,17 @@ bin/logstash -f config/filebeat-apache-weblog.conf --config.reload.automatic
 >> Kibana提供统一的访问入口，不管是日志分析、还是查找文档，Kibana提供了一个使用这些功能的统一访问入口
 >> Kibana使用的是Elasticsearch数据源，Elasticsearch是存储和处理数据的引擎，而Kibana就是基于Elasticsearch之上的可视化平台
 
-![image](/img/articleContent/大数据_ElasticSearch/49.png)
+ ![](/img/articleContent/大数据_ElasticSearch/49.png)
 
 > 主要功能：
 
 - 探索和查询Elasticsearch中的数据
 
-![image](/img/articleContent/大数据_ElasticSearch/50.png)
+ ![](/img/articleContent/大数据_ElasticSearch/50.png)
 
 - 可视化与分析
 
-![image](/img/articleContent/大数据_ElasticSearch/51.png)
+ ![](/img/articleContent/大数据_ElasticSearch/51.png)
 
 ### 11.2 Kibana安装
 
@@ -3544,21 +3544,21 @@ i18n.locale: "zh-CN"
 http://node1.itcast.cn:5601/status
 ```
 
-![image](/img/articleContent/大数据_ElasticSearch/52.png)
+ ![](/img/articleContent/大数据_ElasticSearch/52.png)
 
 #### 11.2.2 查看ElasticSearch的状态
 
 > 点击齿轮设置按钮，再点击 「Index Management」，可以查看到Elasticsearch集群中的索引状态。
 
-![image](/img/articleContent/大数据_ElasticSearch/53.png)
+ ![](/img/articleContent/大数据_ElasticSearch/53.png)
 
 > 点击索引的名字，可以进一步查看索引更多的信息。
 
-![image](/img/articleContent/大数据_ElasticSearch/54.png)
+ ![](/img/articleContent/大数据_ElasticSearch/54.png)
 
 > 点击「Manage」按钮，还可以用来管理索引。
 
-![image](/img/articleContent/大数据_ElasticSearch/55.png)
+ ![](/img/articleContent/大数据_ElasticSearch/55.png)
 
 ### 11.3 添加Elasticsearch数据源
 
@@ -3566,19 +3566,19 @@ http://node1.itcast.cn:5601/status
 
 > 在开始使用Kibana之前，我们需要指定想要对哪些Elasticsearch索引进行处理、分析。在Kibana中，可以通过定义索引模式（Index Patterns）来对应匹配Elasticsearch索引。在第一次访问Kibana的时候，系统会提示我们定义一个索引模式。或者我们可以通过点击按钮，再点击Kibana下方的Index Patterns，来创建索引模式。参考下图：
 
-![image](/img/articleContent/大数据_ElasticSearch/56.png)
+ ![](/img/articleContent/大数据_ElasticSearch/56.png)
 
 > 1.定义索引模式，用于匹配哪些Elasticsearch中的索引。点击「Next step」
 
-![image](/img/articleContent/大数据_ElasticSearch/57.png)
+ ![](/img/articleContent/大数据_ElasticSearch/57.png)
 
 > 2.选择用于进行时间过滤的字段
 
-![image](/img/articleContent/大数据_ElasticSearch/58.png)
+ ![](/img/articleContent/大数据_ElasticSearch/58.png)
 
 > 3.点击「Create Index Pattern」按钮，创建索引模式。创建索引模式成功后，可以看到显示了该索引模式对应的字段。里面描述了哪些可以用于搜索、哪些可以用来进行聚合计算等。
 
-![image](/img/articleContent/大数据_ElasticSearch/59.png)
+ ![](/img/articleContent/大数据_ElasticSearch/59.png)
 
 ### 11.4 探索数据（Discovery）
 
@@ -3588,23 +3588,23 @@ http://node1.itcast.cn:5601/status
 
 > 点击指南针按钮可以打开Discovery页面。
 
-![image](/img/articleContent/大数据_ElasticSearch/60.png)
+ ![](/img/articleContent/大数据_ElasticSearch/60.png)
 
 > 我们发现没有展示任何的数据。但我们之前已经把数据导入到Elasticsearch中了。
 
-![image](/img/articleContent/大数据_ElasticSearch/61.png)
+ ![](/img/articleContent/大数据_ElasticSearch/61.png)
 
 > Kibana提示，让我们扩大我们的查询的时间范围。
 
-![image](/img/articleContent/大数据_ElasticSearch/62.png)
+ ![](/img/articleContent/大数据_ElasticSearch/62.png)
 
 > 默认Kibana是展示最近15分钟的数据。我们把时间范围调得更长一些，就可以看到数据了。
 
-![image](/img/articleContent/大数据_ElasticSearch/63.png)
+ ![](/img/articleContent/大数据_ElasticSearch/63.png)
 
 > 将时间范围选择为1年范围内的，我们就可以查看到Elasticsearch中的数据了。
 
-![image](/img/articleContent/大数据_ElasticSearch/64.png)
+ ![](/img/articleContent/大数据_ElasticSearch/64.png)
 
 #### 11.4.2 导入更多的Apache Web日志数据
 
@@ -3632,21 +3632,21 @@ bin/logstash -f config/filebeat-es.conf --config.reload.automatic
 
 ##### 11.4.3.1 选择时间范围
 
-![image](/img/articleContent/大数据_ElasticSearch/65.png)
+ ![](/img/articleContent/大数据_ElasticSearch/65.png)
 
 ##### 11.4.3.2 指定查询某天的数据
 
 > 查询2020年5月6日的所有日志数据。
 
-![image](/img/articleContent/大数据_ElasticSearch/66.png)
+ ![](/img/articleContent/大数据_ElasticSearch/66.png)
 
 ##### 11.4.3.3 从直方图上选择日期更细粒度范围
 
 > 如果要选择查看某一天的日志，上面这种方式会有一些麻烦，我们有更快更容易的方式。
 
-![image](/img/articleContent/大数据_ElasticSearch/67.png)
+ ![](/img/articleContent/大数据_ElasticSearch/67.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/68.png)
+ ![](/img/articleContent/大数据_ElasticSearch/68.png)
 
 #### 11.4.4 使用Kibana索索数据
 
@@ -3702,19 +3702,19 @@ uri: "\/itcast.cn\/*"
 
 > Kibana的Discovery组件提供各种各样的筛选器，这样可以筛选出来我们关注的数据上。例如：我们只想查询404的请求URI。
 
-![image](/img/articleContent/大数据_ElasticSearch/69.png)
+ ![](/img/articleContent/大数据_ElasticSearch/69.png)
 
 > 指定过滤出来404以及请求的URI、从哪儿跳转来的日志
 
-![image](/img/articleContent/大数据_ElasticSearch/70.png)
+ ![](/img/articleContent/大数据_ElasticSearch/70.png)
 
 > 将查询保存下来，方便下次直接查看
 
-![image](/img/articleContent/大数据_ElasticSearch/71.png)
+ ![](/img/articleContent/大数据_ElasticSearch/71.png)
 
 > 下次直接点击Open就可以直接打开之前保存的日志了
 
-![image](/img/articleContent/大数据_ElasticSearch/72.png)
+ ![](/img/articleContent/大数据_ElasticSearch/72.png)
 
 ### 11.5 数据可视化（Visualize）
 
@@ -3746,7 +3746,7 @@ uri: "\/itcast.cn\/*"
 
 - 在矩阵的单元格展示数据
 
-![image](/img/articleContent/大数据_ElasticSearch/73.png)
+ ![](/img/articleContent/大数据_ElasticSearch/73.png)
 
 > 仪表盘工具
 
@@ -3759,33 +3759,33 @@ uri: "\/itcast.cn\/*"
 
 > 效果图：
 
-![image](/img/articleContent/大数据_ElasticSearch/74.png)
+ ![](/img/articleContent/大数据_ElasticSearch/74.png)
 
 > 操作步骤：
 
 > 1.创建可视化
 
-![image](/img/articleContent/大数据_ElasticSearch/75.png)
+ ![](/img/articleContent/大数据_ElasticSearch/75.png)
 
 > 2.选择要进行可视化图形类型，此处我们选择Pie（饼图类型）
 
-![image](/img/articleContent/大数据_ElasticSearch/76.png)
+ ![](/img/articleContent/大数据_ElasticSearch/76.png)
 
 > 3.选择数据源
 
-![image](/img/articleContent/大数据_ElasticSearch/77.png)
+ ![](/img/articleContent/大数据_ElasticSearch/77.png)
 
 > 4.添加分桶、分片（还记得吗？我们在Elasticsearch进行分组聚合都是以分桶方式进行的，可以把它理解为分组）
 
-![image](/img/articleContent/大数据_ElasticSearch/78.png)
+ ![](/img/articleContent/大数据_ElasticSearch/78.png)
 
 > 5.配置分桶以及指标计算方式
 
-![image](/img/articleContent/大数据_ElasticSearch/79.png)
+ ![](/img/articleContent/大数据_ElasticSearch/79.png)
 
 > 6.点击蓝色播放按钮执行。
 
-![image](/img/articleContent/大数据_ElasticSearch/80.png)
+ ![](/img/articleContent/大数据_ElasticSearch/80.png)
 
 > 7.保存图形（取名为：apache_log@404_200）
 
@@ -3793,19 +3793,19 @@ uri: "\/itcast.cn\/*"
 
 > 效果如下：
 
-![image](/img/articleContent/大数据_ElasticSearch/81.png)
+ ![](/img/articleContent/大数据_ElasticSearch/81.png)
 
 > 开发步骤：
 
-![image](/img/articleContent/大数据_ElasticSearch/82.png)
+ ![](/img/articleContent/大数据_ElasticSearch/82.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/83.png)
+ ![](/img/articleContent/大数据_ElasticSearch/83.png)
 
 > 我们还可以修改图形的样式，例如：以曲线、面积图的方式展示。
 
-![image](/img/articleContent/大数据_ElasticSearch/84.png)
+ ![](/img/articleContent/大数据_ElasticSearch/84.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/85.png)
+ ![](/img/articleContent/大数据_ElasticSearch/85.png)
 
 #### 11.5.4 以TSVB可视化不同访问来源的数据
 
@@ -3813,49 +3813,49 @@ uri: "\/itcast.cn\/*"
 
 > 1.基于时间序列的图形展示
 
-![image](/img/articleContent/大数据_ElasticSearch/86.png)
+ ![](/img/articleContent/大数据_ElasticSearch/86.png)
 
 > 2.展示指标数据
 
-![image](/img/articleContent/大数据_ElasticSearch/87.png)
+ ![](/img/articleContent/大数据_ElasticSearch/87.png)
 
 > 3.TopN
 
-![image](/img/articleContent/大数据_ElasticSearch/88.png)
+ ![](/img/articleContent/大数据_ElasticSearch/88.png)
 
 > 4.类似油量表的展示
 
-![image](/img/articleContent/大数据_ElasticSearch/89.png)
+ ![](/img/articleContent/大数据_ElasticSearch/89.png)
 
 > 5.Markdown自定义数据展示
 
-![image](/img/articleContent/大数据_ElasticSearch/90.png)
+ ![](/img/articleContent/大数据_ElasticSearch/90.png)
 
 > 6.以表格方式展示数据
 
-![image](/img/articleContent/大数据_ElasticSearch/91.png)
+ ![](/img/articleContent/大数据_ElasticSearch/91.png)
 
 > 操作步骤：
 
 > 1.创建TSVB可视化对象
 
-![image](/img/articleContent/大数据_ElasticSearch/92.png)
+ ![](/img/articleContent/大数据_ElasticSearch/92.png)
 
 > 2.配置Time Series数据源分组条件
 
-![image](/img/articleContent/大数据_ElasticSearch/93.png)
+ ![](/img/articleContent/大数据_ElasticSearch/93.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/94.png)
+ ![](/img/articleContent/大数据_ElasticSearch/94.png)
 
 > 3.配置Metric
 
-![image](/img/articleContent/大数据_ElasticSearch/95.png)
+ ![](/img/articleContent/大数据_ElasticSearch/95.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/96.png)
+ ![](/img/articleContent/大数据_ElasticSearch/96.png)
 
 > 4.TopN
 
-![image](/img/articleContent/大数据_ElasticSearch/97.png)
+ ![](/img/articleContent/大数据_ElasticSearch/97.png)
 
 #### 11.5.5 制作用户选择请求方式、响应字节大小控制组件
 
@@ -3870,31 +3870,31 @@ uri: "\/itcast.cn\/*"
 
 - 筛选出来指定范围的数据。例如：我们筛选某个价格区间的商品等。
 
-![image](/img/articleContent/大数据_ElasticSearch/98.png)
+ ![](/img/articleContent/大数据_ElasticSearch/98.png)
 
 ##### 11.5.5.2 Kibana开发
 
-![image](/img/articleContent/大数据_ElasticSearch/99.png)
+ ![](/img/articleContent/大数据_ElasticSearch/99.png)
 
-![image](/img/articleContent/大数据_ElasticSearch/100.png)
+ ![](/img/articleContent/大数据_ElasticSearch/100.png)
 
 ### 11.6 制作Dashboard
 
 > 接下来，我们把前面的几个图形放到一个看板中。这样，我们就可以在一个看板中，浏览各类数据了。
 
-![image](/img/articleContent/大数据_ElasticSearch/101.png)
+ ![](/img/articleContent/大数据_ElasticSearch/101.png)
 
 > 1.点击第三个组件图标，并创建一个新的Dashboard。
 
-![image](/img/articleContent/大数据_ElasticSearch/102.png)
+ ![](/img/articleContent/大数据_ElasticSearch/102.png)
 
 > 2.点击Edit编辑Dashboard。
 
-![image](/img/articleContent/大数据_ElasticSearch/103.png)
+ ![](/img/articleContent/大数据_ElasticSearch/103.png)
 
 > 3.依次添加我们之前制作好的图表。
 
-![image](/img/articleContent/大数据_ElasticSearch/104.png)
+ ![](/img/articleContent/大数据_ElasticSearch/104.png)
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
