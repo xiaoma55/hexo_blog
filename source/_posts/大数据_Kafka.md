@@ -56,7 +56,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 如果模块之间不存在直接调用，那么新增模块或者修改模块就对其他模块影响最小，这样系统的可扩展性无疑更好一些！
 
-![image](/img/articleContent/大数据_Kafka/1.png)
+ ![](/img/articleContent/大数据_Kafka/1.png)
 
 > 由于消息与平台和语言无关，并且在语法上也不再是函数之间的调用，因此，消息队列允许应用接口独立地进行扩展，只用应用接口遵守同样的接口约束。
 
@@ -65,7 +65,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 > 
 >> (2)人脸识别系统定时从消息队列中读取数据，完成对新增图片的识别。
 
-![image](/img/articleContent/大数据_Kafka/2.png)
+ ![](/img/articleContent/大数据_Kafka/2.png)
 
 > 图片上传系统无须关心人脸识别系统是否对上传的图片进行了处理，它只需要关心是否成功将图片信息写入消息队列。
 
@@ -75,20 +75,20 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 在不使用消息队列的情况下,用户的请求数据直接写入数据库,在高并发的情况下,会对数据库造成巨大的压力,同时也使得响应延迟加剧.在使用消息队列后,用户请求的数据发送给消息队列后立即返回,再消息队列的消费者进程(通常该进程独立部署在专门的服务器上)从消息中获取数据,异步写入数据库.由于消息队列服务器处理速度远远快于数据库,因此用户的响应延迟得到有效改善.显著提高服务器性能
 
-![image](/img/articleContent/大数据_Kafka/3.png)
+ ![](/img/articleContent/大数据_Kafka/3.png)
 
 > 用户在注册账号时，服务程序需要给用户发送邮件注册信息和短信注册信息。比较传统的做法是－一通过串行和并行的方式来实现。
 >>(1)串行方式： 先将用户注册信息写入数据库，然后发送短信注册信息，再发送邮件注册信息。以上三个任务全部完成后，才会将结果返回给用户。具体流程如图1 - 3 所示。假设这三个阶段的耗时均为20 ms ， 不考虑网络等其他消耗，则整个过程需耗时60ms 。
 > 
 >>(2)并行方式：先将用户注册信息写入数据库， 然后在发送短信注册信息的同时还发送邮件注册信息。以上任务全部完成后才会将结果返回给用户。具体流程如图1 - 4 所示。
 
-![image](/img/articleContent/大数据_Kafka/4.png)
+ ![](/img/articleContent/大数据_Kafka/4.png)
 
 > 假设这三个阶段的耗时均为20ms ， 不考虑网络等其他消耗，则整个过程需耗时40 ms 。<br/>
 > 与串行的不同之处是，并行处理提高了处理效率，减少了处理时间。<br/>
 > 针对上述应用场景，采传统方式时，系统的性能（如并发量、吞吐量、响应时间等）会产生瓶颈。此时需要引入消息队列异步处理非必要业务环节。具体架构如图1-5 所示。
 
-![image](/img/articleContent/大数据_Kafka/5.png)
+ ![](/img/articleContent/大数据_Kafka/5.png)
 
 > 用户将注册信息写入数据库约耗时20ms (和串行和并行的处理时间相同） 。短信和邮件注册信息写入消息队列后会直接将结果返回给用户。由于写入消息队列的速度非常快，基本可以忽略。<br/>
 > 另外， “通过异步读取消息队列中的短信注册信息”过程和“邮件注册信息”过程相当于同时进行的，那么整个过程约耗时20ms 。<br/>
@@ -98,13 +98,13 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 消息队列还具有很好的削峰作用,通过异步请求,将短时间高并发产生的事务消息存储在消息队列中,从而削平高峰期的并发事务.在电商网站促销,秒杀活动中,合理使用消息队列,可有效抵御促销活动刚开始大量涌入的订单对系统造成的冲击
 
-![image](/img/articleContent/大数据_Kafka/6.png)
+ ![](/img/articleContent/大数据_Kafka/6.png)
 
 > 数据限流也是消息队列的常用场景之一， 一般在促销和“秒杀”活动中使用得较为广泛。<br/>
 > 例如，在电商的“双11 ＂活动中， 由于瞬间的数据访问量过大，服务器接收到的数据请求过大，则导致服务器上的应用服务无法处理请求而崩溃。<br/>
 > 为了解决这类问题， 一般需要先将用户请求写入消息队列(相当于用消息队列做一次缓冲），然后服务器上的应用服务再从消息队列中读取数据。具体流程如图1 - 6 所示。
 
-![image](/img/articleContent/大数据_Kafka/7.png)
+ ![](/img/articleContent/大数据_Kafka/7.png)
 
 > 数据限流具有以下优点：
 >> 用户请求写数据到消息队列时，不与应用业务服务直接接触，中间存在一次缓冲。这极大地减少了应用服务处理用户请求的压力。
@@ -117,7 +117,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 消息队列具有高效的通信机制，所以其在点对点通信和聊天室通信中被广泛应用。
 
-![image](/img/articleContent/大数据_Kafka/8.png)
+ ![](/img/articleContent/大数据_Kafka/8.png)
 
 ### 1.3 消息系统的分类
 
@@ -127,7 +127,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 > 2.`发布/订阅模式`（一对多，数据生产后，推送给所有订阅者）
 >> 发布订阅模型则是一个基于推送的消息传送模型。发布订阅模型可以有多种不同的订阅者，临时订阅者只在主动监听主题时才接收消息，而持久订阅者则监听主题的所有消息，即使当前订阅者不可用，处于离线状态。和点对点方式不同，发布到topic的消息会被所有订阅者消费。
 
-![image](/img/articleContent/大数据_Kafka/9.png)
+ ![](/img/articleContent/大数据_Kafka/9.png)
 
 ### 1.4 常见的消息系统
 
@@ -151,7 +151,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 >> 5.ZeroMQ：号称最快的消息队列系统，尤其针对大吞吐量的需求场景，擅长的高级/复杂的队列，但是技术也复杂，并且只提供非持久性的队列。<br/>
 >> 6.Redis：是一个key-Value的NOSql数据库，但也支持MQ功能，数据量较小，性能优于RabbitMQ，数据超过1w时就慢的无法忍受
 
-![image](/img/articleContent/大数据_Kafka/10.png)
+ ![](/img/articleContent/大数据_Kafka/10.png)
 
 ## 2 Kafka简介
 
@@ -175,7 +175,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 如今， Kafka 项目成为Apache 项目基金会的顶级项目之一。
 
-![image](/img/articleContent/大数据_Kafka/11.png)
+ ![](/img/articleContent/大数据_Kafka/11.png)
 
 > 官网：
 >> [`http://kafka.apache.org/`](http://kafka.apache.org/)
@@ -186,7 +186,7 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 >> [`http://kafka.apache.org/documentation/#operations`](http://kafka.apache.org/documentation/#operations)
 >> [`http://kafka.apache.org/documentation/#security`](http://kafka.apache.org/documentation/#security)
 
-![image](/img/articleContent/大数据_Kafka/12.png)
+ ![](/img/articleContent/大数据_Kafka/12.png)
 
 ### 2.2 设计初衷
 
@@ -238,9 +238,9 @@ Kafka的目的是通过Hadoop的并行加载机制来`统一线上和离线的�
 
 > 在流式计算中，Kafka一般用来缓存数据，Storm、Spark Streaming、Flink通过消费Kafka的数据进行计算。
 
-![image](/img/articleContent/大数据_Kafka/13.png)
+ ![](/img/articleContent/大数据_Kafka/13.png)
 
-![image](/img/articleContent/大数据_Kafka/14.png)
+ ![](/img/articleContent/大数据_Kafka/14.png)
 
 ## 3 Kafka安装
 
@@ -518,7 +518,7 @@ kafkacmd.sh stop
 
 ## 4 Kafka常用命令
 
-![image](/img/articleContent/大数据_Kafka/33.png)
+ ![](/img/articleContent/大数据_Kafka/33.png)
 
 ### 4.1 主题管理
 
@@ -776,7 +776,7 @@ kafka-topics.sh -describe -zookeeper node1:2181 --topic user2
 
 > Kafka 生产者交互流程如图所示。
 
-![image](/img/articleContent/大数据_Kafka/34.png)
+ ![](/img/articleContent/大数据_Kafka/34.png)
 
 > Kafka 系统提供了一系列的操作脚本， 这些脚本放置在$KAFKA HOME/bin 目录中。
 
@@ -814,7 +814,7 @@ kafka-console-consumer.sh --zookeeper node1:2181  --topic test_topic --from-begi
 
 > 如果一个消费者组订阅了主题，那么该主题中的每个分区只能分配给某一个消费者组中的某一个消费者程序。所以一般我们让`分区数 = 消费者数`
 
-![image](/img/articleContent/大数据_Kafka/35.png)
+ ![](/img/articleContent/大数据_Kafka/35.png)
 
 ##### 4.4.1.2 为什么需要消费者组
 
@@ -831,22 +831,22 @@ kafka-console-consumer.sh --zookeeper node1:2181  --topic test_topic --from-begi
 > 1 个消费者程序，读取主题中6 个分区的数据(消费者压力很大)
 >> 例如，现在有一个业务主题IP_Login ，它有6 个分区。而消费者组IP_Login_Group 中只有一个消费者程序IP_Login_ Consumer1 消费者程序Consumer1读取6 个分区的消息数据，如图所示。
 
-![image](/img/articleContent/大数据_Kafka/36.png)
+ ![](/img/articleContent/大数据_Kafka/36.png)
 
 > 3 个消费者程序，读取主题中6 个分区的数据(消费者压力还是比较大)
 >> 如果消费者组中的消费者程序增加到3 个，此时每个消费者程序将读取两个分区中的消息数据， 如图
 
-![image](/img/articleContent/大数据_Kafka/37.png)
+ ![](/img/articleContent/大数据_Kafka/37.png)
 
 > 6 个消费者程序，读取主题中6 个分区的数据(最佳状态: 消费者程序的数量 = 最大分区数)
 >> 如果消费者组中的消费者程序增加到6 个，此时， 每个消费者程序将分别读取l 个分区的消息数据，如图
 
-![image](/img/articleContent/大数据_Kafka/38.png)
+ ![](/img/articleContent/大数据_Kafka/38.png)
 
 > 7 个消费者程序，读取主题中6 个分区的数据(会有消费者处于空闲/浪费)
 >> 如果消费者组中的消费者程序增加到7 个，此时， 每个消费者程序将分别读取1 个分区的消息数据，剩余的1 个消费者程序会处于空闲状态，如图
 
-![image](/img/articleContent/大数据_Kafka/39.png)
+ ![](/img/articleContent/大数据_Kafka/39.png)
 
 > 总结
 >> 总之，消费者客户端可以通过增加消费者组中消费者程序的个数来进行水平扩展，提升读取主题消息数据的能力。
@@ -913,9 +913,9 @@ kafka-console-consumer.sh --zookeeper node1:2181  group.id=test_topic_group --to
 >> 在使用老版本消费者程序“消费”数据时， 每个消费者程序在被创建时都会往Zookeeper集群中写入元数据信息。
 >> 如果消费者程序所属的消费者组在Zookeeper 集群中不存在，则会在Zookeeper 集群上的/consumers 目录中创建一个以消费者组名命名的目录，并在该目录下创建3 个子目录ids 、owners 、offsets
 
-![image](/img/articleContent/大数据_Kafka/40.png)
+ ![](/img/articleContent/大数据_Kafka/40.png)
 
-![image](/img/articleContent/大数据_Kafka/41.png)
+ ![](/img/articleContent/大数据_Kafka/41.png)
 
 ## 5 Kafka-JavaAPI操作
 
@@ -945,7 +945,7 @@ kafka-console-consumer.sh --zookeeper node1:2181  group.id=test_topic_group --to
 > 2 .异步模式数据写入流程
 >> 例如，一个业务主题（ip_login）有6 个分区。生产者客户端写入一条消息记录时， 消息记录会先写入某个缓冲区，生产者客户端直接得到结果（这时，缓冲区里的数据并没有写到Kafka代理节点中主题的某个分区）。之后， 缓冲区中的数据会通过异步模式发送到Kafka 代理节点中主题的某个分区中。具体数据写入流程如图所示。
 
-![image](/img/articleContent/大数据_Kafka/42.png)
+ ![](/img/articleContent/大数据_Kafka/42.png)
 
 > 消息记录提交给send()方法后，实际上该消息记录被放入一个缓冲区的发送队列，然后通过后台线程将其从缓冲区队列中取出井进行发送； 发送成功后会触发send 方法的回调函数Callback 。
 
@@ -959,7 +959,7 @@ kafka-console-consumer.sh --zookeeper node1:2181  group.id=test_topic_group --to
 > 2.同步模式的数据写入流程
 >> 例如，在一个业务主题ip_login 中有6 个分区。生产者客户端写入一条消息记录到生产者服务端，生产者服务端接收到数据后会立马将其发送到主题ip_login 的某个分区去，然后才将结果返给生产者客户端。具体流程如图4- 8 所示。
 
-![image](/img/articleContent/大数据_Kafka/43.png)
+ ![](/img/articleContent/大数据_Kafka/43.png)
 
 > 这里通过调用Future 接口中的get（）方法等待Kafka 集群代理节点(Broker)的状态返回。如果Producer 发送消息记录成功了， 则返回RecordMetadata 对象，该对象可用来查看消息记录的偏移量(Offset)。
 
@@ -971,7 +971,7 @@ kafka-console-consumer.sh --zookeeper node1:2181  group.id=test_topic_group --to
 
 ##### 5.1.2.3 代码演示
 
-![image](/img/articleContent/大数据_Kafka/44.png)
+ ![](/img/articleContent/大数据_Kafka/44.png)
 
 > `pom`
 
@@ -1136,7 +1136,7 @@ public class MyKafkaProducer_ASync {
 
 ##### 5.1.3.1 默认分区策略
 
-![image](/img/articleContent/大数据_Kafka/45.png)
+ ![](/img/articleContent/大数据_Kafka/45.png)
 
 > `第1种：如果指定了分区号，那么数据就会全部进入到指定的分区里面去`
 >> //producer.send(new ProducerRecord<String, String>("test",1,"1", "hello world"+i));
@@ -1226,7 +1226,7 @@ props.put("partitioner.class", "cn.xiaoma.MyPartitioner");// 指定自定义分�
 > [https://blog.csdn.net/Simon_09010817/article/details/83748974](https://blog.csdn.net/Simon_09010817/article/details/83748974) <br/>
 > [https://blog.csdn.net/Simon_09010817/article/details/83750115](https://blog.csdn.net/Simon_09010817/article/details/83750115)
 
-![image](/img/articleContent/大数据_Kafka/46.png)
+ ![](/img/articleContent/大数据_Kafka/46.png)
 
 > 消费者新接口的实现原理
 >> 在Kafka 0.10.0.x 及之后版本中， 消费者实现的原理并不复杂， 它利用Kafka 系统的内部主题，以消费者组(Group) 、主题(Topic) 和分区(Partition)作为组合主键，所有消费者程序产生的偏移量(Offsets)都会提交到该内部主题__consumer_offsets中进行存储。
@@ -1272,7 +1272,7 @@ props.put("partitioner.class", "cn.xiaoma.MyPartitioner");// 指定自定义分�
 
 > Kafka 系统自动提交偏移量的底层实现调用了`ConsumerCoordinator` 的`commitOffsetsSync()`函数来进行同步提交，或者·commitOffsetsAsync()·函数来进行异步提交。自动提交的流程如图
 
-![image](/img/articleContent/大数据_Kafka/47.png)
+ ![](/img/articleContent/大数据_Kafka/47.png)
 
 ```
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -1677,15 +1677,15 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 ### 8.1 架构图解
 
-![image](/img/articleContent/大数据_Kafka/15.png)
+ ![](/img/articleContent/大数据_Kafka/15.png)
 
-![image](/img/articleContent/大数据_Kafka/16.png)
+ ![](/img/articleContent/大数据_Kafka/16.png)
 
-![image](/img/articleContent/大数据_Kafka/17.png)
+ ![](/img/articleContent/大数据_Kafka/17.png)
 
-![image](/img/articleContent/大数据_Kafka/18.png)
+ ![](/img/articleContent/大数据_Kafka/18.png)
 
-![image](/img/articleContent/大数据_Kafka/19.png)
+ ![](/img/articleContent/大数据_Kafka/19.png)
 
 ### 8.2 核心概念
 
@@ -1727,15 +1727,15 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 > 例如充值记录、登录记录、交易记录、聊天记录，分别写入到充值主题、登录主题、交易主题、聊天主题中进行存储。
 
-![image](/img/articleContent/大数据_Kafka/20.png)
+ ![](/img/articleContent/大数据_Kafka/20.png)
 
-![image](/img/articleContent/大数据_Kafka/21.png)
+ ![](/img/articleContent/大数据_Kafka/21.png)
 
 ##### 8.2.2.2 分区
 
 > 通过分区(Partition)来支持物理层面上的并发读写， 以提高Kafka 集群的吞吐量。
 
-![image](/img/articleContent/大数据_Kafka/22.png)
+ ![](/img/articleContent/大数据_Kafka/22.png)
 
 > 每一个主题(Topic)中可以有一个或者多个分区(Partition)。
 
@@ -1745,13 +1745,13 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 > 一个分区只对应一个代理节点(Broker )，一个代理节点可以管理多个分区。
 
-![image](/img/articleContent/大数据_Kafka/23.png)
+ ![](/img/articleContent/大数据_Kafka/23.png)
 
 > Kafka 通过分区(Partition)来支持物理层面上的并发读写， 以提高Kafka 集群的吞吐量。如下图:
 
 > Consumer group A 有两个消费者来读取4个partition中数据；Consumer group B有四个消费者来读取4个 partition中的数据
 
-![image](/img/articleContent/大数据_Kafka/24.png)
+ ![](/img/articleContent/大数据_Kafka/24.png)
 
 ##### 8.2.2.3 副本
 
@@ -1764,9 +1764,9 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 > `注意`:
 >> 一般设置为2或3，不可设置太大，因为数据要同步到不同机器上，副本数太大的话要大量的网络传输和磁盘占用
 
-![image](/img/articleContent/大数据_Kafka/25.png)
+ ![](/img/articleContent/大数据_Kafka/25.png)
 
-![image](/img/articleContent/大数据_Kafka/26.png)
+ ![](/img/articleContent/大数据_Kafka/26.png)
 
 ##### 8.2.2.4 记录
 
@@ -1780,7 +1780,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 > offset偏移量是分区内每条消息的id/唯一标记，是一个long型数字/8个字节的数字,用于定位位于segment段里的唯一消息。
 
-![image](/img/articleContent/大数据_Kafka/27.png)
+ ![](/img/articleContent/大数据_Kafka/27.png)
 
 > Kafka offset管理
 >> 消费者在消费的过程中需要记录自己消费了多少数据，即消费 Offset。
@@ -1789,7 +1789,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 > 
 >> 每个 Consumer Group、每个 Topic 的每个Partition 都有各自的 Offset，如下图所示。
 
-![image](/img/articleContent/大数据_Kafka/28.png)
+ ![](/img/articleContent/大数据_Kafka/28.png)
 
 > 通常由如下几种 Kafka Offset 的管理方式：
 >> 1.Spark Checkpoint：在 Spark Streaming 执行Checkpoint 操作时，将 Kafka Offset 一并保存到 HDFS 中。这种方式的问题在于：当 Spark Streaming 应用升级或更新时，以及当Spark 本身更新时，Checkpoint 可能无法恢复。因而，不推荐采用这种方式。
@@ -1800,7 +1800,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 > 
 >> 4.KAFKA 自身的一个特殊 Topic（__consumer_offsets）中：这种方式支持大吞吐量的Offset 更新，又不需要手动编写 Offset 管理程序或者维护一套额外的集群，因而是迄今为止最为理想的一种实现方式。
 
-![image](/img/articleContent/大数据_Kafka/29.png)
+ ![](/img/articleContent/大数据_Kafka/29.png)
 
 ##### 8.2.3.2 Segment(分段)
 
@@ -1815,13 +1815,13 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 > 
 >> segment file的命名为:起始offset.log.例如"00000000000.log";
 
-![image](/img/articleContent/大数据_Kafka/30.png)
+ ![](/img/articleContent/大数据_Kafka/30.png)
 
 > Kafka解决查询效率的手段之一是将数据文件分段，比如有100条Message，它们的offset是从0到99。假设将数据文件分成5段，第一段为0-19，第二段为20-39，以此类推，每段放在一个单独的数据文件里面，数据文件以该段中最小的offset命名。这样在查找指定offset的Message的时候，用二分查找就可以定位到该Message在哪个段中。
 
-![image](/img/articleContent/大数据_Kafka/31.png)
+ ![](/img/articleContent/大数据_Kafka/31.png)
 
-![image](/img/articleContent/大数据_Kafka/32.png)
+ ![](/img/articleContent/大数据_Kafka/32.png)
 
 > 比如：要查找绝对offset为7的Message：
 >> 1.首先是用二分查找确定它是在哪个LogSegment中，自然是在第一个Segment中。
@@ -1901,7 +1901,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 #### 8.3.2 写入流程
 
-![image](/img/articleContent/大数据_Kafka/48.png)
+ ![](/img/articleContent/大数据_Kafka/48.png)
 
 > producer写入消息流程如下：
 > 1、总体流程
@@ -1932,7 +1932,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 > 下图中的topic有3个分区，每个分区的偏移量都从0开始，不同分区之间的偏移量都是独立的，不会相互影响。
 
-![image](/img/articleContent/大数据_Kafka/49.png)
+ ![](/img/articleContent/大数据_Kafka/49.png)
 
 > 我们可以看到，每个Partition中的消息都是有序的，生产的消息被不断追加到Partition log上，其中的每一个消息都被赋予了一个唯一的offset值。
 
@@ -1955,7 +1955,7 @@ kafka-console-producer.sh --broker-list node1:9092 --topic test_topic
 
 > DefaultPartitioner类源码
 
-![image](/img/articleContent/大数据_Kafka/50.png)
+ ![](/img/articleContent/大数据_Kafka/50.png)
 
 > 3）消息有序性
 >> 传统消息系统在服务端保持消息的顺序，如果有多个消费者消费同一个消息队列，服务端会以消费存储的顺序依次发送给消费者。
@@ -1975,9 +1975,9 @@ Kafka以分区作为最小的粒度，将每个分区分配给消费者组中不
 
 > 物理上把topic分成一个或多个patition（对应 server.properties 中的num.partitions=3配置），每个patition物理上对应一个文件夹（该文件夹存储该patition的所有数据segment文件,包括消息文件.log和索引文件.index），如下：
 
-![image](/img/articleContent/大数据_Kafka/51.png)
+ ![](/img/articleContent/大数据_Kafka/51.png)
 
-![image](/img/articleContent/大数据_Kafka/52.png)
+ ![](/img/articleContent/大数据_Kafka/52.png)
 
 #### 8.4.2 存储策略
 
@@ -1996,7 +1996,7 @@ Kafka以分区作为最小的粒度，将每个分区分配给消费者组中不
 
 > 目的是为了减少Kafka对于三方系统的依赖(侧面看出kafka的野心很大)
 
-![image](/img/articleContent/大数据_Kafka/53.png)
+ ![](/img/articleContent/大数据_Kafka/53.png)
 
 ### 8.5 Kafka消费过程分析
 
@@ -2020,7 +2020,7 @@ Kafka以分区作为最小的粒度，将每个分区分配给消费者组中不
 
 > 在一些消息系统中，消息代理会在消息被消费之后立即删除消息。如果有不同类型的消费者订阅同一个主题，消息代理可能需要冗余地存储同一消息；或者等所有消费者都消费完才删除，这就需要消息代理跟踪每个消费者的消费状态，这种设计很大程度上限制了消息系统的整体吞吐量和处理延迟。
 
-![image](/img/articleContent/大数据_Kafka/54.png)
+ ![](/img/articleContent/大数据_Kafka/54.png)
 
 > `Kafka的做法是生产者发布的所有消息会一致保存在Kafka集群中，不管消息有没有被消费。用户可以通过设置保留时间或文件大小来清理过期的数据`，比如，设置保留策略为两天。那么，在消息发布之后，它可以被不同的消费者消费，在两天之后，过期的消息就会自动清理掉。
 >> 1）基于时间：log.retention.hours=168   # 24*7
@@ -2031,7 +2031,7 @@ Kafka以分区作为最小的粒度，将每个分区分配给消费者组中不
 
 > Consumer连接指定的Topic partition所在leader broker，采用pull方式从kafkalogs中获取消息。对于不同的消费模式，会将offset保存在不同的地方
 
-![image](/img/articleContent/大数据_Kafka/55.png)
+ ![](/img/articleContent/大数据_Kafka/55.png)
 
 #### 8.5.3 消费模式
 
@@ -2097,7 +2097,7 @@ while (true) {
 
 #### 8.5.4 消费者组
 
-![image](/img/articleContent/大数据_Kafka/56.png)
+ ![](/img/articleContent/大数据_Kafka/56.png)
 
 > 消费者是以consumer group消费者组的方式工作，由一个或者多个消费者组成一个组，共同消费一个topic。
 
@@ -2148,7 +2148,7 @@ chmod u+x kafka-manager
 jps
 ```
 
-![image](/img/articleContent/大数据_Kafka/58.png)
+ ![](/img/articleContent/大数据_Kafka/58.png)
 
 > web页面访问：
 
@@ -2158,19 +2158,19 @@ http://node1:8070
 
 > 添加kafka集群
 
-![image](/img/articleContent/大数据_Kafka/59.png)
+ ![](/img/articleContent/大数据_Kafka/59.png)
 
-![image](/img/articleContent/大数据_Kafka/60.png)
+ ![](/img/articleContent/大数据_Kafka/60.png)
 
-![image](/img/articleContent/大数据_Kafka/61.png)
+ ![](/img/articleContent/大数据_Kafka/61.png)
 
 > 浏览kafka的概况
 
-![image](/img/articleContent/大数据_Kafka/62.png)
+ ![](/img/articleContent/大数据_Kafka/62.png)
 
 > 创建主题
 
-![image](/img/articleContent/大数据_Kafka/63.png)
+ ![](/img/articleContent/大数据_Kafka/63.png)
 
 ## 10 KafkaTool
 
@@ -2184,15 +2184,15 @@ https://www.kafkatool.com/download.html
 
 > 安装：傻瓜式
 
-![image](/img/articleContent/大数据_Kafka/64.png)
+ ![](/img/articleContent/大数据_Kafka/64.png)
 
-![image](/img/articleContent/大数据_Kafka/65.png)
+ ![](/img/articleContent/大数据_Kafka/65.png)
 
-![image](/img/articleContent/大数据_Kafka/66.png)
+ ![](/img/articleContent/大数据_Kafka/66.png)
 
-![image](/img/articleContent/大数据_Kafka/67.png)
+ ![](/img/articleContent/大数据_Kafka/67.png)
 
-![image](/img/articleContent/大数据_Kafka/68.png)
+ ![](/img/articleContent/大数据_Kafka/68.png)
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
