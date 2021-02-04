@@ -9826,6 +9826,10 @@ public class OrderAutomaticFavorableComments {
 
 ![](/img/articleContent/大数据_Flink/184.png)
 
+![](/img/articleContent/大数据_Flink/185.png)
+
+![](/img/articleContent/大数据_Flink/186.png)
+
 > 实时过滤出配置中的用户，并在事件流中补全这批用户的基础信息。
 
 > 事件流：表示用户在某个时刻浏览或点击了某个商品，格式如下。
