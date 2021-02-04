@@ -9317,6 +9317,57 @@ GROUP BY SESSION(rowtime, INTERVAL ‘12’ HOUR), user
 
 ### 9.1 Flink实现模拟双十一实时大屏统计
 
+#### 9.1.1 需求
+
+> 在大数据的实时处理中，实时的大屏展示已经成了一个很重要的展示项，比如最有名的双十一大屏实时销售总价展示。除了这个，还有一些其他场景的应用，比如我们在我们的后台系统实时的展示我们网站当前的pv、uv等等，其实做法都是类似的。
+
+> 今天我们就做一个最简单的模拟电商统计大屏的小例子，
+
+> 需求如下：
+>> 1.实时计算出当天零点截止到当前时间的销售总额
+>> 2.计算出各个分类的销售top3
+>> 3.每秒钟更新一次统计结果
+
+#### 9.1.2 数据
+
+> 首先我们通过自定义source 模拟订单的生成，生成了一个Tuple2,第一个元素是分类，第二个元素表示这个分类下产生的订单金额，金额我们通过随机生成.
+
+```
+/**
+* 模拟生成某一个分类下的订单
+  */
+  public static class MySource implements SourceFunction<Tuple2<String,Double>> {
+      private volatile boolean isRunning = true;
+      private Random random = new Random();
+      String category[] = {
+          "女装", "男装",
+          "图书", "家电",
+          "洗护", "美妆",
+          "运动", "游戏",
+          "户外", "家具",
+          "乐器", "办公"
+        };
+
+      @Override
+      public void run(SourceContext<Tuple2<String,Double>> ctx) throws Exception{
+          while (isRunning){
+              Thread.sleep(10);
+              //随机生成一个分类
+              String c = category[(int) (Math.random() * (category.length - 1))];
+              //随机生成一个该分类下的随机金额的成交订单
+              double price = random.nextDouble() * 100;
+              ctx.collect(Tuple2.of(c, price));
+          }
+      }
+      @Override
+      public void cancel(){
+        isRunning = false;
+      }
+  }
+```
+
+#### 9.1.3 代码实现
+
 ```
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9583,7 +9634,51 @@ public class DoubleElevenBigScreem {
 }
 ```
 
+#### 9.1.4 效果
+
+![](/img/articleContent/大数据_Flink/182.png)
+
 ### 9.2 Flink实现订单自动好评
+
+#### 9.2.1 需求
+
+> 在电商领域会有这么一个场景，如果用户买了商品，在订单完成之后，一定时间之内没有做出评价，系统自动给与五星好评，我们今天主要使用Flink的定时器来简单实现这一功能。
+
+#### 9.2.2 数据
+
+> 自定义source模拟生成一些订单数据.
+
+> 在这里，我们生了一个最简单的二元组Tuple2,包含订单id和订单完成时间两个字段.
+
+```
+/**
+ * 自定义source模拟生成一些订单数据.
+ * 在这里，我们生了一个最简单的二元组Tuple2,包含订单id和订单完成时间两个字段.
+ */
+public static class MySource implements SourceFunction<Tuple2<String, Long>> {
+    private volatile boolean isRunning = true;
+
+    @Override
+    public void run(SourceContext<Tuple2<String, Long>> ctx) throws Exception {
+        Random random = new Random();
+        while (isRunning) {
+            Thread.sleep(1000);
+            //订单id
+            String orderid = UUID.randomUUID().toString();
+            //订单完成时间
+            long orderFinishTime = System.currentTimeMillis();
+            ctx.collect(Tuple2.of(orderid, orderFinishTime));
+        }
+    }
+
+    @Override
+    public void cancel() {
+        isRunning = false;
+    }
+}
+```
+
+#### 9.2.3 代码实现
 
 ```
 import org.apache.flink.api.common.state.MapState;
@@ -9721,7 +9816,112 @@ public class OrderAutomaticFavorableComments {
 }
 ```
 
+#### 9.2.4 效果
+
+![](/img/articleContent/大数据_Flink/183.png)
+
 ### 9.3 Flink-BroadcastState实现配置动态更新
+
+#### 9.3.1 需求
+
+![](/img/articleContent/大数据_Flink/184.png)
+
+> 实时过滤出配置中的用户，并在事件流中补全这批用户的基础信息。
+
+> 事件流：表示用户在某个时刻浏览或点击了某个商品，格式如下。
+
+```
+{"userID": "user_3", "eventTime": "2019-08-17 12:19:47", "eventType": "browse", "productID": 1}
+{"userID": "user_2", "eventTime": "2019-08-17 12:19:48", "eventType": "click", "productID": 1}
+```
+
+> 配置数据: 表示用户的详细信息，在Mysql中，如下。
+
+```
+DROP TABLE IF EXISTS `user_info`;
+CREATE TABLE `user_info`  (
+`userID` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+`userName` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+`userAge` int(11) NULL DEFAULT NULL,
+PRIMARY KEY (`userID`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+-- ----------------------------
+-- Records of user_info
+-- ----------------------------
+INSERT INTO `user_info` VALUES ('user_1', '张三', 10);
+INSERT INTO `user_info` VALUES ('user_2', '李四', 20);
+INSERT INTO `user_info` VALUES ('user_3', '王五', 30);
+INSERT INTO `user_info` VALUES ('user_4', '赵六', 40);
+SET FOREIGN_KEY_CHECKS = 1;
+```
+
+> 输出结果:
+
+```
+(user_3,2019-08-17 12:19:47,browse,1,王五,33)
+(user_2,2019-08-17 12:19:48,click,1,李四,20)
+```
+
+#### 9.3.2 BroadcastState介绍
+
+> 在开发过程中，如果遇到需要下发/广播配置、规则等低吞吐事件流到下游所有 task 时，就可以使用 Broadcast State。Broadcast State 是 Flink 1.5 引入的新特性。
+
+> 下游的 task 接收这些配置、规则并保存为 BroadcastState, 将这些配置应用到另一个数据流的计算中 。
+
+> 场景举例
+>> 1)动态更新计算规则: 如事件流需要根据最新的规则进行计算，则可将规则作为广播状态广播到下游Task中。
+>> 2)实时增加额外字段: 如事件流需要实时增加用户的基础信息，则可将用户的基础信息作为广播状态广播到下游Task中。
+
+#### 9.3.3 API介绍
+
+> 首先创建一个Keyed 或Non-Keyed 的DataStream，<br/>
+> 然后再创建一个BroadcastedStream，<br/>
+> 最后通过DataStream来连接(调用connect 方法)到Broadcasted Stream 上，<br/>
+> 这样实现将BroadcastState广播到Data Stream 下游的每个Task中。
+
+> 1.如果DataStream是Keyed Stream ，则连接到Broadcasted Stream 后， 添加处理ProcessFunction 时需要使用KeyedBroadcastProcessFunction 来实现， 下面是KeyedBroadcastProcessFunction 的API，代码如下所示：
+
+```
+public abstract class KeyedBroadcastProcessFunction<KS, IN1, IN2, OUT> extends BaseBroadcastProcessFunction {
+    public abstract void processElement(final IN1 value, final ReadOnlyContext ctx, final Collector<OUT> out) throws Exception;
+    public abstract void processBroadcastElement(final IN2 value, final Context ctx, final Collector<OUT> out) throws Exception;
+}
+```
+
+> 上面泛型中的各个参数的含义，说明如下：
+>>  KS：表示Flink 程序从最上游的Source Operator 开始构建Stream，当调用keyBy 时所依赖的Key 的类型；
+> 
+>>  IN1：表示非Broadcast 的Data Stream 中的数据记录的类型；
+> 
+>>  IN2：表示Broadcast Stream 中的数据记录的类型；
+> 
+>>  OUT：表示经过KeyedBroadcastProcessFunction 的processElement()和processBroadcastElement()方法处理后输出结果数据记录的类型。
+
+> 2.如果Data Stream 是Non-Keyed Stream，则连接到Broadcasted Stream 后，添加处理ProcessFunction 时需要使用BroadcastProcessFunction 来实现， 下面是BroadcastProcessFunction 的API，代码如下所示：
+
+```
+public abstract class BroadcastProcessFunction<IN1, IN2, OUT> extends BaseBroadcastProcessFunction {
+    public abstract void processElement(final IN1 value, final ReadOnlyContext ctx, final Collector<OUT> out) throws Exception;
+    public abstract void processBroadcastElement(final IN2 value, final Context ctx, final Collector<OUT> out) throws Exception;
+}
+```
+
+> 上面泛型中的各个参数的含义，与前面KeyedBroadcastProcessFunction 的泛型类型中的后3 个含义相同，只是没有调用keyBy 操作对原始Stream 进行分区操作，就不需要KS 泛型参数。
+
+> 具体如何使用上面的BroadcastProcessFunction，接下来我们会在通过实际编程，来以使用KeyedBroadcastProcessFunction 为例进行详细说明。
+
+> 注意事项
+>> 1) Broadcast State 是Map 类型，即K-V 类型。
+> 
+>> 2) Broadcast State 只有在广播的一侧, 即在BroadcastProcessFunction 或KeyedBroadcastProcessFunction 的processBroadcastElement 方法中可以修改。在非广播的一侧， 即在BroadcastProcessFunction 或KeyedBroadcastProcessFunction 的processElement 方法中只读。
+> 
+>> 3) Broadcast State 中元素的顺序，在各Task 中可能不同。基于顺序的处理，需要注意。
+> 
+>> 4) Broadcast State 在Checkpoint 时，每个Task 都会Checkpoint 广播状态。
+> 
+>> 5) Broadcast State 在运行时保存在内存中，目前还不能保存在RocksDB State Backend 中。
+
+#### 9.3.4 代码实现
 
 ```
 import org.apache.flink.api.common.state.BroadcastState;
