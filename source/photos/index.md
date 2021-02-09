@@ -50,8 +50,24 @@ date: 2021-02-08 14:13:16
     color: #fff;
     background-color: #d77fcc85;
 }
+.card{
+    border-radius: 10px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box; 
+    border: none; 
+    border-radius: .25rem;
+    background: none;
+}
 @media (prefers-color-scheme: dark) {
-  .card {background-color: #333;}
+  .card {
+    background-color: #333;
+  }
 }
 </style>
 
