@@ -197,7 +197,7 @@ custom_js:
   - /js/dongTaiHeiSeXianTiao.js # 动态黑色线条
   - /js/xiaoXueHua.js # 小雪花飘落
   - /js/yingHuaPiaoLuo.js # 樱花飘落
-  - /js/shuBiaoGenSuiXiaoXinXin.js # 鼠标跟随小星星
+#  - /js/shuBiaoGenSuiXiaoXinXin.js # 鼠标跟随小星星
 #  - //cdn.jsdelivr.net/gh/bynotes/texiao/source/js/daXueHua.js # 大雪花飘落
   - /js/dianJiChuXiaoAiXin.js # 鼠标点击出小爱心❤
   - /js/wangZhanBiaoTiEGao.js # 网站标题恶搞
