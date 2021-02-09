@@ -48,10 +48,10 @@ function createPlotIconsData() {
         if (isDir) {
             const subfiles = fs.readdirSync(path.join(__dirname, dirName));
             subfiles.forEach(function(subfileName) {
-                // 如果已经存在 则不再处理
-                // if (allPlots.find(o => o.fileName === subfileName && o.dirName === dirName)) {
-                //     return;
-                // }
+                //如果已经存在 则不再处理
+                if (allPlots.find(o => o.fileName === subfileName && o.dirName === dirName)) {
+                    return;
+                }
 
                 // 新增标
                 const plot = new Photo();
