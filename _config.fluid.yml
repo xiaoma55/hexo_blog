@@ -790,7 +790,6 @@ tag:
     start_color: "#BBBBEE"
     end_color: "#337ab7"
 
-
 #---------------------------
 # 关于页
 # About Page
@@ -811,15 +810,6 @@ about:
     # - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "豆瓣" }
     # - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
     - { class: "iconfont icon-wechat-fill", qrcode: "/img/icon/wechat.png" }
-
-
-# 相册
-photos:
-  enable: true
-  banner_img: /img/bg/aboutMeBanner.jpg
-  banner_img_height: 90
-  banner_mask_alpha: 0
-  subtitle:  "我的相册"
 
 #---------------------------
 # 404页

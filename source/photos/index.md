@@ -1,8 +1,8 @@
 ---
-title: photos
+title: I miss you , bros !
 layout: photo
-index_img: /img/articleBg/1(10).jpg
-banner_img: /img/articleBg/1(10).jpg
+index_img: /img/bg/photos.jpg
+banner_img: /img/bg/photos.jpg
 date: 2021-02-08 14:13:16
 ---
 
