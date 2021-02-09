@@ -1,7 +1,7 @@
 var imgDataPath = "/photos/photos.json"; //图片名称高宽信息json文件路径
 // var imgPath = "https://cdn.jsdelivr.net/gh/Cenergy/images/gallery/"; //图片访问路径
 var imgPath = "/img/photos/"; //图片访问路径
-var imgMaxNum = 5; //图片显示数量
+var imgMaxNum = 50; //图片显示数量
 
 var windowWidth =
     window.innerWidth ||
@@ -90,7 +90,7 @@ const photo = {
         });
         contentHtml += ` <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="home-tab">${li}</div>`;
 
-        const ulHtml = `<ul class="nav nav-tabs" id="myTab" role="tablist">${liHtml}</ul>`;
+        const ulHtml = `<ul class="nav nav-pills mb-3 photo-tabs" id="pills-tab" role="tablist">${liHtml}</ul><div id="helloTest"></div>`;
         const tabContent = `<div class="tab-content" id="myTabContent">${contentHtml}</div>`;
 
         $("#imageTab").append(ulHtml);

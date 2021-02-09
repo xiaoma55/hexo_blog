@@ -26,6 +26,30 @@ date: 2021-02-08 14:13:16
   width:100%;
   height:100%;
 }
+.photo-tab{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #e1eaf7;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    color: #606266;
+    font-size: .8rem;
+    transition: box-shadow .35s,-webkit-transform .35s;
+    transition: transform .35s,box-shadow .35s;
+    transition: transform .35s,box-shadow .35s,-webkit-transform .35s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-right: .8rem;
+    margin-top: .8rem;
+}
+.nav-pills .nav-link.active{
+    color: #fff;
+    background-color: #d77fcc85;
+}
 @media (prefers-color-scheme: dark) {
   .card {background-color: #333;}
 }
