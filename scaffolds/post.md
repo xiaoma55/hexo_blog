@@ -4,7 +4,7 @@ date: {{ date }}
 index_img: /img/articleBg/1(1).jpg
 banner_img: /img/articleBg/1(1).jpg
 tags:
-    - 标签一
+    - 大数据
     - 标签一
 category:
     - [编程, 大数据]
