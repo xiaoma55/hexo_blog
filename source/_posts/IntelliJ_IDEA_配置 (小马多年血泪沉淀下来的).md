@@ -197,5 +197,9 @@ Ctrl+F12 或者 右击列名  ：定位到某行数据后，可以跳转到指�
 
 ![设置背景图片](/img/articleContent/IDEASetting/backgroundImage4.png)
 
+## 13 Scala类型自动补全
+
+![设置Scala自动补全](/img/articleContent/IDEASetting/ScalaSetting1.png)
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
