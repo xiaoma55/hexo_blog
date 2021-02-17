@@ -677,7 +677,7 @@ disqus:
 # See: https://github.com/gitalk/gitalk#options
 gitalk:
   clientID: '61b738599506ef5e04c5'
-  clientSecret: 'f08b9f0ac709398cb1b80bd5e941614f17d020ed'
+  clientSecret: '73ca7d1370517fa09d37c373b3e2b36a2242abf2'
   repo: 'hexoBlogGitalk'
   owner: 'xiaoma55'
   admin: ['xiaoma55']
