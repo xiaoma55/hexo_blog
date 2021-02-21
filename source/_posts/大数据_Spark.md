@@ -7438,5 +7438,3 @@ object StructuredStreamingDemo06_Deduplication {
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/大数据_Spark/1.png)
