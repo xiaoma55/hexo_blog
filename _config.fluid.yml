@@ -54,7 +54,7 @@ code:
       # Select a style in the link
       # See: https://highlightjs.org/static/demo/
 #      style: "Github Gist"
-      style: "Atom One Dark"
+      style: "AndroidStudio"
 
       # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
       # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
@@ -351,9 +351,14 @@ scroll_down_arrow:
 scroll_top_arrow:
   enable: true
 
-# 头图滚动视差
-# Banner image scrolling parallax
-banner_parallax: true
+banner:
+  # 视差滚动，图片与板块会随着屏幕滚动产生视差效果
+  # Scrolling parallax
+  parallax: true
+
+  # 图片最小的宽高比，以免图片两边被过度裁剪，适用于移动端竖屏时，如需关闭设为 0
+  # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
+  width_height_ratio: 1.0
 
 
 #---------------------------
@@ -687,7 +692,6 @@ gitalk:
   pagerDirection: first
   distractionFreeMode: true
   createIssueManually: true
-  proxy: https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token
 
 # Valine
 # 基于 LeanCloud
@@ -873,7 +877,6 @@ links:
       link: "http://moliam.space/",
       image: "http://backgroundimg.oss-cn-shenzhen.aliyuncs.com/9_ball3_4k.jpg"
     }
-
 
 #---------------------------
 # 以下是配置 JS CSS 静态资源的 URL 前缀，可以自定义成 CDN 地址，

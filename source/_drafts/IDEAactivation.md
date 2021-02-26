@@ -9,7 +9,7 @@ tags:
   - 激活
 category:
     - [编程, IDEA]
-comment: 'off'
+ 
 date: 2020-11-16 22:54:26
 ---
 idea的全系产品都是收费的。

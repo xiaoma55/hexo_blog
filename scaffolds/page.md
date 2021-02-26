@@ -10,7 +10,6 @@ category:
     - [一级分类, 二级分类]
     - [一级分类, 二级分类]
     - [一级分类]
-comment: off
 layout: about
 ---
 
