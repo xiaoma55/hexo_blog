@@ -2758,10 +2758,7 @@ object ClickHouseUtils {
 }
 ```
 
-## 3 实时OLAP开发 
 
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/大数据_ClickHouse/1.png)
