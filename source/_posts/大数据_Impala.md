@@ -8,7 +8,7 @@ tags:
 category:
   - - 编程
     - 大数据
-date: 2021-03-02 17:50:59
+date: 2020-08-17 17:50:59
 ---
 
 Apache Impala是Apache Hadoop的开源原生分析数据库。

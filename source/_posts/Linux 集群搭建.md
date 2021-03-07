@@ -9,7 +9,7 @@ category:
   - - 编程
     - 大数据
  
-date: 2020-12-09 14:30:55
+date: 2019-05-05 14:30:55
 ---
 
 在学习linux的过程中，难免需要搭建个集群玩，今天就记录下搭建linux集群最基础的一些设置，当然，需要你先安装好一个linux虚拟机，可以查看{% post_link CenosInstallation 虚拟机安装 %} 和 {% post_link Cenos7CannotPingNet 虚拟机配置网络 %}。接下来，我们开始吧！

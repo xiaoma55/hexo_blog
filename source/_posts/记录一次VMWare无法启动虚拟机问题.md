@@ -8,7 +8,7 @@ category:
   - - 博客
     - 技术
  
-date: 2020-11-25 01:18:35
+date: 2018-11-07 01:18:35
 ---
 
 今天打开VMWare，突然打不开虚拟机，提示【VMware Workstation】 未能启动【VMWare Authorization Service】。您可以尝试手动启动【VMware Authorization】。

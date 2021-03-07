@@ -9,7 +9,7 @@ tags:
 category:
   - - 软件
  
-date: 2021-01-08 16:05:00
+date: 2019-11-02 16:05:00
 ---
 
 Beyond Compare是一套由Scooter Software推出的`文件比较工具`。
