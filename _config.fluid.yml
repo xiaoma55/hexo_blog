@@ -693,6 +693,7 @@ gitalk:
   pagerDirection: first
   distractionFreeMode: true
   createIssueManually: true
+  proxy: https://netnr-proxy.cloudno.de/https://github.com/login/oauth/access_token
 
 # Valine
 # 基于 LeanCloud
@@ -936,7 +937,7 @@ static_prefix:
 
   valine: https://cdn.staticfile.org/valine/1.4.14/
 
-  gitalk: https://cdn.staticfile.org/gitalk/1.7.2/
+  gitalk: https://cdn.staticfile.org/gitalk/1.7.0/
 
   disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1.0/dist/
 
