@@ -44,5 +44,3 @@ Adobe Acrobat 是由A`dobe公司`开发的一款`PDF（Portable Document Format�
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/工具_PDF/1.png)
