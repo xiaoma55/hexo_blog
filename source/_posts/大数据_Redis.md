@@ -514,7 +514,7 @@ bin/redis-cli -h node1.xiaoma.cn shutdown
 bin/redis-server redis.conf
 ```
 
-### 3.2 AOF持久阿虎方案
+### 3.2 AOF持久化方案
 
 #### 3.2.1 介绍
 
