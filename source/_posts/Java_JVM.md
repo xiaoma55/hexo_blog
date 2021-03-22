@@ -328,7 +328,7 @@ public class TestJVM {
 -Xms4800m | 初始化堆空间大小
 -Xmx4800m | 最大堆空间大小
 -Xmn1800m | 年轻代的空间大小
--XX:+PrintGCDetails | 打印GC闲情日志
+-XX:+PrintGCDetails | 打印GC详情日志
 -XX:+PrintGCDateStamps | 打印GC的耗时
 -XX:+HeapDumpOnOutOfMemoryError | 当抛出OOM时进行HeapDump
 -XX:HeapDumpPath=/home/admin/logs | 指定HeapDump的路径或目录
