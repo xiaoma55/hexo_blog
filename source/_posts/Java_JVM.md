@@ -32,7 +32,7 @@ Java虚拟机在执行字节码时，`把字节码解释成具体平台上的机
 > 我画的`visio原图`链接，有兴趣的同学可以在这个图上自己改
 
 ```
-链接：https://pan.baidu.com/s/1ml5DpdgSva4hzmyyF0zC6g 
+链接：https://pan.baidu.com/s/1bEDnR4Wvo_kqY43Jhbul-g 
 提取码：6666 
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
 ```
