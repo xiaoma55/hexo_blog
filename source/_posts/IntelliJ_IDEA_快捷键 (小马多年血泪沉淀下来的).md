@@ -35,6 +35,7 @@ Ctrl P             参数提示
 Ctrl Alt L         格式化
 Ctrl ALT H         查询方法的调用关系（可以选择引用和被引用） 常用
 ALT F7             查询方法的调用关系
+ALT 7/Ctrl F12     查看当前类中的所有方法
 F2                 定位到下一个报错位置（自行在setting->keymap中搜error找到Next Highlighted Error）
 Shift F2           定位到上一个报错位置（自行在setting->keymap中搜error找到Previous Highlighted Error）
 Ctrl G             跳到指定行
