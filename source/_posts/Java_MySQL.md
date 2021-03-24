@@ -1,5 +1,5 @@
 ---
-title: MySQL
+title: MySQL 存储原理
 index_img: /img/articleBg/1(76).jpg
 banner_img: /img/articleBg/1(76).jpg
 tags:
@@ -11,9 +11,19 @@ category:
 date: 2021-03-24 09:06:54
 ---
 
-写摘要，就是首页显示的那个
+`MySQL` 是最流行的`关系型数据库管理系统`。
+
+在 WEB 应用方面 MySQL 是最好的 `RDBMS`(Relational Database Management System：`关系数据库管理系统`)应用软件之一。
 
 <!-- more -->
+
+> 我画的`visio原图`链接，有兴趣的同学可以在这个图上自己改
+
+```
+链接：https://pan.baidu.com/s/1BMOk-anyl_XSSPxLtaDcMQ 
+提取码：6666 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
+```
 
 ## 1 MySQL底层存储
 
@@ -183,7 +193,7 @@ ALTER TABLE article ADD FULLTEXT INDEX index_article_contents　(contents);
 
 ### 3.5 MySQL为什么采用B+树而不是B树
 
-> 两个数都是特殊的二叉搜索树。
+> 两个数都是特殊的二叉搜索树。一个节点可以放多个数据。
 
 > `B树与B+树的最大区别就是`:
 >> `B树可以在非叶结点中存储数据`
