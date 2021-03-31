@@ -72,6 +72,7 @@ gitalk:
   pagerDirection: first
   distractionFreeMode: true
   createIssueManually: true
+  proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
 ```
 
 ## 4 完工
