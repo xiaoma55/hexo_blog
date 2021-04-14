@@ -310,6 +310,7 @@ navbar:
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "友链", link: "/links/", icon: "iconfont icon-link-fill" }
     - { key: "相册", link: "/photos/", icon: "iconfont icon-image" }
+    - { key: "工具", link: "/customerPage/box/index.html", icon: "iconfont icon-book" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user-fill" }
     - { key: "新冠肺炎疫情地图", link: "https://voice.baidu.com/act/newpneumonia/newpneumonia", icon: "iconfont icon-baidu-fill" }
 

@@ -2,7 +2,7 @@ var OriginTitle = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        $('[rel="icon"]').attr('href', "../img/icon/faviconRed.png");
+        $('[rel="icon"]').attr('href', "../img/icon/favicon.ico");
         document.title = '不要小宝贝啦ヽ(●-`Д´-)ノ！';
         clearTimeout(titleTime);
     }
