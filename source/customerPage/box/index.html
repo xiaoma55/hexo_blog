@@ -1,4 +1,5 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href=".\css\APlayer.min.css"><script src=".\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href=".\css\APlayer.min.css">
+<script src=".\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -23,96 +24,122 @@
     <script src="./js/jquery-1.11.1.min.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .content-block {
+            box-shadow: 0px 0px 14px #a59e9e5c;
+            padding: 20px;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 
 <body class="page-body">
-    <!-- skin-white -->
-    <div class="page-container">
-        <div class="sidebar-menu toggle-others fixed">
-            <div class="sidebar-menu-inner">
-                <header class="logo-env">
-                    <!-- logo -->
-                    <div class="logo">
-                        <a href="https://xiaoma.cool/" class="logo-expanded">
-                            <img src="./img/logo.png" width="100%" alt="">
-                        </a>
-                        <a href="https://xiaoma.cool/" class="logo-collapsed">
-                            <img src="./img/logo-collapsed.png" width="40" alt="">
-                        </a>
-                    </div>
-                    <div class="mobile-menu-toggle visible-xs">
-                        <a href="#" data-toggle="user-info-menu">
-                            <i class="linecons-cog"></i>
-                        </a>
-                        <a href="#" data-toggle="mobile-menu">
-                            <i class="fa-bars"></i>
-                        </a>
-                    </div>
-                </header>
-                <!-- 侧边菜单栏 -->
-                <ul id="main-menu" class="main-menu">
-                    <li>
-                        <a href="#开发社区" class="smooth">
-                            <i class="linecons-pencil"></i>
-                            <span class="title">开发社区</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#在线工具" class="smooth">
-                            <i class="linecons-search"></i>
-                            <span class="title">在线工具</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#站内游戏" class="smooth">
-                            <i class="linecons-globe"></i>
-                            <span class="title">站内游戏</span>
-                            <span class="label label-pink pull-right hidden-collapsed">HOT</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#影音站点" class="smooth">
-                            <i class="linecons-desktop"></i>
-                            <span class="title">影音站点</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#图片下载" class="smooth">
-                            <i class="linecons-lightbulb"></i>
-                            <span class="title">图片下载</span>
-                        </a>
-                    </li>
-                </ul>
-                <!-- END 侧边菜单栏 -->
-            </div>
+<!-- skin-white -->
+<div class="page-container">
+    <div class="sidebar-menu toggle-others fixed">
+        <div class="sidebar-menu-inner">
+            <header class="logo-env">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="https://xiaoma.cool/" class="logo-expanded">
+                        <img src="./img/logo.png" width="100%" alt="">
+                    </a>
+                    <a href="https://xiaoma.cool/" class="logo-collapsed">
+                        <img src="./img/logo-collapsed.png" width="40" alt="">
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle visible-xs">
+                    <a href="#" data-toggle="user-info-menu">
+                        <i class="linecons-cog"></i>
+                    </a>
+                    <a href="#" data-toggle="mobile-menu">
+                        <i class="fa-bars"></i>
+                    </a>
+                </div>
+            </header>
+            <!-- 侧边菜单栏 -->
+            <ul id="main-menu" class="main-menu">
+                <li>
+                    <a href="#开发社区" class="smooth">
+                        <i class="linecons-pencil"></i>
+                        <span class="title">开发社区</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#在线工具" class="smooth">
+                        <i class="linecons-search"></i>
+                        <span class="title">在线工具</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#站内游戏" class="smooth">
+                        <i class="linecons-globe"></i>
+                        <span class="title">站内游戏</span>
+                        <span class="label label-pink pull-right hidden-collapsed">HOT</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#影音站点" class="smooth">
+                        <i class="linecons-desktop"></i>
+                        <span class="title">影音站点</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#图片下载" class="smooth">
+                        <i class="linecons-lightbulb"></i>
+                        <span class="title">图片下载</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- END 侧边菜单栏 -->
         </div>
-        <div class="main-content">
-            <!-- 顶栏 -->
-            <nav class="navbar user-info-navbar" role="navigation">
-                <!-- User Info, Notifications and Menu Bar -->
-                <!-- Left links for user info navbar -->
-                <ul class="user-info-menu left-links list-inline list-unstyled">
-                    <li class="hidden-sm hidden-xs">
-                        <a href="#" data-toggle="sidebar">
-                            <i class="fa-bars"></i>
-<!--                            隐藏/显示侧边栏-->
-                        </a>
-                    </li>
-<!--                    <li>-->
-<!--                        <a href="/" target="_blank" style="padding: 30px 20px;">-->
-<!--                            <i class="fa fa-home"></i>-->
-<!--                            博客首页-->
-<!--                        </a>-->
-<!--                    </li>-->
-                    <!-- 天气 -->
-                    <li>
-                        <a id="tp-weather-widget" style="padding: 28px 20px;color: white !important;"></a>
-                        <script>
-                            (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
-                            window.SeniverseWeatherWidget('show', {
+    </div>
+    <div class="main-content">
+        <!-- 顶栏 -->
+        <nav class="navbar user-info-navbar" role="navigation">
+            <!-- User Info, Notifications and Menu Bar -->
+            <!-- Left links for user info navbar -->
+            <ul class="user-info-menu left-links list-inline list-unstyled">
+                <li class="hidden-sm hidden-xs">
+                    <a href="#" data-toggle="sidebar">
+                        <i class="fa-bars"></i>
+                        <!--                            隐藏/显示侧边栏-->
+                    </a>
+                </li>
+                <!--                    <li>-->
+                <!--                        <a href="/" target="_blank" style="padding: 30px 20px;">-->
+                <!--                            <i class="fa fa-home"></i>-->
+                <!--                            博客首页-->
+                <!--                        </a>-->
+                <!--                    </li>-->
+                <!-- 天气 -->
+                <li>
+                    <a id="tp-weather-widget" style="padding: 28px 20px;color: white !important;"></a>
+                    <script>
+                        (function (a, h, g, f, e, d, c, b) {
+                            b = function () {
+                                d = h.createElement(g);
+                                c = h.getElementsByTagName(g)[0];
+                                d.src = e;
+                                d.charset = "utf-8";
+                                d.async = 1;
+                                c.parentNode.insertBefore(d, c)
+                            };
+                            a["SeniverseWeatherWidgetObject"] = f;
+                            a[f] || (a[f] = function () {
+                                (a[f].q = a[f].q || []).push(arguments)
+                            });
+                            a[f].l = +new Date();
+                            if (a.attachEvent) {
+                                a.attachEvent("onload", b)
+                            } else {
+                                a.addEventListener("load", b, false)
+                            }
+                        }(window, document, "script", "SeniverseWeatherWidget", "//cdn.sencdn.com/widget2/static/js/bundle.js?t=" + parseInt((new Date().getTime() / 100000000).toString(), 10)));
+                        window.SeniverseWeatherWidget('show', {
                             flavor: "slim",
                             location: "WX4FBXXFKE4F",
                             geolocation: true,
@@ -122,18 +149,22 @@
                             token: "a39cd5a0-4024-4cb2-85c6-0250317058db",
                             hover: "enabled",
                             container: "tp-weather-widget"
-                            })
-                        </script>
-                    </li>
-                </ul>
-            </nav>
-            <!-- END 顶栏 -->
-            <!-- 开发社区 -->
-            <br>
+                        })
+                    </script>
+                </li>
+            </ul>
+        </nav>
+        <!-- END 顶栏 -->
+        <!-- 开发社区 -->
+        <br>
+
+        <div class="content-block">
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="开发社区"></i>开发社区</h4>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://github.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://github.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://github.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://github.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/github.png" class="img-circle" width="40">
@@ -148,7 +179,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://stackoverflow.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://stackoverflow.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://stackoverflow.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://stackoverflow.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/stackoverflow.png" class="img-circle" width="40">
@@ -163,7 +196,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.aliyun.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.aliyun.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.aliyun.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.aliyun.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/aliyun.png" class="img-circle" width="40">
@@ -178,7 +213,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://gitee.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://gitee.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://gitee.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://gitee.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/gitee.png" class="img-circle" width="40">
@@ -195,7 +232,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://vercel.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://vercel.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://vercel.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://vercel.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/Vercel.png" class="img-circle" width="40">
@@ -210,15 +249,19 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <!--END 开发社区 -->
-            <!-- 在线工具 -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--END 开发社区 -->
+        <!-- 在线工具 -->
+        <div class="content-block">
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="在线工具"></i>在线工具</h4>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.sojson.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.sojson.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.sojson.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.sojson.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/soJson.png" class="img-circle" width="40">
@@ -233,20 +276,26 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <!--END 在线工具 -->
-            <!-- 站内游戏 -->
-            <h4 class="text-gray" style="color: red"><i class="linecons-tag" style="margin-right: 7px;" id="站内游戏"></i>站内游戏</h4>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--END 在线工具 -->
+        <!-- 站内游戏 -->
+        <div class="content-block">
+            <h4 class="text-gray" style="color: red"><i class="linecons-tag" style="margin-right: 7px;" id="站内游戏"></i>站内游戏
+            </h4>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('/customerPage/box/games/2048/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="网页版 2048 小游戏">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('/customerPage/box/games/2048/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="网页版 2048 小游戏">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/2048.png" class="img-circle" width="40">
                             </a>
-                            <span class="label label-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="Hello I am a Tooltip"></span>
+                            <span class="label label-info" data-toggle="tooltip" data-placement="left" title=""
+                                  data-original-title="Hello I am a Tooltip"></span>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
                                     <strong>2048</strong>
@@ -257,7 +306,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('/customerPage/box/games/cat/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="圈小猫小游戏，点击圆点围住小猫">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('/customerPage/box/games/cat/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="圈小猫小游戏，点击圆点围住小猫">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/cat.png" class="img-circle" width="40">
@@ -272,7 +323,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('/customerPage/box/games/element/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="3D 网页展示元素周期表">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('/customerPage/box/games/element/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="3D 网页展示元素周期表">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/element.png" class="img-circle" width="40">
@@ -287,7 +340,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('/customerPage/box/games/gobang/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="网页版简易五子棋">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('/customerPage/box/games/gobang/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="网页版简易五子棋">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/gobang.png" class="img-circle" width="40">
@@ -304,7 +359,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('/customerPage/box/games/PacMan/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="躲避怪物，吃掉豆子">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('/customerPage/box/games/PacMan/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="躲避怪物，吃掉豆子">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/PacMan.png" class="img-circle" width="40">
@@ -319,16 +376,21 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <!-- END 站内游戏 -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <!-- END 站内游戏 -->
 
-            <!-- 影音站点 -->
+        <!-- 影音站点 -->
+        <div class="content-block">
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="影音站点"></i>影音站点</h4>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://v.qq.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://v.qq.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://v.qq.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom"
+                         title="" data-original-title="https://v.qq.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/TencentVideo.png" class="img-circle" width="40">
@@ -343,7 +405,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.youku.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.youku.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.youku.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.youku.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/YouKu.png" class="img-circle" width="40">
@@ -358,7 +422,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.iqiyi.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.iqiyi.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.iqiyi.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.iqiyi.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/iqiyi.png" class="img-circle" width="40">
@@ -373,7 +439,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.mgtv.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.mgtv.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.mgtv.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.mgtv.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/mgtv.png" class="img-circle" width="40">
@@ -390,7 +458,9 @@
             </div>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.bilibili.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.bilibili.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.bilibili.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.bilibili.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/bilibili.png" class="img-circle" width="40">
@@ -405,7 +475,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.douyu.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.douyu.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.douyu.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.douyu.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/douyu.png" class="img-circle" width="40">
@@ -420,7 +492,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.youtube.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.youtube.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.youtube.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.youtube.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/YouTube.png" class="img-circle" width="40">
@@ -435,17 +509,20 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <!--END 影音站点 -->
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--END 影音站点 -->
 
-
+        <div class="content-block">
             <!-- 图片下载 -->
             <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" id="图片下载"></i>图片下载</h4>
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://wallhaven.cc/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://wallhaven.cc/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://wallhaven.cc/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://wallhaven.cc/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/wallpaper.png" class="img-circle" width="40">
@@ -460,7 +537,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.pexels.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.pexels.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.pexels.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.pexels.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/paxels.png" class="img-circle" width="40">
@@ -475,7 +554,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://www.stockvault.net/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://www.stockvault.net/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://www.stockvault.net/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://www.stockvault.net/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/StockVault.png" class="img-circle" width="40">
@@ -490,7 +571,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://pixabay.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://pixabay.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://pixabay.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://pixabay.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/pixabay.png" class="img-circle" width="40">
@@ -508,7 +591,9 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://wallhaven.cc/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://wallhaven.cc/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://wallhaven.cc/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://wallhaven.cc/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/freejpg.png" class="img-circle" width="40">
@@ -523,7 +608,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://unsplash.com/', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://unsplash.com/">
+                    <div class="xe-widget xe-conversations box2 label-info"
+                         onclick="window.open('https://unsplash.com/', '_blank')" data-toggle="tooltip"
+                         data-placement="bottom" title="" data-original-title="https://unsplash.com/">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
                                 <img src="./img/unsplash.png" class="img-circle" width="40">
@@ -538,62 +625,67 @@
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
-            <br>
-            <!-- END 图片下载 -->
-
-
-            <footer class="main-footer sticky footer-type-1">
-                <div class="footer-inner">
-                    <!-- Add your copyright text here -->
-                    <div class="footer-text">
-                        COPYRIGHT <i class="far fa-copyright"></i> 2018 - 2020
-                        <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><strong> WEBSTACK</strong></a> 丨 DESIGNED BY <a href="http://viggoz.com" target="_blank"><strong>VIGGO</strong></a> 丨 CHANGED BY <a href="https://xiaoma.cool/" target="_blank"><strong>小马</strong></a>
-                    </div>
-                    <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
-                    <div class="go-up">
-                        <a href="#" rel="go-top">
-                            <i class="fa-angle-up"></i>
-                        </a>
-                    </div>
-                </div>
-            </footer>
         </div>
+        <br>
+        <br>
+        <br>
+        <!-- END 图片下载 -->
+
+
+        <footer class="main-footer sticky footer-type-1">
+            <div class="footer-inner">
+                <!-- Add your copyright text here -->
+                <div class="footer-text">
+                    COPYRIGHT <i class="far fa-copyright"></i> 2018 - 2020
+                    <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank"><strong>
+                        WEBSTACK</strong></a> 丨 DESIGNED BY <a href="http://viggoz.com"
+                                                               target="_blank"><strong>VIGGO</strong></a> 丨
+                    CHANGED BY
+                    <a href="https://xiaoma.cool/" target="_blank"><strong>小马</strong></a>
+                </div>
+                <!-- Go to Top Link, just add rel="go-top" to any link to add this functionality -->
+                <div class="go-up">
+                    <a href="#" rel="go-top">
+                        <i class="fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <!-- 锚点平滑移动 -->
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $(document).on('click', '.has-sub', function(){
+</div>
+<!-- 锚点平滑移动 -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '.has-sub', function () {
             var _this = $(this)
-            if(!$(this).hasClass('expanded')) {
-               setTimeout(function(){
-                    _this.find('ul').attr("style","")
-               }, 300);
-              
+            if (!$(this).hasClass('expanded')) {
+                setTimeout(function () {
+                    _this.find('ul').attr("style", "")
+                }, 300);
+
             } else {
-                $('.has-sub ul').each(function(id,ele){
+                $('.has-sub ul').each(function (id, ele) {
                     var _that = $(this)
-                    if(_this.find('ul')[0] != ele) {
-                        setTimeout(function(){
-                            _that.attr("style","")
+                    if (_this.find('ul')[0] != ele) {
+                        setTimeout(function () {
+                            _that.attr("style", "")
                         }, 300);
                     }
                 })
             }
         })
-        $('.user-info-menu .hidden-sm').click(function(){
-            if($('.sidebar-menu').hasClass('collapsed')) {
-                $('.has-sub.expanded > ul').attr("style","")
+        $('.user-info-menu .hidden-sm').click(function () {
+            if ($('.sidebar-menu').hasClass('collapsed')) {
+                $('.has-sub.expanded > ul').attr("style", "")
             } else {
                 $('.has-sub.expanded > ul').show()
             }
         })
-        $("#main-menu li ul li").click(function() {
+        $("#main-menu li ul li").click(function () {
             $(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
             $(this).addClass('active'); // 添加当前元素的样式
         });
-        $("a.smooth").click(function(ev) {
+        $("a.smooth").click(function (ev) {
             ev.preventDefault();
 
             public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
@@ -610,8 +702,8 @@
 
     var href = "";
     var pos = 0;
-    $("a.smooth").click(function(e) {
-        $("#main-menu li").each(function() {
+    $("a.smooth").click(function (e) {
+        $("#main-menu li").each(function () {
             $(this).removeClass("active");
         });
         $(this).parent("li").addClass("active");
@@ -620,18 +712,18 @@
         pos = $(href).position().top - 30;
     });
 
-    $('.EKHJj').css('color','white !important')
+    $('.EKHJj').css('color', 'white !important')
 
-    </script>
-    <!-- Bottom Scripts -->
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/TweenMax.min.js"></script>
-    <script src="./js/resizeable.js"></script>
-    <script src="./js/joinable.js"></script>
-    <script src="./js/xenon-api.js"></script>
-    <script src="./js/xenon-toggles.js"></script>
-    <!-- JavaScripts initializations and stuff -->
-    <script src="./js/xenon-custom.js"></script>
+</script>
+<!-- Bottom Scripts -->
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/TweenMax.min.js"></script>
+<script src="./js/resizeable.js"></script>
+<script src="./js/joinable.js"></script>
+<script src="./js/xenon-api.js"></script>
+<script src="./js/xenon-toggles.js"></script>
+<!-- JavaScripts initializations and stuff -->
+<script src="./js/xenon-custom.js"></script>
 </body>
 
 </html>
