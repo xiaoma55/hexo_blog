@@ -1,0 +1,16 @@
+/*这个css是我写的重写当前页面样式的一些东西*/
+
+.content-block {
+    box-shadow: 0px 0px 14px #a59e9e5c;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#tp-weather-widget .sw-container {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+#tp-weather-widget .sw-container .EKHJj{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    color: white;
+}
