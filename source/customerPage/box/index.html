@@ -635,6 +635,34 @@
         <br>
         <!-- END 图片下载 -->
 
+        <!-- 底部信息  -->
+        <footer class="text-center mt-5 py-3">
+            <div class="footer-content">
+                <!-- 网站运行天数 -->
+                <div style="font-size: 14px;margin-top: 20px;"><span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span>
+                    <script src="/js/wangZhanYunXingShiJianBox.js"></script>
+                </div>
+                <!-- 网易云音乐 -->
+                <div>
+                    <audio loop autoplay id="music"></audio>
+                    <script src="/js/wangZhanBeiJingYinYue.js"></script>
+                </div>
+            </div>
+            <div class="statistics">
+                <!-- 不蒜子统计PV -->
+                <span id="busuanzi_container_site_pv" style="display: none">
+            被瞅了
+            <span id="busuanzi_value_site_pv"></span>
+             次&nbsp&nbsp&nbsp
+          </span>
+                <!-- 不蒜子统计UV -->
+                <span id="busuanzi_container_site_uv" style="display: none">
+            &nbsp&nbsp&nbsp被
+            <span id="busuanzi_value_site_uv"></span>
+             人看爆
+          </span>
+            </div>
+        </footer>
 
         <footer class="main-footer sticky footer-type-1">
             <div class="footer-inner">
@@ -658,6 +686,7 @@
     </div>
 </div>
 <!-- 锚点平滑移动 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $(document).on('click', '.has-sub', function () {
