@@ -20,6 +20,6 @@ node source/photos/create.js
 添加照片执行上面就好，如果是删除照片，那么得先删除photos.json和photosInfo.json，再执行上面的
 ```
 
-> 但是记得不要用我的图片呦，我会不开心的呢。。
+> 但是记得不要用我的图片呦，我会不开心的呢。
 
 
