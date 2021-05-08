@@ -116,6 +116,14 @@ done
 echo "完成分发zookeeper到各个服务器"
 ```
 
+> 执行安装
+
+```shell
+chmod +x /lankr/script/zookeeper/init_zookeeper.sh
+/lankr/script/zookeeper/init_zookeeper.sh
+```
+
+
 ## 3 创建集群启动脚本
 
 > 创建脚本start_zookeeper.sh
