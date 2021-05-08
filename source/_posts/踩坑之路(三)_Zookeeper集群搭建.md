@@ -168,11 +168,25 @@ chmod +x /lankr/script/zookeeper/bin/satrt_zookeeper.sh
 /lankr/application/zookeeper-3.4.6/bin/zkServer.sh start-foreground
 ```
 
-## 4 坑
+## 4 客户端工具连接
+
+> 可以使用客户端可视化工具连接Zookeeper。我使用`ZooInspector`
+
+```
+链接：https://pan.baidu.com/s/1mW_Fp2MsxsQCfjLvS4-A6A 
+提取码：8888 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
+```
+
+> 如图所示，双击start.bat，然后输入zookeeper的ip:host就可以连接到了
+
+![](/img/articleContent/踩坑之路/3_Zookeeper集群搭建/1.png)
+
+## 5 坑
 
 > `默默留下没有技术的泪水`
 
-### 4.1 启动集群失败
+### 5.1 启动集群失败
 
 > 查看状态
 
@@ -208,7 +222,7 @@ firewall-cmd --permanent --zone=public --add-port=3888/tcp
  firewall-cmd --list-ports
 ```
 
-### 4.2 远程启动集群失败
+### 5.2 远程启动集群失败
 
 > `这个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
 
