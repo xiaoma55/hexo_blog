@@ -182,6 +182,30 @@ Using config: /lankr/application/zookeeper-3.4.6/bin/../conf/zoo.cfg
 Error contacting service. It is probably not running.
 ```
 
+> `事故原因`
+>> 又是排查了半下午，心态崩了。
+> 
+>> 原来是防火墙的原因，以前我自己都是在本地搞，防火墙都是关掉的，可是服务器上的防火墙不能关怎么办,只能是开放对应的端口
+
+```shell
+# 查看防火墙状态，确保他是开着的
+systemctl status firewalld
+
+# 查看已经开放的端口，看有没有我们需要的那个
+firewall-cmd --list-ports
+
+# 开启zookeeper需要的三个端口
+firewall-cmd --permanent --zone=public --add-port=2181/tcp
+firewall-cmd --permanent --zone=public --add-port=2888/tcp
+firewall-cmd --permanent --zone=public --add-port=3888/tcp
+
+# 重启防火墙
+ systemctl reload firewall
+ 
+ # 再次查看已经开放的端口
+ firewall-cmd --list-ports
+```
+
 ### 4.2 远程启动集群失败
 
 > `这个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
