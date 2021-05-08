@@ -168,9 +168,9 @@ chmod +x /lankr/script/zookeeper/bin/satrt_zookeeper.sh
 /lankr/application/zookeeper-3.4.6/bin/zkServer.sh start-foreground
 ```
 
-### 4 坑
+## 4 坑
 
-#### 4.1 启动没起来
+### 4.1 启动没起来
 
 > 查看状态
 
@@ -181,6 +181,8 @@ chmod +x /lankr/script/zookeeper/bin/satrt_zookeeper.sh
 Using config: /lankr/application/zookeeper-3.4.6/bin/../conf/zoo.cfg
 Error contacting service. It is probably not running.
 ```
+
+### 4.2 远程启动集群失败
 
 > `有个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
 
