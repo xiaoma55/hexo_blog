@@ -170,7 +170,9 @@ chmod +x /lankr/script/zookeeper/bin/satrt_zookeeper.sh
 
 ## 4 坑
 
-### 4.1 启动没起来
+> `默默留下没有技术的泪水`
+
+### 4.1 启动集群失败
 
 > 查看状态
 
