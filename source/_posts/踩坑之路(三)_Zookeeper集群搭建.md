@@ -184,7 +184,7 @@ Error contacting service. It is probably not running.
 
 ### 4.2 远程启动集群失败
 
-> `有个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
+> `这个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
 
 注意：`远程启动zookeeper集群`的时候，写一下`export JAVA_HOME=/lankr/application/jdk1.8.0_291`，因为shell脚本执行的过程中，`登录shell`和`非登录shell`读取的环境变量配置文件不同。
 
