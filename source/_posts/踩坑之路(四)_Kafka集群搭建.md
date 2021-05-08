@@ -212,7 +212,7 @@ https://www.kafkatool.com/
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
 ```
 
-![](/img/articleContent/踩坑之路/3_Kafka集群搭建/1.png)
+![](/img/articleContent/踩坑之路/4_Kafka集群搭建/1.png)
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
