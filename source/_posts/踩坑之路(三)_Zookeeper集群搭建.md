@@ -155,7 +155,7 @@ do
 done
 ```
 
-> 执行脚本安装
+> 执行脚本启动
 
 ```shell
 chmod +x /lankr/script/zookeeper/satrt_zookeeper.sh
