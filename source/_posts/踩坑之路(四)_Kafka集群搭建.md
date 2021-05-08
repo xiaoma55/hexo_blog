@@ -146,7 +146,25 @@ echo "完成安装包和配置文件分发"
 /lankr/script/kafka/init_kafka.sh
 ```
 
-## 3 创建一键启动脚本
+## 3 开放需要端口
+
+> kafka默认使用9092端口，那么我们放行一下
+
+```shell
+# 查看已经开放的端口，看有没有我们需要的那个
+firewall-cmd --list-ports
+
+# 开启zookeeper需要的三个端口
+firewall-cmd --permanent --zone=public --add-port=9092/tcp
+
+# 重启防火墙
+ systemctl reload firewall
+ 
+ # 再次查看已经开放的端口
+ firewall-cmd --list-ports
+```
+ 
+## 4 创建一键启动脚本
 
 > 创建脚本start_kafka.sh
 
