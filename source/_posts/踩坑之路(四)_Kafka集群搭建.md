@@ -200,5 +200,19 @@ done
 /lankr/script/kafka/start_kafka.sh
 ```
 
+## 5 可视化工具
+
+> 我用的Kafka可视化工具是Kafka tool
+
+https://www.kafkatool.com/
+
+```
+链接：https://pan.baidu.com/s/1zFVjrs7woAZ61JvmF_DqqQ 
+提取码：8888 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
+```
+
+![](/img/articleContent/踩坑之路/3_Kafka集群搭建/1.png)
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
