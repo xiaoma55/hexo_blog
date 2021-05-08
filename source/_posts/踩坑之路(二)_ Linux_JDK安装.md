@@ -1,5 +1,5 @@
 ---
-title: '踩坑之路(二) JDK安装'
+title: '踩坑之路(二) Linux_JDK安装'
 index_img: /img/articleBg/1(78).jpg
 banner_img: /img/articleBg/1(78).jpg
 tags:
