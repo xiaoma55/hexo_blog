@@ -102,7 +102,7 @@ echo
 
 # 配置zookeeper集群的myid
 echo "开始配置zookeeper集群的myid"
-echo 1 > /lankr/application/zookeeper-3.4.6/zkdatas/myid
+echo 3 > /lankr/application/zookeeper-3.4.6/zkdatas/myid
 echo "完成配置zookeeper集群的myid"
 
 echo
