@@ -1,5 +1,5 @@
 ---
-title: '踩坑之路(三) Kafka集群搭建'
+title: '踩坑之路(四) Kafka集群搭建'
 index_img: /img/articleBg/1(80).jpg
 banner_img: /img/articleBg/1(80).jpg
 tags:
