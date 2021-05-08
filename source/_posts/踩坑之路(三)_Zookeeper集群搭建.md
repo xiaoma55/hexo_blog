@@ -111,8 +111,7 @@ echo "完成分发zookeeper到各个服务器"
 > 创建脚本start_zookeeper.sh
 
 ```
-cd /lankr/script/zookeeper
-vim satrt_zookeeper.sh
+vim /lankr/script/zookeeper/satrt_zookeeper.sh
 ```
 
 > 写入下面内容
@@ -136,17 +135,20 @@ do
 done
 ```
 
+> 执行脚本安装
+
+```shell
+chmod +x /lankr/script/zookeeper/satrt_zookeeper.sh
+/lankr/script/zookeeper/satrt_zookeeper.sh
+```
+
 > `有个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
 
-`注意：远程启动zookeeper集群的时候，写一下export JAVA_HOME=/lankr/application/jdk1.8.0_291，因为`
+注意：`远程启动zookeeper集群`的时候，写一下`export JAVA_HOME=/lankr/application/jdk1.8.0_291`，因为shell脚本执行的过程中，`登录shell`和`非登录shell`读取的环境变量配置文件不同。
 
-`shell脚本执行的过程中，登录shell和非登录shell读取的环境变量配置文件不同。`
+`登录shell`会读取`/etc/profile`,`~、。bash_profile`,`~/.bash_login`,`~/.profile`等文件，而`非登录shell`读取的脚本有`/etc/bashrc`和`~/.bashrc`,像`java，path`这些环境变量是`读取不到`的。
 
-`登录shell会读取/etc/profile,~、。bash_profile,~/.bash_login,~/.profile等文件，而非登录shell读取的脚本有/etc/bashrc和~/.bashrc,像java，path这些环境变量是读取不到的。`
-
-`解决办法两个：一是将/etc/profile文件中的环境变量复制到~/.bashrc就解决了。二是在执行时暴露一下环境变量，像我上面那样。`
+解决办法两个：`一是将/etc/profile文件中的环境变量复制到~/.bashrc就解决了`。`二是在执行时暴露一下环境变量，像我上面那样`。
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/目录/1.png)

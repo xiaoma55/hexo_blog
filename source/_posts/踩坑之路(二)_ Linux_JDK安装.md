@@ -18,14 +18,14 @@ https://kafka.apache.org/downloads
 
 > `jdk-8u291-linux-x64.tar.gz`，把他上传到/lankr/software
 
-## 2 解压配置Kafka
+## 2 解压配置JDK
 
 > 创建脚本init_jdk.sh
 
 ```shell
-touch init_jdk.sh
-chmod 777 init_jdk.sh
-vim init_jdk.sh
+touch /lankr/script/init/init_jdk.sh
+chmod +x /lankr/script/init/init_jdk.sh
+vim /lankr/script/init/init_jdk.sh
 ```
 
 > 输入下面内容
@@ -76,8 +76,11 @@ done
 echo "完成把jdk往各个服务器发送"```
 ```
 
+> 执行脚本安装
+
+```shell
+/lankr/script/init/init_jdk.sh
+```
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/目录/1.png)

@@ -23,9 +23,9 @@ https://kafka.apache.org/downloads
 > 创建脚本init_kafka.sh
 
 ```shell
-touch init_kafka.sh
-chmod 777 init_kafka.sh
-vim init_kafka.sh
+touch /lankr/script/kafka/init_kafka.sh
+chmod +x /lankr/script/kafka/init_kafka.sh
+vim /lankr/script/kafka/init_kafka.sh
 ```
 
 > 输入下面内容
@@ -133,9 +133,9 @@ echo "完成安装包和配置文件分发"
 > 创建脚本start_kafka.sh
 
 ```shell
-touch start_kafka.sh
-chmod 777 start_kafka.sh
-vim start_kafka.sh
+touch /lankr/script/kafka/start_kafka.sh
+chmod +x /lankr/script/kafka/start_kafka.sh
+vim /lankr/script/kafka/start_kafka.sh
 ```
 
 > 输入下面内容
@@ -155,7 +155,11 @@ do
 done
 ```
 
+> 执行启动脚本
+
+```shell
+/lankr/script/kafka/start_kafka.sh
+```
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-
-![](/img/articleContent/目录/1.png)
