@@ -22,6 +22,12 @@ Kafka在当前`MQ领域`简直就是`一骑绝尘`。
 
 https://kafka.apache.org/downloads
 
+```
+链接：https://pan.baidu.com/s/1UxgjhBQ6mytqZp4bhpDs7w 
+提取码：8888 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
+```
+
 > `kafka_2.11-1.0.0.tgz`，把他上传到/lankr/software
 
 ## 2 解压配置Kafka

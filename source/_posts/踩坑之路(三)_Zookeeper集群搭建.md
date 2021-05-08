@@ -26,6 +26,12 @@ date: 2021-05-07 18:10:57
 
 https://zookeeper.apache.org/releases.html
 
+```
+链接：https://pan.baidu.com/s/1uBuiIO3c-UgkbVLm_mBD5g 
+提取码：8888 
+复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
+```
+
 > `apache-zookeeper-3.4.6.tar.gz`，把他上传到/lankr/software
 
 ## 2 解压配置zookeeper
