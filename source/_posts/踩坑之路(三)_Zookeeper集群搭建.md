@@ -87,9 +87,11 @@ syncLimit=5
 clientPort=2181
 autopurge.purgeInterval=8928
 # 集群中服务器地址
-server.1=node1:2888:3888
-server.2=node2:2888:3888
-server.3=node3:2888:3888' > /lankr/application/zookeeper-3.4.6/conf/zoo.cfg
+server.3=node3:2888:3888
+server.4=node4:2888:3888
+server.5=node5:2888:3888
+server.6=node6:2888:3888
+server.7=node7:2888:3888' > /lankr/application/zookeeper-3.4.6/conf/zoo.cfg
 echo "完成书写配置文件"
 
 echo
@@ -107,7 +109,7 @@ echo
 
 # 分发zookeeper到各个服务器
 echo "开始分发zookeeper到各个服务器"
-for i in {2..7}
+for i in {4..7}
 do 
     scp -r /lankr/application/zookeeper-3.4.6/ node$i:/lankr/application/
     # 修改各个服务器的zookeeper的myid的值
