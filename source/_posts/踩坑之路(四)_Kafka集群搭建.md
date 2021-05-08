@@ -12,6 +12,12 @@ category:
 date: 2021-05-08 14:10:57
 ---
 
+Kafka在当前`MQ领域`简直就是`一骑绝尘`。
+
+我搭这个集群，是为了以后将`采集的数据`直接`怼入Kafka`，做一次`消息缓存`，之后用计划用`flink去消费`，处理后续的逻辑业务。
+
+<!-- more -->
+
 ## 1 下载上传Kafka安装包
 
 https://kafka.apache.org/downloads
