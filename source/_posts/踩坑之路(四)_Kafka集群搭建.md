@@ -133,7 +133,7 @@ echo "开始分发安装包和配置文件"
 for i in {4..7}
 do
     scp -r /lankr/application/kafka_2.11-1.0.0 node$i:/lankr/application
-    ssh node$i "sed -i 's/\bbroker.id=0\b/broker.id=$i/g;s/\bhost.name=node1\b/host.name=node$i/g' /lankr/application/kafka_2.11-1.0.0/config/server.properties"
+    ssh node$i "sed -i 's/\bbroker.id=3\b/broker.id=$i/g;s/\bhost.name=node3\b/host.name=node$i/g' /lankr/application/kafka_2.11-1.0.0/config/server.properties"
     scp /etc/profile node$i:/etc
     scp /etc/profile_init_back node$i:/etc
 done 
