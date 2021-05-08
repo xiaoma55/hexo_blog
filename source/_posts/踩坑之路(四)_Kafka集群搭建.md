@@ -134,6 +134,12 @@ done
 echo "完成安装包和配置文件分发"
 ```
 
+> 执行安装
+
+```shell
+/lankr/script/kafka/init_kafka.sh
+```
+
 ## 3 创建一键启动脚本
 
 > 创建脚本start_kafka.sh
