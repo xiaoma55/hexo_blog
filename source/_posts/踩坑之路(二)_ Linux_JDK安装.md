@@ -83,7 +83,7 @@ do
     scp /etc/profile_init_back node$i:/etc
     ssh node$i "source /etc/profile"
 done
-echo "完成把jdk往各个服务器发送"```
+echo "完成把jdk往各个服务器发送"
 ```
 
 > 执行脚本安装
