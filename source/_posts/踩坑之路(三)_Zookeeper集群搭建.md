@@ -158,8 +158,28 @@ done
 > 执行脚本启动
 
 ```shell
-chmod +x /lankr/script/zookeeper/satrt_zookeeper.sh
+chmod +x /lankr/script/zookeeper/bin/satrt_zookeeper.sh
 /lankr/script/zookeeper/satrt_zookeeper.sh
+```
+
+> 查看下详细的日志
+
+```shell
+/lankr/application/zookeeper-3.4.6/bin/zkServer.sh start-foreground
+```
+
+### 4 坑
+
+#### 4.1 启动没起来
+
+> 查看状态
+
+```shell
+/lankr/application/zookeeper-3.4.6/bin/zkServer.sh status
+
+发现报错
+Using config: /lankr/application/zookeeper-3.4.6/bin/../conf/zoo.cfg
+Error contacting service. It is probably not running.
 ```
 
 > `有个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
