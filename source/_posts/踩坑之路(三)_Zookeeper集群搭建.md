@@ -222,10 +222,13 @@ firewall-cmd --permanent --zone=public --add-port=2888/tcp
 firewall-cmd --permanent --zone=public --add-port=3888/tcp
 
 # 重启防火墙
- systemctl reload firewall
+systemctl restart firewalld.service
+
+# 重载配置文件
+firewall-cmd --reload
  
- # 再次查看已经开放的端口
- firewall-cmd --list-ports
+# 再次查看已经开放的端口
+firewall-cmd --list-ports
 ```
 
 ### 5.2 远程启动集群失败

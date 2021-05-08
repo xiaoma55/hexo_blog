@@ -158,10 +158,13 @@ firewall-cmd --list-ports
 firewall-cmd --permanent --zone=public --add-port=9092/tcp
 
 # 重启防火墙
- systemctl reload firewall
+systemctl restart firewalld.service
+
+# 重载配置文件
+firewall-cmd --reload
  
- # 再次查看已经开放的端口
- firewall-cmd --list-ports
+# 再次查看已经开放的端口
+firewall-cmd --list-ports
 ```
  
 ## 4 创建一键启动脚本
