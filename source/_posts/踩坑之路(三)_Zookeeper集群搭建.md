@@ -1,0 +1,152 @@
+---
+title: '踩坑之路(三) Zookeeper集群搭建'
+index_img: /img/articleBg/1(79).jpg
+banner_img: /img/articleBg/1(79).jpg
+tags:
+  - 大数据
+  - 踩坑之路
+category:
+  - - 编程
+    - 大数据
+    
+date: 2021-05-07 18:10:57
+---
+
+## 1 下载上传Zookeeper安装包
+
+https://zookeeper.apache.org/releases.html
+
+> `apache-zookeeper-3.4.6.tar.gz`，把他上传到/lankr/software
+
+## 2 解压配置zookeeper
+
+> 创建脚本init_zookeeper.sh
+
+```
+cd /lankr/script/zookeeper
+vim init_zookeeper.sh
+```
+
+> 写入下面内容
+
+```shell
+#!/bin/bash
+
+# 判断/lankr/application是否已经由zookeeper3.6.3的包
+ZOOKEEPER_APP_NAME="/lankr/application/zookeeper-3.4.6"
+
+if [ -d $ZOOKEEPER_APP_NAME ]; then
+    echo "zookeeper3.4.6的安装包已经存在，可能以前安装过，现在直接退出"
+    exit 1
+else
+    echo "zookeeper的安装包不存在，现在开始安装和配置操作"
+fi
+
+echo
+
+# 解压zookeeper到/lankr/application/
+echo "开始解压zookeeper到/lankr/application" 
+tar -zxvf /lankr/software/zookeeper-3.4.6.tar.gz -C /lankr/application
+echo "完成解压zookeeper"
+
+echo
+
+# 备份配置文件
+echo "开始备份配置文件"
+cd /lankr/application/zookeeper-3.4.6/conf
+cp zoo_sample.cfg zoo.cfg
+echo "完成备份配置文件"
+
+echo
+
+# 创建数据存储目录
+echo "开始创建数据存储目录"
+mkdir -p /lankr/application/zookeeper-3.4.6/zkdatas/
+echo "完成创建数据存储目录"
+
+echo
+
+echo "开始书写配置文件"
+echo '#Zookeeper的数据存放目录,默认情况下，Zookeeper 将写数据的日志文件也保存在这个目录里
+dataDir=/lankr/application/zookeeper-3.4.6/zkdatas/
+# 保留多少个快照
+autopurge.snapRetainCount=3
+# 日志多少小时清理一次
+initLimit=10
+syncLimit=5
+clientPort=2181
+autopurge.purgeInterval=8928
+# 集群中服务器地址
+server.1=node1:2888:3888
+server.2=node2:2888:3888
+server.3=node3:2888:3888' > /lankr/application/zookeeper-3.4.6/conf/zoo.cfg
+echo "完成书写配置文件"
+
+echo
+
+# echo "我用的这个版本，zookeeper识别不了JAVA_HOME，所以下面强制写入一下"
+
+# sed -i '2i JAVA_HOME="/lankr/application/jdk1.8.0_291"' /lankr/application/zookeeper-3.4.6/bin/zkEnv.sh
+
+# 配置zookeeper集群的myid
+echo "开始配置zookeeper集群的myid"
+echo 1 > /lankr/application/zookeeper-3.4.6/zkdatas/myid
+echo "完成配置zookeeper集群的myid"
+
+echo
+
+# 分发zookeeper到各个服务器
+echo "开始分发zookeeper到各个服务器"
+for i in {2..3}
+do 
+    scp -r /lankr/application/zookeeper-3.4.6/ node$i:/lankr/application/
+    # 修改各个服务器的zookeeper的myid的值
+    ssh node$i "echo $i > /lankr/application/zookeeper-3.4.6/zkdatas/myid"
+done
+echo "完成分发zookeeper到各个服务器"
+```
+
+## 3 创建集群启动脚本
+
+> 创建脚本start_zookeeper.sh
+
+```
+cd /lankr/script/zookeeper
+vim satrt_zookeeper.sh
+```
+
+> 写入下面内容
+
+```shell
+#!/bin/bash
+
+# 启动zookeeper集群
+echo "准备启动zookeeper集群"
+for i in {1..3}
+do
+    # 启动zookeeper
+    echo "准备启动node$i上的zookeeper"
+    ssh node$i "export JAVA_HOME=/lankr/application/jdk1.8.0_291 && /lankr/application/zookeeper-3.4.6/bin/zkServer.sh start"
+
+    # 查看zookeeper状态
+    echo "node$i上的zookeeper状态如下:"
+    ssh node$i "/lankr/application/zookeeper-3.4.6/bin/zkServer.sh status"
+
+    echo
+done
+```
+
+> `有个问题困了我一整个下午，人都麻了，后来问了文杰老哥解决的，记录一下，太难了。`
+
+`注意：远程启动zookeeper集群的时候，写一下export JAVA_HOME=/lankr/application/jdk1.8.0_291，因为`
+
+`shell脚本执行的过程中，登录shell和非登录shell读取的环境变量配置文件不同。`
+
+`登录shell会读取/etc/profile,~、。bash_profile,~/.bash_login,~/.profile等文件，而非登录shell读取的脚本有/etc/bashrc和~/.bashrc,像java，path这些环境变量是读取不到的。`
+
+`解决办法两个：一是将/etc/profile文件中的环境变量复制到~/.bashrc就解决了。二是在执行时暴露一下环境变量，像我上面那样。`
+
+## 联系博主，加入【羊山丨交流社区】
+![联系博主](/img/icon/wechatFindMe.png)
+
+![](/img/articleContent/目录/1.png)
