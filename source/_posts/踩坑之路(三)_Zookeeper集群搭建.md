@@ -131,7 +131,7 @@ chmod +x /lankr/script/zookeeper/init_zookeeper.sh
 > 创建脚本start_zookeeper.sh
 
 ```
-vim /lankr/script/zookeeper/satrt_zookeeper.sh
+vim /lankr/script/zookeeper/start_zookeeper.sh
 ```
 
 > 写入下面内容
