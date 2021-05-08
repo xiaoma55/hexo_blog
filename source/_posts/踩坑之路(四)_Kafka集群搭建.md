@@ -60,7 +60,7 @@ echo
 # 修改配置文件
 echo "开始修改配置文件"
 
-echo 'broker.id=0
+echo 'broker.id=3
 num.network.threads=3
 num.io.threads=8
 socket.send.buffer.bytes=102400
@@ -77,11 +77,11 @@ log.flush.interval.ms=1000
 log.retention.hours=168
 log.segment.bytes=1073741824
 log.retention.check.interval.ms=300000
-zookeeper.connect=node1:2181,node2:2181,node3:2181
+zookeeper.connect=node3:2181,node4:2181,node5:2181,node6:2181,node7:2181
 zookeeper.connection.timeout.ms=6000
 group.initial.rebalance.delay.ms=0
 delete.topic.enable=true
-host.name=node1' > /lankr/application/kafka_2.11-1.0.0/config/server.properties 
+host.name=node3' > /lankr/application/kafka_2.11-1.0.0/config/server.properties 
 
 echo "完成修改配置文件"
 
@@ -124,7 +124,7 @@ echo
 
 # 分发安装包，循环发送，不同集群配置改下个数
 echo "开始分发安装包和配置文件"
-for i in {2..7}
+for i in {4..7}
 do
     scp -r /lankr/application/kafka_2.11-1.0.0 node$i:/lankr/application
     ssh node$i "sed -i 's/\bbroker.id=0\b/broker.id=$i/g;s/\bhost.name=node1\b/host.name=node$i/g' /lankr/application/kafka_2.11-1.0.0/config/server.properties"
@@ -151,7 +151,7 @@ vim /lankr/script/kafka/start_kafka.sh
 
 # 启动kafka集群
 echo "准备启动kafka集群"
-for i in {1..7}
+for i in {3..7}
 do
     # 启动zookeeper
     echo "准备启动node$i上的kafka"
