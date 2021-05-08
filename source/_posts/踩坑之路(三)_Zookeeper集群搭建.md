@@ -107,7 +107,7 @@ echo
 
 # 分发zookeeper到各个服务器
 echo "开始分发zookeeper到各个服务器"
-for i in {2..3}
+for i in {2..7}
 do 
     scp -r /lankr/application/zookeeper-3.4.6/ node$i:/lankr/application/
     # 修改各个服务器的zookeeper的myid的值
@@ -131,7 +131,7 @@ vim /lankr/script/zookeeper/satrt_zookeeper.sh
 
 # 启动zookeeper集群
 echo "准备启动zookeeper集群"
-for i in {1..3}
+for i in {1..7}
 do
     # 启动zookeeper
     echo "准备启动node$i上的zookeeper"

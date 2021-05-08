@@ -124,7 +124,7 @@ echo
 
 # 分发安装包，循环发送，不同集群配置改下个数
 echo "开始分发安装包和配置文件"
-for i in {2..3}
+for i in {2..7}
 do
     scp -r /lankr/application/kafka_2.11-1.0.0 node$i:/lankr/application
     ssh node$i "sed -i 's/\bbroker.id=0\b/broker.id=$i/g;s/\bhost.name=node1\b/host.name=node$i/g' /lankr/application/kafka_2.11-1.0.0/config/server.properties"
@@ -151,7 +151,7 @@ vim /lankr/script/kafka/start_kafka.sh
 
 # 启动kafka集群
 echo "准备启动kafka集群"
-for i in {1..3}
+for i in {1..7}
 do
     # 启动zookeeper
     echo "准备启动node$i上的kafka"
