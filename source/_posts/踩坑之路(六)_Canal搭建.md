@@ -123,7 +123,6 @@ canal.instance.filter.regex=.*\\..*
 # 这样每个表都会发到一个主题里，这样就好管理了
 canal.mq.dynamicTopic=.*\\..*
 
-
 ```
 
 ### 2.6 启动：起飞
