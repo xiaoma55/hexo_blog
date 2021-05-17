@@ -120,9 +120,8 @@ canal.mq.topic=a_default_topic
 # 你自己的要同步的表的匹配规则，我要同步全部，所以这里就用默认的
 canal.instance.filter.regex=.*\\..*
 
-# 这样每个表都会发到一个主题里，这样就好管理了
+# 这样每个表都会发到一个主题里，这样就好管理了。然后先这样吧，后续再根据业务去看怎么弄
 canal.mq.dynamicTopic=.*\\..*
-
 ```
 
 ### 2.6 启动：起飞
@@ -148,7 +147,7 @@ tail -1000f /lankr/application/canal-1.1.15/logs/example/example.log
 
 ### 3 总结
 
-> canal的官方文档确实坑很多，写的很乱，很多配置、参数都没有解释，哎，万能的google滚啊趴啊，趴啊滚啊，慢慢来吧。
+> canal的官方文档确实坑很多，写的很乱，很多配置、参数都没有解释，哎，万能的google`滚啊趴啊`，`趴啊滚啊`，慢慢来吧。
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
