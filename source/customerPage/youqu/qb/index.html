@@ -62,7 +62,7 @@
             <div class="panel-body" style="text-align: center;">
                 <div class="list-group">
                     <div class="list-group-item list-group-item-warning" style="font-weight: bold;">
-                        <span>输入QQ号码即可查询绑定手机</span></div>
+                        <span>输入QQ号码即可查询绑定手机或者根据手机号反查QQ号码</span></div>
                     </p>
                     <p>
                         <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
@@ -70,20 +70,34 @@
                     document.write(returnCitySN["cip"])
                    </script></span>
                 </div>
+
+                <!--根据qq查手机-->
                 <div class="list-group-item list-group-item-info" style="font-weight: bold;">
-                    <input class="form-control" id="input" placeholder="请输入QQ"></div>
+                    <input class="form-control" id="input" placeholder="请输入QQ或手机号"></div>
                 <div class="list-group-item">
                     <a onclick="qbang('cha')" class="btn btn-block btn-primary"
-                       style="background: linear-gradient(to right,#b221ff,#14b7ff);">点击查找</a></div>
+                       style="background: linear-gradient(to right,#b221ff,#14b7ff);">Q绑查询</a></div>
 
-                <!--老山羊网络-->
-                <!--QQ1957394516-->
                 <div class="list-group-item list-group-item-warning" style="font-weight: bold;display: none;"
                      id="jiexi_data">
                     <div class="input-group">
                         <span class="input-group-addon">手机号码</span>
                         <input type="text" class="form-control" placeholder id="mobile"></div>
                 </div>
+
+                <!--手机反查-->
+                <div class="list-group-item">
+                    <a onclick="shoujifancha()" class="btn btn-block btn-primary"
+                       style="background: linear-gradient(to right,#b221ff,#14b7ff);">手机反查</a></div>
+
+                <div class="list-group-item list-group-item-warning" style="font-weight: bold;display: none;"
+                     id="jiexi_data_shoujifancha">
+                    <div class="input-group">
+                        <span class="input-group-addon">qq号码</span>
+                        <input type="text" class="form-control" placeholder id="mobile_shoujifancha"></div>
+                </div>
+
+
                 <!--<div class="list-group-item">
                     <a class="btn btn-block btn-primary" style="background: linear-gradient(to right,#5F5F9F,#93DB70);"
                        href="http://cb.kujiuyun.cn">老山羊轰炸</a></div>
@@ -197,14 +211,14 @@
     document.oncontextmenu = new Function("return false;")
     document.onkeydown = document.onkeyup = document.onkeypress = function () {
         if (window.event.keyCode == 123) {
-            window.event.returnValue = false;
-            return (false);
+            // window.event.returnValue = false;
+            // return (false);
         }
     }
 
     function qbang($mod) {
-        var qq = $('#input').val();
-        if (qq == '') {
+        var qqOrInput = $('#input').val();
+        if (qqOrInput == '') {
             var alert_1 = layer.msg('请输入QQ', {
                 icon: 5
             });
@@ -218,13 +232,27 @@
         }
     }
 
+    function shoujifancha() {
+        var qqOrInput = $('#input').val();
+        if (qqOrInput == '') {
+            var alert_1 = layer.msg('请输入手机号', {
+                icon: 5
+            });
+        } else {
+            dialog('<div style="text-align:center"><br><b style="color:#ff4425">仅供查询自己的手机号<br>不是自己的请立即退出本页面<br>否则，发生的一切后果本人不负责<br>Tips：数据来自泄露，查到就是有使用过，查不到就是<br>没有，不保证百分百是现用（老山羊网络科技）<br><br>确认查询？？</b><br><br><a onclick=' + 'queren("")' + ' class="btn btn-block btn-primary" style="background: linear-gradient(to right,#b221ff,#14b7ff);">确认</a><br></div>', 1);
+        }
+    }
+
     function queren(mod) {
         console.log(mod);
         layer.close(layer.index);
-        var qq = $('#input').val();
+        var qqOrInput = $('#input').val();
         if (mod == 'cha') {
-            $url = 'http://api.qb-api.com/qb-api.php?mod=cha&qq=' + qq;
+            $url = 'http://api.qb-api.com/qb-api.php?mod=cha&qq=' + qqOrInput;
+        } else if (mod == '') {
+            $url = 'https://qb-api.com/bq-api.php?mobile=' + qqOrInput;
         } else {
+
         }
 
         var alert_1 = layer.load(0, {
@@ -237,8 +265,17 @@
                     layer.msg('查询成功', {
                         icon: 1
                     });
-                    $('#mobile').val(json['data']['mobile']);
-                    $('#jiexi_data').css("display", "block");
+                    if (mod == 'cha') {
+                        $('#mobile').val(json['data']['mobile']);
+                        $('#jiexi_data').css("display", "block");
+                        $('#jiexi_data_shoujifancha').css("display", "none");
+                    } else if (mod == '') {
+                        $('#mobile_shoujifancha').val(json['data']['qq']);
+                        $('#jiexi_data').css("display", "none");
+                        $('#jiexi_data_shoujifancha').css("display", "block");
+                    } else {
+
+                    }
                 } else {
 
                     layer.msg(json['msg']);
