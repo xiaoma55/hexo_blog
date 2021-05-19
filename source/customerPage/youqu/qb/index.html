@@ -25,8 +25,9 @@
             background-attachment: fixed;
             background-position: center center;
         }
+
         /*不同块之间的距离*/
-        .contentBlock{
+        .contentBlock {
             margin-bottom: 40px;
             box-shadow: 2px 6px 30px #5c4c45eb;
         }
@@ -114,6 +115,25 @@
                         <div class="input-group">
                             <span class="input-group-addon">qq号码</span>
                             <input type="text" class="form-control" placeholder id="shouJiFanChaQQResult">
+                        </div>
+                    </div>
+                </div>
+
+                <!--LOL查询-->
+                <div class="contentBlock">
+                    <div class="list-group-item list-group-item-info" style="font-weight: bold;">
+                        <input class="form-control input_content_LOLChaXun" placeholder="请输入QQ号">
+                    </div>
+                    <div class="list-group-item">
+                        <a onclick="startChaXun('LOLChaXun')" class="btn btn-block btn-primary"
+                           style="background: linear-gradient(to right,#b221ff,#14b7ff);">LOL查询
+                        </a>
+                    </div>
+                    <div class="list-group-item list-group-item-warning" style="font-weight: bold;display: none;"
+                         id="jiexi_data_LOLChaXun">
+                        <div class="input-group">
+                            <span class="input-group-addon">qq号码</span>
+                            <input type="text" class="form-control" placeholder id="LOLChaXunResult">
                         </div>
                     </div>
                 </div>
@@ -249,6 +269,8 @@
                 dialog('<div style="text-align:center"><br><b style="color:#ff4425">仅供查询自己的QQ号码<br>不是自己的请立即退出本页面<br>否则，发生的一切后果本人不负责<br>Tips：数据来自泄露，查到就是有使用过，查不到就是<br>没有，不保证百分百是现用（老山羊网络科技）<br><br>确认查询？？</b><br><br><a onclick=' + 'queren("qBangChaXunShouJi")' + ' class="btn btn-block btn-primary" style="background: linear-gradient(to right,#b221ff,#14b7ff);">确认</a><br></div>', 1);
             } else if ($mod == 'shouJiFanChaQQ') {
                 dialog('<div style="text-align:center"><br><b style="color:#ff4425">仅供查询自己的手机号<br>不是自己的请立即退出本页面<br>否则，发生的一切后果本人不负责<br>Tips：数据来自泄露，查到就是有使用过，查不到就是<br>没有，不保证百分百是现用（老山羊网络科技）<br><br>确认查询？？</b><br><br><a onclick=' + 'queren("shouJiFanChaQQ")' + ' class="btn btn-block btn-primary" style="background: linear-gradient(to right,#b221ff,#14b7ff);">确认</a><br></div>', 1);
+            } else if ($mod == 'LOLChaXun') {
+                dialog('<div style="text-align:center"><br><b style="color:#ff4425">仅供查询自己的QQ号码<br>不是自己的请立即退出本页面<br>否则，发生的一切后果本人不负责<br>Tips：数据来自泄露，查到就是有使用过，查不到就是<br>没有，不保证百分百是现用（老山羊网络科技）<br><br>确认查询？？</b><br><br><a onclick=' + 'queren("LOLChaXun")' + ' class="btn btn-block btn-primary" style="background: linear-gradient(to right,#b221ff,#14b7ff);">确认</a><br></div>', 1);
             } else {
 
             }
@@ -265,6 +287,8 @@
             $url = 'http://api.qb-api.com/qb-api.php?mod=cha&qq=' + input_content;
         } else if (mod == 'shouJiFanChaQQ') {
             $url = 'https://qb-api.com/bq-api.php?mobile=' + input_content;
+        } else if (mod == 'LOLChaXun') {
+            $url = 'https://qb-api.com/lol-api.php?mod=cha&qq=' + input_content;
         } else if (mod == '') {
         }
 
@@ -284,6 +308,9 @@
                     } else if (mod == 'shouJiFanChaQQ') {
                         $('#shouJiFanChaQQResult').val(json['data']['qq']);
                         $('#jiexi_data_shouJiFanChaQQ').css("display", "block");
+                    } else if (mod == 'LOLChaXun') {
+                        $('#LOLChaXunResult').val(json['data']['qq'] + "        " + json['data']['server']);
+                        $('#jiexi_data_LOLChaXun').css("display", "block");
                     } else {
 
                     }
