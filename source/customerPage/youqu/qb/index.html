@@ -251,8 +251,8 @@
     document.oncontextmenu = new Function("return false;")
     document.onkeydown = document.onkeyup = document.onkeypress = function () {
         if (window.event.keyCode == 123) {
-            // window.event.returnValue = false;
-            // return (false);
+            window.event.returnValue = false;
+            return (false);
         }
     }
 
