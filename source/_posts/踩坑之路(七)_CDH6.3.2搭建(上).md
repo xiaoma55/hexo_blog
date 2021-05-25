@@ -411,13 +411,11 @@ All done, your SCM database is configured correctly!
 
 ### 5.3 启动cm-server服务
 
-> 需开放端口
+> CDH用到的端口太多太多了，咱也不乱来，照着官网一通开
 
-端口号 | 作用 
----|---
-7180 | Cloudera Manager WebUI端口
-7182 | Cloudera Manager Server 与 Agent 通讯端口(`所有节点都开放`)
-7191 | 点对点包裹分布       (`所有节点都开放`)
+```shell
+https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports_cm.html
+```
 
 > ⚠ `在node1节点完成以下操作`
 
