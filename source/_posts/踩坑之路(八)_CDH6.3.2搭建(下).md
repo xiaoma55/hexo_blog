@@ -129,7 +129,11 @@ ZKFC | `8019` | dfs.ha.zkfc.port | ZooKeeper FailoverController，用于NN HA
 
 #### 3.1.3 开始安装
 
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/17.png)
 
+#### 3.1.4 完成
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/18.png)
 
 ## 4 配置本地域名映射
 
