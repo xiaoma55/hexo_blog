@@ -1,5 +1,5 @@
 ---
-title: '踩坑之路(七) CDH6.3.2搭建'
+title: '踩坑之路(七) CDH6.3.2搭建(上)'
 index_img: /img/articleBg/1(83).jpg
 banner_img: /img/articleBg/1(83).jpg
 tags:
@@ -28,7 +28,7 @@ date: 2021-05-22 10:10:57
 复制这段内容后打开百度网盘手机App，操作更方便哦--来自百度网盘超级会员V4的分享
 ```
 
-![](/img/articleContent/踩坑之路/7_CDH6.3.2搭建/2.png)
+![](/img/articleContent/踩坑之路/7_CDH6.3.2搭建(上)(上)/2.png)
 
 ## 1 基础配置
 
@@ -411,6 +411,14 @@ All done, your SCM database is configured correctly!
 
 ### 5.3 启动cm-server服务
 
+> 需开放端口
+
+端口号 | 作用 
+---|---
+7180 | Cloudera Manager WebUI端口
+7182 | Cloudera Manager Server 与 Agent 通讯端口(`所有节点都开放`)
+7191 | 点对点包裹分布       (`所有节点都开放`)
+
 > ⚠ `在node1节点完成以下操作`
 
 > 启动cm-server服务
@@ -431,7 +439,7 @@ systemctl status cloudera-scm-server.service
 tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log
 ```
 
-> cm-server默认使用7180端口进行访问
+> cm-server默认使用7180端口进行WebUI访问
 
 ```shell
 netstat -anp| grep 7180
@@ -444,7 +452,7 @@ netstat -anp| grep 7180
 密码：admin
 ```
 
-![](/img/articleContent/踩坑之路/7_CDH6.3.2搭建/1.png)
+![](/img/articleContent/踩坑之路/7_CDH6.3.2搭建(上)/1.png)
 
 
 `可算是有这么一点点进展了，这两天踩坑把我踩麻了，给各路神仙请个安，希望接下来CDH的安装能够顺利一点！`

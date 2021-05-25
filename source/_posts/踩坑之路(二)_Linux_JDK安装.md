@@ -92,5 +92,15 @@ echo "完成把jdk往各个服务器发送"
 /lankr/script/init/init_jdk.sh
 ```
 
+## 3 做软连接
+
+> 所有节点执行
+
+```shell
+mkdir -p /usr/java/default
+ln -s /lankr/application/jdk1.8.0_291/ /usr/java/default
+
+```
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
