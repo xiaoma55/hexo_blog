@@ -99,7 +99,7 @@ sed -i s/"vm.swappiness = 30"/"vm.swappiness = 10"/g  /usr/lib/tuned/virtual-gue
 
 ## 3 安装服务
 
-### 3.1 安装HDFS
+### 3.1 安装HDFS和YARN
 
 > `放行HDFS端口`
 
@@ -131,11 +131,96 @@ ZKFC | `8019` | dfs.ha.zkfc.port | ZooKeeper FailoverController，用于NN HA
 
 ![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/17.png)
 
+##### 3.1.3.1 Failed to format NameNode.
+
+> `错误`
+
+```shell
+Failed to format NameNode.
+
+是由于之前初始化 namenode 在 /dfs/nn 留下了残留数据（失效数据），从而影响再次初始化
+```
+
+> 解决办法
+>> 清空残留数据后，重新初始化
+
+> namenode节点：
+
+```
+rm -rf /dfs/nn
+```
+
+> datanode节点：
+
+```
+rm -rf /dfs/dn
+```
+
+##### 3.1.3.2 First failure: Command (Create /tmp Directory (762)) has failed
+
+> `错误`
+
+```shell
+First failure: Command (Create /tmp Directory (762)) has failed
+Safe mode will be turned off automatically once the thresholds have been reached
+```
+
+> 按正常命令启动HDFS之后,HDFS一直处于安全模式。他会一会儿自己退出，我们目前先手动退出一下
+
+```shell
+sudo -u hdfs hdfs dfsadmin -safemode leave
+```
+
+##### 3.1.3.2 Failed to upload YARN MapReduce Framework JARs.
+
+> `报错`
+
+```shell
+Failed to install YARN MapReduce Framework JARs.
+Failed to upload YARN MapReduce Framework JARs.
+```
+
+> 解决
+>> 这个我是端口的问题，去把需要的端口都放开吧(当然如果你关了防火墙就不会有这个问题)
+
+```shell
+需要开放的端口：
+https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports.html
+```
+
 #### 3.1.4 完成
 
 ![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/18.png)
 
-## 4 配置本地域名映射
+## 4 警告修复
+
+### 4.1 DNS Resolution
+
+```shell
+The hostname and canonical name for this host are not consistent when checked from a Java process.
+```
+
+> 解决
+
+```shell
+vim /etc/sysconfig/network
+NETWORKING=yes
+HOSTNAME= node1.lankr.cn               ##每台服务器配置自己的
+systemctl restart network
+```
+
+```shell
+问题缘由是在配置hostname的时候配置了域名，服务器根据/etc/resolv.conf DNF解析是，提示找不到改域名。
+处理方式：在每台服务器上添加本地域名解析：(根据上述hosts配置，须要添加以下配置，domain 是本地域名的意思)
+
+echo "domain lankr.cn" >> /etc/resolv.conf
+```
+
+### 4.2 Erasure Coding Policy Verification Test
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/19.png)
+
+## 5 配置本地域名映射
 
 ```shell
 C:\Windows\System32\drivers\etc\hosts
@@ -151,5 +236,8 @@ C:\Windows\System32\drivers\etc\hosts
 192.168.1.107 node7.lankr.cn node7
 ```
 
+> 这样windows电脑就可以通过node1或者node1.lankr.cn来访问CM集群了，而不用ip了
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
+
