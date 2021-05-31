@@ -353,6 +353,15 @@ wget http://node1/cm6/mysql-connector-java.jar
 yum install -y cloudera-manager-agent
 ```
 
+> 启动/停止/重启/查看状态cloudera-manager-agent
+
+```shell
+systemctl start cloudera-scm-agent
+systemctl stop cloudera-scm-agent
+systemctl restart cloudera-scm-agent
+systemctl status cloudera-scm-agent
+```
+
 ### 4.2 管理节点安装cm-server
 
 > ⚠ `在node1节点完成以下操作`
