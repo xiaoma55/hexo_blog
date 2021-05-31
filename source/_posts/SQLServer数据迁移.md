@@ -99,9 +99,24 @@ date: 2021-05-31 18:10:57
 > 
 >> 可以脱机的场景下，脱机之后选择mdf备份就可以了。 
 
-## 3 数据恢复
+## 3 备份定时脚本
 
+> 数据库不单要`备份数据`，还有一些`定时脚本也需要备份`过来。
 
+> 右键一个个太麻烦了，直接用我的脚本吧,把数据库名一个个换掉就好了。
+
+```shell
+BACKUP DATABASE [b3d] TO  DISK = N'D:\lankr_powerbi\sqlserver\MSSQL11.MSSQLSERVER\MSSQL\Backup\b3d.bak' WITH NOFORMAT, NOINIT,  NAME = N'b3d-完整 数据库 备份', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
+
+BACKUP DATABASE [baiji_ctong] TO  DISK = N'D:\lankr_powerbi\sqlserver\MSSQL11.MSSQLSERVER\MSSQL\Backup\baiji_ctong.bak' WITH NOFORMAT, NOINIT,  NAME = N'baiji_ctong-完整 数据库 备份', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
+
+BACKUP DATABASE [baiji_pami] TO  DISK = N'D:\lankr_powerbi\sqlserver\MSSQL11.MSSQLSERVER\MSSQL\Backup\baiji_pami.bak' WITH NOFORMAT, NOINIT,  NAME = N'baiji_pami-完整 数据库 备份', SKIP, NOREWIND, NOUNLOAD,  STATS = 10
+GO
+
+.....
+```
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
