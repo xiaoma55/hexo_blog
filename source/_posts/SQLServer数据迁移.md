@@ -118,5 +118,11 @@ GO
 .....
 ```
 
+## 4 恢复数据
+
+![](/img/articleContent/SQLServer数据迁移/10.png)
+
+![](/img/articleContent/SQLServer数据迁移/11.png)
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
