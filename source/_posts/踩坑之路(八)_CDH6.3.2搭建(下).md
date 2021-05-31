@@ -101,21 +101,11 @@ sed -i s/"vm.swappiness = 30"/"vm.swappiness = 10"/g  /usr/lib/tuned/virtual-gue
 
 ### 3.1 安装HDFS和YARN
 
-> `放行HDFS端口`
+> `放行端口`
 
-节点 | 端口 | 配置 | 用途
----|---|---|---
-DateNode | `9870` | dfs.datanode.address | 可视化端口
-DateNode | `50010` | dfs.datanode.address | datanode服务端口，用于数据传输
-DateNode | `50075` | dfs.datanode.http.address | http服务的端口
-DateNode | `50475` | dfs.datanode.https.address | http服务的端口
-DateNode | `50020` | dfs.datanode.ipc.address | ipc服务的端口
-NameNode | `50070` | dfs.namenode.http-address | http服务的端口
-NameNode | `50470` | dfs.namenode.https-address | http服务的端口
-NameNode | `8020` | fs.defaultFS | 接收Client连接的RPC端口，用于获取文件系统metadata信息。
-journalnode | `8485` | dfs.journalnode.rpc-address | RPC服务
-journalnode | `8480` | dfs.journalnode.http-address | HTTP服务
-ZKFC | `8019` | dfs.ha.zkfc.port | ZooKeeper FailoverController，用于NN HA
+```
+https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_ports.html#concept_k5z_vwy_4j
+```
 
 ![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/14.png)
 
@@ -192,6 +182,38 @@ https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports.htm
 
 ![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/18.png)
 
+### 3.2 安装Zookeeper
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/20.png)
+
+#### 3.2.1 角色分配
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/21.png)
+
+#### 3.2.2 集群配置
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/22.png)
+
+#### 3.2.3 开始安装
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/23.png)
+
+### 3.3 安装Kafka
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/24.png)
+
+#### 3.3.1 角色分配
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/25.png)
+
+#### 3.3.2 集群配置
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/26.png)
+
+#### 3.3.3 开始安装
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/27.png)
+
 ## 4 警告修复
 
 ### 4.1 DNS Resolution
@@ -220,6 +242,26 @@ echo "domain lankr.cn" >> /etc/resolv.conf
 
 ![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/19.png)
 
+### 4.3 ERROR：The health test result for NAME_NODE_HA_CHECKPOINT_AGE  has become bad: The filesystem checkpoint is 4 hour(s) old. This is 401.25% of the configured checkpoint period of 1 hour(s).
+
+> 通过真正的错误的描述，发现主要是版本不匹配，说明在重新安装CDH的时候，保留了以前版本的CDH的数据，导致不一致的版本问题，所以导致secondarynamenode不执行检查点的操作。
+ 
+> `那么解决办法就是删除之前的数据`，所以通过删除secondarynamenode执行检查点是的目录，即hdfs-site.xml中参数fs.checkpoint.dir, dfs.namenode.checkpoint.dir的值的路径，默认是`/dfs/snn`。
+
+```shell
+rm -rf /dfs/snn
+```
+
+### 4.4 Bad : This host is in contact with the Cloudera Manager Server. This host is not in contact with the Host Monitor.
+
+> 这个问题，卡了一天多，到最后，发现有`一个端口漏掉了`，CDH组件非常多，需要开放的端口也就非常多了，一定要细致细致再细致。
+
+> 照着官网一步一步来吧
+
+```shell
+https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports.html#concept_k5z_vwy_4j
+```
+
 ## 5 配置本地域名映射
 
 ```shell
@@ -240,4 +282,3 @@ C:\Windows\System32\drivers\etc\hosts
 
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
-

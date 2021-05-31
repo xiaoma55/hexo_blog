@@ -423,7 +423,7 @@ All done, your SCM database is configured correctly!
 > CDH用到的端口太多太多了，咱也不乱来，照着官网一通开
 
 ```shell
-https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports_cm.html
+https://docs.cloudera.com/documentation/enterprise/latest/topics/cm_ig_ports.html#concept_k5z_vwy_4j
 ```
 
 > ⚠ `在node1节点完成以下操作`
