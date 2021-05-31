@@ -280,5 +280,11 @@ C:\Windows\System32\drivers\etc\hosts
 
 > 这样windows电脑就可以通过node1或者node1.lankr.cn来访问CM集群了，而不用ip了
 
+## 6 老泪纵横
+
+> `不容易呀不容易`，终于可以`头戴一片绿`了，这`青青草原`可真好看。
+
+![](/img/articleContent/踩坑之路/8_CDH6.3.2搭建(下)/28.png)
+
 ## 联系博主，加入【羊山丨交流社区】
 ![联系博主](/img/icon/wechatFindMe.png)
