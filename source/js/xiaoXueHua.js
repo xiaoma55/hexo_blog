@@ -34,7 +34,8 @@ function snowCanvas() {
     /* 添加Dom结点 */
     var snowcanvas = document.createElement("canvas");
     snowcanvas.id = "snowfall";
-    snowcanvas.width = window.innerWidth;
+    //不知道为什么出现了横向滚动条，注释了下面这行
+    // snowcanvas.width = window.innerWidth;
     snowcanvas.height = document.body.clientHeight;
     snowcanvas.setAttribute("style", "position:absolute; top: 0; left: 0; z-index: 1; pointer-events: none;");
     document.getElementsByTagName("body")[0].appendChild(snowcanvas);
