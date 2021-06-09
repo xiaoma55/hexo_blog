@@ -45,7 +45,7 @@ function snowCanvas() {
     window.onresize = function() {
         snowcanvas.width = window.innerWidth;
         /* snowcanvas.height = window.innerHeight */
-    }
+    }k
 }
 /* 雪运动对象 */
 function flakeMove(canvasWidth, canvasHeight, flakeSize, fallSpeed) {
