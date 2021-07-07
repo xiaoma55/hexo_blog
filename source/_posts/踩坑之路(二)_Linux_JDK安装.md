@@ -97,7 +97,7 @@ echo "完成把jdk往各个服务器发送"
 > 所有节点执行
 
 ```shell
-mkdir -p /usr/java/default
+mkdir -p /usr/java
 ln -s /lankr/application/jdk1.8.0_291/ /usr/java/default
 
 ```
