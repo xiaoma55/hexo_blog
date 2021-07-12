@@ -67,21 +67,26 @@ date: 2021-02-07 01:26:20
 
 ![设置显示行号和方法间的分隔符](/img/articleContent/IDEASetting/showLineNumberAndMethodSeparatorsAfter.png)
 
-## 6 新建类头注释信息
+## 6 类注释添加
 
-> 平时项目里都是协作开发，虽然我们在git记录里可以看到代码是谁写的，以及是干什么的。但是我们可以在新建类的时候，让idea自动帮我们生成作者以及描述等信息，这样就很直观的可以看到类的相关信息。
+> 平时项目里都是协作开发，虽然我们在git记录里可以看到代码是谁写的，以及是干什么的。让idea自动帮我们生成作者以及描述等信息，这样就很直观的可以看到类的相关信息。
+
 
 ![新建类头注释信息](/img/articleContent/IDEASetting/fileHeaderInNewClass.png)
 
 ```
 /**
-    @desc   ...
-    @date ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}:${SECOND}
-    @author xiaoma
-*/
+ * @Description: ...
+ * @Package: $PAKCAGE_NAME$
+ * @ClassName: $CLASS_NAME$
+ *
+ * @Author: xiaoma
+ * @Date: $DATE$ $TIME$
+ * @Version: v1.0
+ **/
 ```
 
-我刚新建了个类，我们看下，效果就是这样
+> 在类头上输入`ac`，然后回车
 
 ![新建类头注释信息](/img/articleContent/IDEASetting/fileHeaderInNewClassAlfter.png)
 
@@ -94,29 +99,31 @@ date: 2021-02-07 01:26:20
 ![JavaDoc注释](/img/articleContent/IDEASetting/javaDocTemplates2.png)
 
 ```
-*
- * @desc $description$
- $params$
- * @return $return$
- *
- * @date $date$ $time$
- * @author xiaoma
+**
+ * @Description: ...
+ * @Method: $METHOD_NAME$
+ $Params$
+ * @Return: $return$ 
+        
+ * @Author: xiaoma
+ * @Date: $DATE$ $TIME$ 
+ * @Version: V1.0
  */
 ```
 
-params的值设置为
+> `Params`的值设置为
 
 ```
-groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 1; i < params.size() +1; i++) {result+='* @param ' + params[i - 1] + ' ' + i + ((i < params.size()) ? '\\n ' : '')}; return result", methodParameters())
+groovyScript("def result=''; def params=\"${_1}\".replaceAll('[\\\\[|\\\\]|\\\\s]', '').split(',').toList(); for(i = 1; i < params.size() +1; i++) {result+='* @Param: ' + params[i - 1] + ' ' + i + ((i < params.size()) ? '\\n ' : '')}; return result", methodParameters())
 ```
 
-使用方法
+> 使用方法
 
 ```
-/**+回车
+/am+回车
 ```
 
-我刚新建了个方法，在上面输入/**+回车之后的效果，大家看下
+> 我刚新建了个方法，在上面输入/am+回车之后的效果，大家看下
 
 ![JavaDoc注释](/img/articleContent/IDEASetting/javaDocTemplatesAlfter.png)
 
